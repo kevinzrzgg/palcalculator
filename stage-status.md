@@ -1,6 +1,6 @@
 # Stage Status — palcalculator
 
-- 00 setup：PARTIAL_DONE — GitHub repo `kevinzrzgg/palcalculator` created public and local git worktree initialized; remaining setup blockers: Cloudflare DNS/zone/Pages permissions, GSC/Bing/analytics decision, and production/public launch approval.
+- 00 setup：OWNER_ACTION_REQUIRED — GitHub repo/worktree done; remaining blockers are Cloudflare DNS/Pages permissions, canonical/indexing approval, analytics/GSC/Bing decision, and production/public launch approval.
 - 01 research：DONE — `t_04976f25` research_bot delivered research.md
 - 02 PRD：DONE — `t_0bc3c878` product_bot delivered PRD + route contract
 - 03 pricing：DONE — `t_1236d985` pricing_bot delivered pricing.md
