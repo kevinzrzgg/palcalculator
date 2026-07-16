@@ -72,8 +72,14 @@ describe('static frontend contract', () => {
     expect(source).toContain('navigator.clipboard.writeText');
     expect(source).toContain('Copy/share result URL');
     expect(source).toContain('palcalculatorEvents');
+    expect(source).toContain('palcalculatorTrack');
+    expect(source).toContain('page_slug');
+    expect(source).toContain('tool_type');
+    expect(source).toContain('referrer_host');
     expect(source).toContain('tool_success');
     expect(source).toContain('tool_error');
+    expect(source).toContain('share_copy');
+    expect(source).toContain('share_open');
   });
 
   it('uses the Cloudflare-equivalent static preview server instead of SPA preview fallback', () => {
