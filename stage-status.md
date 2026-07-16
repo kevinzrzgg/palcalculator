@@ -10,7 +10,7 @@
 - 08 backend/data：DONE — `t_69d5636e` backend_bot delivered data-contract.md
 - 07 frontend：DONE/ACCEPTED — `t_eda7a4a7`; frontend_bot implemented Vite+React frontend, pushed commit `5251c90`; orchestrator verified build/test pass
 - zh-CN docs：DONE — `t_649cf0a3`; Chinese Markdown generated under `/root/projects/palcalculator/zh-CN/`
-- 10 SEO：READY/RUNNING — `t_aa4b814f`; dispatched after frontend acceptance
+- 10 SEO：RUNNING_RECOVERY — `t_aa4b814f`; seo_bot auth crash fixed by syncing working auth and re-dispatching; currently running
 - 04b compliance recheck：READY/RUNNING — `t_47d82d17`; dispatched after frontend acceptance
 - 02b PM acceptance：WAITING — `t_0f1e01e9`; waits for SEO + compliance recheck
 - 09 QA：TODO — `t_6f6b8013`; waits for PM acceptance / implementation

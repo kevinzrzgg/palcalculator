@@ -1,0 +1,1 @@
+{"schemaVersion":"1.0.0","dataVersion":"palworld-1-0_public-web_2026-07-16_r1","generatedAt":"2026-07-16T05:15:00Z","combos":[],"caveats":[{"code":"SPECIAL_COMBO_TABLE_PENDING","severity":"blocking","message":"No separately verified special-combo override table was available to this worker; normal pair outputs are enabled, special markers remain unsupported."}]}
