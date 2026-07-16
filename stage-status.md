@@ -16,3 +16,8 @@
 - 09 QA：TODO — `t_6f6b8013`; waits for PM acceptance / implementation
 - 11 launch：TODO/BLOCKED_BY_SETUP — `t_9bed78ed`; waits for QA_GO + owner setup
 - 12 review：TODO — `t_9b3f1ac3`; waits for launch
+
+- repair R1 backend/data：DONE/ACCEPTED — `t_1be67cb6`; data-backed calculators added, build/test pass; special combos caveated
+- repair R2 frontend SEO：DONE/ACCEPTED — `t_a493338a`; static route metadata/404/sitemap repair added, build/test pass
+- repair R3 canonical：ACCEPTED_FOR_RECHECK — `t_a7b1b85f`; using `https://palcalculator.com` for local recheck; production deploy/search still needs owner/Cloudflare setup
+- 10 SEO recheck after repairs：READY/RUNNING — `t_716f3a37`; dispatching now
