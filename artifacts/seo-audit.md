@@ -1,301 +1,225 @@
-# PalCalculator SEO Recheck
+# PalCalculator SEO Recheck After Repairs
 
 Project: palcalculator
-Stage: 10-seo-recheck
+Stage: 10-seo-recheck-after-repairs
 Keyword focus: palcalculator, Palworld calculator, Palworld breeding calculator, Palworld 1.0 breeding calculator
 Market: US / English
-Audit date: 2026-07-16
+Audit date UTC: 2026-07-16T06:02:08Z
 Fact source directory: `/root/projects/palcalculator`
-Frontend handoff: `/root/projects/palcalculator/artifacts/frontend-report.md`
 
 ## Verdict
 
-SEO REPAIR LIST — not SEO GO yet.
+SEO CONDITIONAL NO-GO — technical SEO repairs pass, but production SEO GO remains blocked by canonical-origin / production-indexing approval.
 
-The frontend artifact is present and locally buildable, and the route list, robots.txt, sitemap.xml, fan-site disclaimer, data caveats, and SoftwareApplication JSON-LD are implemented. However, the current Vite SPA + Cloudflare Pages catch-all fallback is not safe for SEO launch as-is: it creates soft-404 risk, ships one static title/meta/canonical for every route, and indexes calculator pages while production Palworld data is still pending.
+The current implementation rebuilds successfully, emits route-specific static HTML for all 10 P0 routes, removes the broad SPA catch-all, returns real 404s for unknown paths, excludes share/result-style paths from indexation, and ships a versioned Palworld 1.0 public-web data build with working normal breeding, reverse lookup, route states, and caveated IV/stat outputs.
+
+However, owner approval for `https://palcalculator.com` as the final production canonical origin is still not recorded. Per the ops handoff, production deploy/search submission/indexing must remain blocked or conservative until the owner explicitly confirms the canonical origin and production indexing approval. Current static output is conservative: homepage/data/legal pages are indexable, while calculator tool routes are `noindex,follow` and absent from the sitemap.
 
 ## Validation evidence
 
 Commands run in `/root/projects/palcalculator`:
 
 ```text
-npm test
+npm test && npm run build
 ```
 
 Result:
 
 ```text
 Test Files  1 passed (1)
-Tests       2 passed (2)
+Tests       6 passed (6)
+✓ built in 1.35s
+Generated 10 route-specific HTML files, 4 sitemap URLs, explicit slash redirects, and 404.html.
 exit_code=0
 ```
 
-```text
-npm run build
-```
+Local static HTTP probe served `dist/` with `python3 -m http.server 4176 --directory dist` and checked route HTML/statuses.
 
-Result:
+## Route-specific static metadata check
+
+| Route | HTTP | Robots | Initial title | Canonical | Initial H1 | SEO assessment |
+|---|---:|---|---|---|---|---|
+| `/` | 200 | `index,follow` | `PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators` | `https://palcalculator.com/` | `PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators` | PASS pending canonical approval |
+| `/breeding-calculator/` | 200 | `noindex,follow` | `Palworld Breeding Calculator - Parent Pairs, Children & Combos` | `https://palcalculator.com/breeding-calculator/` | `Palworld Breeding Calculator` | PASS metadata; intentionally not indexable yet |
+| `/breeding-route-calculator/` | 200 | `noindex,follow` | `Palworld Breeding Route Calculator - Shortest Path from Owned Pals` | `https://palcalculator.com/breeding-route-calculator/` | `Palworld Breeding Route Calculator` | PASS metadata; intentionally not indexable yet |
+| `/iv-calculator/` | 200 | `noindex,follow` | `Palworld IV Calculator - Check HP, Attack & Defense IVs` | `https://palcalculator.com/iv-calculator/` | `Palworld IV Calculator` | PASS metadata; intentionally not indexable yet |
+| `/stats-calculator/` | 200 | `noindex,follow` | `Palworld Stats Calculator - Estimate Pal Stats by Level` | `https://palcalculator.com/stats-calculator/` | `Palworld Stats Calculator` | PASS metadata; intentionally not indexable yet |
+| `/passive-skill-calculator/` | 200 | `noindex,follow` | `Palworld Passive Skill Calculator - Plan Breeding Passives` | `https://palcalculator.com/passive-skill-calculator/` | `Palworld Passive Skill Calculator` | PASS metadata; intentionally not indexable yet |
+| `/palworld-1-0-breeding-calculator/` | 200 | `noindex,follow` | `Palworld 1.0 Breeding Calculator - Updated Combos & Routes` | `https://palcalculator.com/palworld-1-0-breeding-calculator/` | `Palworld 1.0 Breeding Calculator` | PASS metadata; intentionally not indexable yet |
+| `/data-sources/` | 200 | `index,follow` | `PalCalculator Data Sources & Update Policy` | `https://palcalculator.com/data-sources/` | `PalCalculator Data Sources & Update Policy` | PASS pending canonical approval |
+| `/privacy/` | 200 | `index,follow` | `Privacy Policy` | `https://palcalculator.com/privacy/` | `Privacy Policy` | PASS pending canonical approval |
+| `/terms/` | 200 | `index,follow` | `Terms of Use` | `https://palcalculator.com/terms/` | `Terms of Use` | PASS pending canonical approval |
+
+All checked route HTML includes route-specific meta description, canonical, OG title, OG description, OG URL, robots directive, and an initial static H1 before React loads.
+
+## 404 / unknown path / excluded path check
+
+Local probe results:
 
 ```text
-dist/index.html                   0.90 kB │ gzip:  0.49 kB
-dist/assets/index-Fpdp7px_.css    5.90 kB │ gzip:  1.87 kB
-dist/assets/index-B6sYoiBC.js   212.97 kB │ gzip: 67.25 kB │ map: 898.75 kB
-✓ built in 755ms
-exit_code=0
+/nonexistent-seo-test-12345 -> 404 text/html;charset=utf-8 | homepage_title=False
+/sitemap_index.xml -> 404 text/html;charset=utf-8 | homepage_title=False
+/share/test -> 404 text/html;charset=utf-8 | homepage_title=False
+/results/test -> 404 text/html;charset=utf-8 | homepage_title=False
+/sitemap.xml -> 200 application/xml
+/robots.txt -> 200 text/plain
+/404.html -> 200 text/html
 ```
 
 Static artifact checks:
 
-- `dist/index.html` exists, 905 bytes.
-- `dist/robots.txt` exists and allows public crawl, disallows `/share/`, and declares `https://palcalculator.com/sitemap.xml`.
-- `dist/sitemap.xml` exists with 10 P0 canonical URLs.
-- `dist/_redirects` contains only `/* /index.html 200`.
-- Route table in `src/main.tsx` includes 10 P0 routes:
-  - `/`
-  - `/breeding-calculator/`
-  - `/breeding-route-calculator/`
-  - `/iv-calculator/`
-  - `/stats-calculator/`
-  - `/passive-skill-calculator/`
-  - `/palworld-1-0-breeding-calculator/`
-  - `/data-sources/`
-  - `/privacy/`
-  - `/terms/`
+- `dist/_redirects` contains only explicit no-trailing-slash to trailing-slash 301 redirects.
+- There is no broad `/* /index.html 200` catch-all fallback in the generated `_redirects`.
+- `dist/404.html` exists and includes `meta name="robots" content="noindex,follow"`.
+- Unknown paths are not emitted as static route files.
 
-## Page matrix recheck
+## Sitemap / robots / indexability
 
-| Route | Sitemap | Static title/meta/canonical | Rendered H1/content | Indexability assessment |
-|---|---:|---|---|---|
-| `/` | yes | correct for homepage | React renders homepage | OK after domain confirmation |
-| `/breeding-calculator/` | yes | uses homepage title/meta/canonical in initial HTML | React can render route-specific H1 after JS | P0 repair needed |
-| `/breeding-route-calculator/` | yes | uses homepage title/meta/canonical in initial HTML | React can render route-specific H1 after JS | P0 repair needed |
-| `/iv-calculator/` | yes | uses homepage title/meta/canonical in initial HTML | React can render route-specific H1 after JS | P0 repair needed |
-| `/stats-calculator/` | yes | uses homepage title/meta/canonical in initial HTML | React can render route-specific H1 after JS | P0 repair needed |
-| `/passive-skill-calculator/` | yes | uses homepage title/meta/canonical in initial HTML | React can render route-specific H1 after JS | P0 repair needed |
-| `/palworld-1-0-breeding-calculator/` | yes | uses homepage title/meta/canonical in initial HTML | React can render route-specific H1 after JS | P0 repair needed |
-| `/data-sources/` | yes | uses homepage title/meta/canonical in initial HTML | React can render trust page after JS | P1 repair needed |
-| `/privacy/` | yes | uses homepage title/meta/canonical in initial HTML | React can render legal page after JS | P1 repair needed |
-| `/terms/` | yes | uses homepage title/meta/canonical in initial HTML | React can render legal page after JS | P1 repair needed |
-
-## What passes
-
-1. Frontend artifact is present, and this task is not blocked by a missing frontend.
-2. Build and tests pass locally.
-3. P0 routes are represented in app routing and sitemap.
-4. `robots.txt` includes `Disallow: /share/`, matching the noindex/share-route plan at a crawl-policy level.
-5. Sitemap lists only the 10 intended canonical P0 routes; no `/share/`, no programmatic thin Pal pages.
-6. UI copy makes Palworld and fan-made/unofficial status visible.
-7. Data uncertainty is visible: the app uses `DATASET_VERSION_PENDING`, `FORMULA_VERSION_PENDING`, unavailable states, and explicit caveats instead of fabricated calculator output.
-8. JSON-LD SoftwareApplication is present in React source and accurately describes a free web app at a global level.
-
-## P0 issues to repair before SEO GO
-
-### P0-1: Cloudflare Pages catch-all fallback creates soft-404 and duplicate-indexing risk
-
-Evidence:
+`dist/robots.txt`:
 
 ```text
-public/_redirects: /* /index.html 200
-dist/_redirects:   /* /index.html 200
+User-agent: *
+Allow: /
+Disallow: /share/
+Sitemap: https://palcalculator.com/sitemap.xml
 ```
 
-Impact:
-
-- Unknown URLs such as `/nonexistent-seo-test-12345` will be served as homepage/app HTML with HTTP 200 on Cloudflare Pages.
-- XML-looking nonexistent URLs such as `/sitemap_index.xml` can also fall back to app HTML instead of returning 404.
-- This violates the Cloudflare/static-site P0 check: unknown paths must be real 404s.
-
-Required repair:
-
-- Replace the broad SEO-host fallback with explicit routing that preserves real 404s, or move to prerendered/static route files.
-- Add a real `404.html` with `noindex, follow`.
-- If SPA fallback is still required for app state, scope it narrowly and do not allow arbitrary unknown paths to return 200.
-
-Acceptance check:
+`dist/sitemap.xml` currently contains exactly 4 URLs:
 
 ```text
-/nonexistent-seo-test-12345 -> 404
-/sitemap_index.xml -> 404 unless a real sitemap index exists
-/favicon.ico -> 200 image/icon or real 404, not homepage HTML
+https://palcalculator.com/
+https://palcalculator.com/data-sources/
+https://palcalculator.com/privacy/
+https://palcalculator.com/terms/
 ```
 
-### P0-2: Every route currently ships the homepage canonical in initial HTML
+Sitemap/exclusion assessment:
 
-Evidence from `dist/index.html`:
+- PASS: `/share/` is disallowed in robots and no share URL appears in sitemap.
+- PASS: `/results/` / result-state-style paths are not in sitemap and return 404 in the static probe.
+- PASS: calculator tool routes are absent from sitemap while their generated HTML is `noindex,follow`.
+- PASS: sitemap contains no programmatic thin Pal pages.
+- WATCH: because backend data repair now provides real normal breeding/data-backed utility, calculator pages can become indexable after owner-approved canonical origin and production indexing approval. The current noindex posture is conservative rather than a technical metadata failure.
 
-```html
-<link rel="canonical" href="https://palcalculator.com/"/>
+## Backend/data readiness check
+
+Backend handoff reviewed: `/root/projects/palcalculator/artifacts/backend-data-repair.md`.
+
+Data build evidence:
+
+- `dataVersion`: `palworld-1-0_public-web_2026-07-16_r1`
+- `gameVersionLabel`: `Palworld 1.0 public-web data build`
+- Pals: 297
+- Normal breeding pairs: 44,253
+- Tests verify child-from-parents, reverse parent pairs, route states, and caveated IV/stat bands.
+
+Data caveats that remain correctly disclosed:
+
+- verified special combo override table unsupported
+- guaranteed passive inheritance odds unsupported
+- server-side save upload unsupported
+- exact IV with all modifiers unsupported
+
+SEO interpretation: this is no longer a pending/example-only shell. It is a working, caveated MVP data build. Indexation of calculator routes is technically plausible after owner canonical/deploy approval, but current `noindex,follow` is acceptable as a conservative production-indexing block.
+
+## Canonical origin / production indexing gate
+
+Ops handoff reviewed: `/root/projects/palcalculator/artifacts/canonical-origin-handoff.md`.
+
+Current status:
+
+- `https://palcalculator.com` is registered/owned, but explicit owner approval as the final production canonical origin is not recorded.
+- DNS was reported as still on Dynadot/default infrastructure at the ops check.
+- Ops explicitly instructed SEO not to treat `https://palcalculator.com` as production-approved until owner confirms it.
+
+Required owner decision before SEO GO / GSC submission / production indexing:
+
+```text
+Is https://palcalculator.com the final owner-approved canonical production origin for PalCalculator, with apex as primary and any www host redirected to the apex? May build/deploy use this exact origin in canonical tags, sitemap.xml, and robots.txt for production indexing?
 ```
 
-Impact:
+If yes, unblock production indexation and update tool-route indexability according to launch choice. If no, provide the exact final canonical origin and regenerate canonical/robots/sitemap from that origin.
 
-- All sitemap routes served through the same SPA document initially declare the homepage as canonical.
-- Tool routes in the sitemap conflict with the canonical signal, so Google may consolidate them into `/` or ignore route-specific pages.
+## What is fixed since prior SEO audit
 
-Required repair:
+1. PASS: route-specific initial HTML now exists for all 10 P0 routes.
+2. PASS: each route has unique title/meta description/canonical/OG/H1 in the initial HTML.
+3. PASS: broad SPA catch-all fallback has been removed from `_redirects`.
+4. PASS: `404.html` exists with `noindex,follow`.
+5. PASS: unknown paths and XML-looking nonexistent paths return 404 in local static probing.
+6. PASS: share/result-style paths are not indexed and are not in sitemap.
+7. PASS: backend data is no longer example-only/pending; normal breeding, reverse lookup, route states, and caveated IV/stat outputs are test-covered.
+8. PASS: `/data-sources/` exposes data version, included domains, unsupported domains, sources, update date, and correction path.
 
-- Produce per-route HTML with route-specific canonical tags, or use an SSR/static-export framework for the P0 route set.
-- Required examples:
-  - `/breeding-calculator/` -> `https://palcalculator.com/breeding-calculator/`
-  - `/breeding-route-calculator/` -> `https://palcalculator.com/breeding-route-calculator/`
-  - `/iv-calculator/` -> `https://palcalculator.com/iv-calculator/`
+## Remaining repair / decision list
 
-### P0-3: Every route currently ships the homepage title/meta description in initial HTML
+### P0-1: Owner canonical-origin and production indexing approval is still missing
 
-Evidence from `dist/index.html`:
-
-```html
-<title>PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators</title>
-<meta name="description" content="Unofficial fan-made Palworld 1.0 calculator hub for breeding routes, IV/stat checks, passive planning, and owned-Pal optimization."/>
-```
-
-`src/main.tsx` changes `document.title` on client navigation, but direct-loaded route HTML still starts with homepage metadata.
-
-Impact:
-
-- Search snippets and canonical understanding are weak for tool-intent pages.
-- Route contract requires each indexable tool page to include a title, meta description, canonical, OG title/description, and H1 matching the user task.
-
-Required repair:
-
-- Generate unique static HTML metadata per route before deploy.
-- Use the title directions from `artifacts/route-contract.md` and detailed copy from `artifacts/copy.md`.
-
-### P0-4: Indexable calculator pages are listed in sitemap while production data is pending
+Severity: P0 blocker for SEO GO and search submission.
 
 Evidence:
 
-- UI and frontend report state production Palworld data is pending.
-- Data files are explicit example-only seed data.
-- Calculator result states return `DATASET_VERSION_PENDING`, `BREEDING_DATA_PENDING`, `FORMULA_VERSION_PENDING`, and similar unavailable states.
+- Ops handoff says `https://palcalculator.com` is registered/owned but not owner-approved as the final production canonical origin.
+- Current static output uses `https://palcalculator.com` in canonical URLs, robots sitemap declaration, and sitemap locs.
 
-Impact:
+Required repair/decision:
 
-- The pages are honest, but they may be thin/unsatisfying for high-intent searchers if indexed before real calculator output exists.
-- PRD P0 launchable scope calls for actual breeding, route, IV/stat, and passive planning utility with data version/freshness, not only unavailable shells.
+- Owner must explicitly confirm the final canonical origin and apex/www redirect policy.
+- If confirmed as `https://palcalculator.com`, production deploy/search submission can proceed after deploy QA.
+- If not confirmed, regenerate route HTML, robots, and sitemap with the approved origin; keep indexing blocked until then.
 
-Required repair options:
+### P0-2: Decide when to index calculator tool routes
 
-1. Preferred: complete verified Palworld data import and ship working P0 calculator results before indexable launch.
-2. Conservative fallback: keep only `/`, `/data-sources/`, `/privacy/`, and `/terms/` indexable until real calculator data exists; temporarily remove tool pages from sitemap and set route-specific `noindex,follow` for tool routes.
-
-### P0-5: Canonical origin is still not owner-confirmed in upstream contract
+Severity: P0 launch-indexing decision, not a static metadata failure.
 
 Evidence:
 
-- `artifacts/route-contract.md` says canonical origin is `{CANONICAL_ORIGIN}` until owner confirms domain.
-- Frontend hardcodes `https://palcalculator.com/` in canonical, robots sitemap declaration, and sitemap locs.
+- Tool routes are currently `noindex,follow` and absent from sitemap.
+- Backend data repair shows real, test-covered calculator utility for normal formula breeding and caveated stats, with explicit unsupported-domain caveats.
 
-Impact:
+Required decision:
 
-- If `palcalculator.com` is not the final owned production domain, all canonical/sitemap signals will be wrong.
+- If owner approves production indexing and accepts the current caveated MVP data scope, change calculator routes to `index,follow` and add them to sitemap.
+- If owner wants to wait for verified special-combo override data or further QA, keep calculator routes `noindex,follow` and absent from sitemap.
 
-Required repair:
+### P1-1: Crawlable internal anchors should be rechecked in source after frontend claim
 
-- Owner/deploy agent must confirm final domain before production SEO GO.
-- If the domain is confirmed, record the confirmation in deployment handoff.
-- If not confirmed, parameterize canonical origin via build-time env and block production indexation until set.
-
-## P1 issues
-
-### P1-1: Internal navigation uses buttons/history state instead of crawlable anchors
+Severity: P1.
 
 Evidence:
 
-- Header and route cards use `<button>` plus `window.history.pushState`.
-- Static source contains only one internal anchor href: `/sitemap.xml`.
+- Frontend repair handoff claims header, cards, hero CTAs, and footer trust/legal links were converted to crawlable `<a href="/.../">` links.
+- Current `src/main.tsx` still contains several button-driven navigation components in the source snapshot reviewed during this task.
 
-Impact:
+Required repair/check:
 
-- Google can discover URLs from sitemap, but crawlable semantic internal links are weak.
-- Users without JS and non-Google crawlers do not get a normal link graph.
+- Confirm the latest intended source version is present.
+- Ensure primary navigation, homepage route cards, hero CTAs, and footer internal links emit real anchors in the built HTML/React render, not button-only navigation.
+- This does not block the current static metadata/404 repair because sitemap and static route files are present, but it remains a crawlability/UX quality issue.
 
-Repair:
+### P1-2: FAQ/AEO structured content remains a growth improvement
 
-- Convert primary nav, route cards, and footer internal links to real `<a href="/route/">` links, while preserving React enhancement if desired.
+Severity: P1/P2 depending on launch scope.
 
-### P1-2: FAQ/AEO readiness is incomplete
+Required improvement:
 
-Evidence:
+- Add visible FAQ sections to core calculator pages after the above-fold tool.
+- Add FAQPage schema only for questions/answers visible on that route.
+- Keep answers caveated and data-version-aware.
 
-- SoftwareApplication JSON-LD exists, but no visible FAQ sections or FAQPage schema are present for core tool pages.
-- Copy freeze and SEO workflow call for FAQ content and AI-answer-ready Q&A blocks.
+### P1-3: Analytics/privacy launch decision remains pending
 
-Repair:
+Severity: P1 before public launch if analytics is enabled.
 
-- Add short visible FAQ sections for each core calculator route after the above-fold tool.
-- Only add FAQPage JSON-LD for questions/answers visible on that route.
-- Suggested topics:
-  - What is a Palworld breeding calculator?
-  - Can I find the shortest breeding route from owned Pals?
-  - Why do results depend on data version?
-  - Is PalCalculator official?
+Required decision:
 
-### P1-3: Data sources page needs real source/update details before trust launch
-
-Evidence:
-
-- Current data page says source/update workflow is pending.
-
-Repair:
-
-- After backend/data import, show actual data version, last update date, source categories, formula assumptions, unsupported domains, and correction workflow.
-
-### P1-4: Analytics/measurement plan remains pending
-
-Evidence:
-
-- Frontend report notes analytics provider is pending; no analytics script is installed.
-
-Repair:
-
-- Before launch, decide GA4/Clarity or no analytics.
-- If enabled, update Privacy with provider, event names, retention/cookie behavior, and avoid collecting private Palbox/save-file content.
-
-## P2 improvements
-
-1. Add WebSite schema with `potentialAction` only if search/action behavior is implemented accurately.
-2. Add BreadcrumbList schema only if visible breadcrumbs or clear hierarchy is added.
-3. Add Open Graph image once a non-infringing brand/social card is available.
-4. Add `lastmod` to sitemap after a real deploy/update process exists.
-5. Add a favicon or confirm `/favicon.ico` returns an icon/real 404 in production.
-
-## Recommended implementation path
-
-1. Decide whether this remains Vite SPA or migrates to static-prerendered routes.
-   - Best SEO path: prerender the 10 P0 routes into separate HTML files with per-route metadata.
-   - Acceptable simple alternative: generate route-specific static HTML shells for each P0 route and hydrate the same React app.
-2. Remove or narrow `/* /index.html 200`; add `404.html`; verify unknown paths return 404 on Cloudflare Pages.
-3. Generate per-route `<title>`, `<meta name="description">`, canonical, OG title/description, and route H1 in initial HTML.
-4. Confirm final canonical origin before deploy.
-5. Decide indexability for data-pending calculators:
-   - If verified production data is imported: keep tool pages indexable.
-   - If data is still pending: noindex or remove tool routes from sitemap until calculator value is real.
-6. Replace button-only route navigation with crawlable anchors.
-7. Add visible route-specific FAQ/AEO sections and matching schema where accurate.
-8. Re-run local build/test and Cloudflare Pages HTTP probes:
-   - `/` 200
-   - all P0 routes 200
-   - no-trailing-slash variants 301 to trailing slash if configured
-   - `/nonexistent-seo-test-12345` 404
-   - `/sitemap_index.xml` 404 unless real
-   - `/sitemap.xml` 200 XML
-   - `/robots.txt` 200 text/plain
-   - `/favicon.ico` icon or real 404
+- Decide GA4/Clarity/no analytics.
+- If analytics is enabled, update Privacy with provider, event names, retention/cookie behavior, and avoid collecting private save-file/Palbox content.
 
 ## Acceptance gate result
 
-Not SEO GO.
+Not SEO GO yet.
 
-Repair list severity summary:
+Current implementation is technically much improved and passes the recheck for static routing, route metadata, 404 behavior, sitemap exclusion of share/result paths, and data-readiness evidence. The remaining SEO GO blocker is not a code-level metadata failure; it is the owner/deploy decision for canonical origin and production indexation. Keep production search submission blocked until that approval exists.
 
-- P0: SPA catch-all soft-404 risk.
-- P0: route-specific canonical tags missing in initial HTML.
-- P0: route-specific title/meta/OG missing in initial HTML.
-- P0: calculator tool routes are indexable while production data remains pending.
-- P0: final canonical domain still needs owner confirmation.
-- P1: internal links should use crawlable anchors.
-- P1: FAQ/AEO content and FAQPage schema not yet implemented.
-- P1: data source and analytics details still pending.
-
-Recommended next agent: frontend_bot or deploy_bot to implement SEO technical repairs, then seo_bot recheck after route-specific static output and 404 behavior are fixed.
+Recommended next action: owner/deploy approval for canonical origin and production indexing policy, then one final SEO deploy recheck against the real production URL.
