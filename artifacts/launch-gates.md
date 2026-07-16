@@ -62,7 +62,13 @@ NS palcalculator.com -> ns1.dyna-ns.net / ns2.dyna-ns.net
 A palcalculator.com -> 185.53.179.146
 ```
 
-Cloudflare zone creation attempt failed because the available API token lacks:
+Cloudflare token search / permission check:
+
+- Environment token `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_API_SEORAPIDINDEXCHECKER_TOKEN`: active, can deploy Pages, but lacks `com.cloudflare.api.account.zone.create`.
+- Server file `/root/.cloudflare-api-token`: found, but Cloudflare API reports it is invalid/expired.
+- No Dynadot API credential was found in environment or searchable project files.
+
+Cloudflare zone creation attempt failed because the active available API token lacks:
 
 ```text
 com.cloudflare.api.account.zone.create
