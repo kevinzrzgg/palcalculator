@@ -2,26 +2,55 @@
 
 Project: PalCalculator
 Date: 2026-07-16
-Status: BLOCKED_WITH_STEPS
+Status: OWNER_REPORTED_GSC_SUBMITTED_REQUESTED_INDEXING / BING_READY_FOR_OWNER
 
 ## Executive summary
 
-I verified the live sitemap, robots.txt, homepage canonical basics, and sitemap page canonicals for https://palcalculator.com. The site is ready for owner-side search engine setup, but I did not submit the sitemap to Google Search Console or Bing Webmaster Tools because no verified local GSC/Bing CLI/API access or browser login state was available in this worker environment.
+Owner update received: the owner reports that Google Search Console sitemap submission is complete and that URL Inspection indexing was requested for `https://palcalculator.com/`.
 
-Do not treat this as submission success. The next action is for the owner/operator to log in to Google Search Console and Bing Webmaster Tools and submit `https://palcalculator.com/sitemap.xml` using the UI steps below.
+I did not verify Google Search Console through an API or logged-in browser, so this artifact records the GSC step as owner-reported, not API-verified. I also did not submit to Bing Webmaster Tools because no verified local Bing/GSC API or logged-in browser access exists in this worker environment.
 
-## Evidence collected
+Public SEO file checks are still good when resolving the domain through propagated public DNS/Cloudflare. The local worker's default resolver still has a stale apex A answer (`185.53.179.146`), but major public resolvers checked now return Cloudflare nameservers and Cloudflare A records.
 
-### Live URL checks
+## Current search engine status
+
+| Channel | Status | Evidence / note | Next action |
+|---|---|---|---|
+| Google Search Console | OWNER_REPORTED_SUBMITTED | Owner reported sitemap submitted in GSC and indexing requested for `https://palcalculator.com/`. No API proof available locally. | Monitor GSC sitemap row and URL Inspection status over the next few days. |
+| Google sitemap URL | READY / LIVE | `https://palcalculator.com/sitemap.xml` returns 200 via propagated Cloudflare resolution; sitemap has 4 canonical URLs. | No action unless GSC reports fetch errors. |
+| Google URL Inspection | OWNER_REPORTED_REQUESTED_INDEXING | Owner reported indexing request for homepage. | Do not repeatedly request indexing; wait for Google processing. |
+| Bing Webmaster Tools | READY_FOR_OWNER | No local Bing Webmaster API key/tooling/login state found. | Owner should import from GSC or manually add site and submit sitemap. |
+| Local API/CLI submission | NOT_AVAILABLE | `gcloud`, `gsutil`, `gws` missing; no Google/GSC/Bing/Webmaster/IndexNow env vars; no local gcloud config/ADC. | Provision safe API credentials later only if owner wants agent-side submission/verification. |
+
+## Evidence collected in this follow-up
+
+### DNS / reachability notes
+
+Public resolver checks at follow-up:
+
+| Resolver | `palcalculator.com NS` | `palcalculator.com A` |
+|---|---|---|
+| `1.1.1.1` | `aleena.ns.cloudflare.com`, `alex.ns.cloudflare.com` | `104.21.59.233`, `172.67.185.26` |
+| `1.0.0.1` | `aleena.ns.cloudflare.com`, `alex.ns.cloudflare.com` | `104.21.59.233`, `172.67.185.26` |
+| `8.8.8.8` | `aleena.ns.cloudflare.com`, `alex.ns.cloudflare.com` | `172.67.185.26`, `104.21.59.233` |
+| `8.8.4.4` | `alex.ns.cloudflare.com`, `aleena.ns.cloudflare.com` | `104.21.59.233`, `172.67.185.26` |
+| `9.9.9.9` | `aleena.ns.cloudflare.com`, `alex.ns.cloudflare.com` | `104.21.59.233`, `172.67.185.26` |
+| `208.67.222.222` | `alex.ns.cloudflare.com`, `aleena.ns.cloudflare.com` | `104.21.59.233`, `172.67.185.26` |
+
+Caveat: this worker's default resolver still returned stale apex A `185.53.179.146` during direct `curl -4 https://palcalculator.com`, causing a timeout from this host. That appears to be local resolver cache/stale DNS, not the current public resolver state. Forced Cloudflare-resolution checks below succeeded.
+
+### Live URL checks via propagated Cloudflare resolution
+
+Checks used Cloudflare IP `104.21.59.233` for `palcalculator.com` to bypass this worker's stale default resolver.
 
 | URL checked | Result | Notes |
 |---|---:|---|
-| `https://palcalculator.com` | 200 | Homepage reachable. Canonical points to `https://palcalculator.com/`. Meta robots: `index,follow`. |
-| `https://www.palcalculator.com` | 200 | WWW hostname reachable. |
+| `https://palcalculator.com/` | 200 | Homepage reachable. Canonical points to `https://palcalculator.com/`. Meta robots: `index,follow`. |
 | `https://palcalculator.com/sitemap.xml` | 200 | XML sitemap reachable and parseable. |
 | `https://palcalculator.com/robots.txt` | 200 | Robots file reachable. References the sitemap. |
-| `http://palcalculator.com` | redirects/final 200 | Final URL observed as `https://palcalculator.com/`. |
-| `http://www.palcalculator.com` | redirects/final 200 | Final URL observed as `https://www.palcalculator.com/`. |
+| `https://www.palcalculator.com` | 200 | WWW hostname reachable through default resolver. |
+| `https://www.palcalculator.com/sitemap.xml` | 200 | XML sitemap reachable on www too. |
+| `https://www.palcalculator.com/robots.txt` | 200 | Robots reachable on www too. |
 
 ### robots.txt
 
@@ -59,7 +88,7 @@ https://palcalculator.com/terms/
 | `/privacy/` | 200 | `https://palcalculator.com/privacy/` | `index,follow` | yes |
 | `/terms/` | 200 | `https://palcalculator.com/terms/` | `index,follow` | yes |
 
-No critical SEO bug was found that required production code changes in this task.
+No critical production SEO code bug was found in the sitemap/robots/canonical checks. No production code changes were made.
 
 ## Local tooling/access inspection
 
@@ -69,7 +98,6 @@ Checked without printing secrets:
 |---|---|---|
 | `curl` | available | `/usr/bin/curl` |
 | `jq` | available | `/usr/bin/jq` |
-| `node` / `npm` | available | Node v22 path present; project scripts readable |
 | `wrangler` | available | Cloudflare tooling present, but not sufficient for GSC/Bing submission |
 | `gcloud` | missing | No Google Cloud CLI in PATH |
 | `gsutil` | missing | No Google Cloud storage tooling in PATH |
@@ -77,52 +105,37 @@ Checked without printing secrets:
 | Google local auth config | missing | `~/.config/gcloud` and ADC file not present |
 | GSC/Search Console env vars | missing | No matching env var names found |
 | Bing/Webmaster/IndexNow env vars | missing | No matching env var names found |
-| `/root/.hermes/.env` | present | Only relevant name found was `CLOUDFLARE_API_SEORAPIDINDEXCHECKER_TOKEN`; value not printed and not used for GSC/Bing |
+| `/root/.hermes/.env` | present | No Google/GSC/Bing/Webmaster/IndexNow key names found; Cloudflare token name exists but was not printed and is not used for GSC/Bing |
 
-Conclusion: verified GSC/Bing submission access is not available locally. Submission must be done by the owner/operator through the browser UI or by provisioning safe API credentials in a future task.
+Conclusion: verified GSC/Bing submission access is not available locally. GSC is owner-reported complete; Bing remains owner-side unless credentials are provisioned later.
 
-## Owner UI steps: Google Search Console
+## Owner UI steps: Google Search Console monitoring
 
-Goal: add/verify `palcalculator.com` and submit `https://palcalculator.com/sitemap.xml`.
-
-Recommended property type: Domain property, because it covers both apex and www.
+Since the owner reports GSC setup is already done:
 
 1. Open Google Search Console:
    - https://search.google.com/search-console
-2. Click the property selector in the top-left.
-3. Click `Add property`.
-4. Choose `Domain`.
-5. Enter:
-   - `palcalculator.com`
-6. Google will show a DNS TXT verification record.
-7. Open Cloudflare dashboard for `palcalculator.com`.
-8. Go to `DNS` → `Records`.
-9. Add the TXT record exactly as Google shows it.
-   - Type: `TXT`
-   - Name: usually `@` or `palcalculator.com` depending on Cloudflare UI
-   - Content: Google verification value
-   - TTL: Auto
-10. Return to Google Search Console and click `Verify`.
-11. After verification succeeds, open the new `palcalculator.com` property.
-12. In the left sidebar, click `Sitemaps`.
-13. Under `Add a new sitemap`, enter:
-   - `sitemap.xml`
-   - Full sitemap URL should resolve to `https://palcalculator.com/sitemap.xml`.
-14. Click `Submit`.
-15. Confirm the sitemap row appears with status such as `Success` or `Couldn't fetch` pending refresh.
-16. If Google says `Couldn't fetch`, wait 5-15 minutes and retry; the live sitemap currently returns HTTP 200.
-17. Optional after sitemap submission: use URL Inspection for `https://palcalculator.com/` and click `Request indexing` if available.
+2. Open the `palcalculator.com` property.
+3. Open `Sitemaps`.
+4. Confirm submitted sitemap is:
+   - `https://palcalculator.com/sitemap.xml`
+5. Record exact status shown by Google:
+   - `Success`, `Couldn't fetch`, `Pending`, or another exact message.
+6. If Google says `Couldn't fetch`, wait 5-15 minutes and retry once; the live sitemap currently returns HTTP 200 through propagated Cloudflare DNS.
+7. Open URL Inspection for:
+   - `https://palcalculator.com/`
+8. Confirm whether it shows `URL is on Google`, `URL is not on Google`, or `Indexing requested`.
+9. Do not repeatedly click `Request indexing`; after one request, wait for Google processing.
 
-What to record after completion:
-- Property type used: Domain or URL-prefix.
-- Verification method: DNS TXT recommended.
-- Sitemap submitted: `https://palcalculator.com/sitemap.xml`.
-- GSC sitemap status and last read time.
-- Any errors shown by Google.
+What to record after follow-up:
+- GSC property type used: Domain or URL-prefix.
+- Sitemap status and last read time.
+- URL Inspection status for homepage.
+- Any non-secret error text.
 
 ## Owner UI steps: Bing Webmaster Tools
 
-Goal: add/verify `palcalculator.com` and submit `https://palcalculator.com/sitemap.xml`.
+Bing is the remaining search-console setup item.
 
 Fast path if GSC has already been verified:
 
@@ -183,14 +196,7 @@ PALCALCULATOR_BING_WEBMASTER_API_KEY=[stored in root-only env/secret file]
 
 ## Next action
 
-Owner/operator should complete the GSC and Bing UI steps above. After that, update this artifact or comment back with:
-
-```txt
-GSC verified: yes/no
-GSC sitemap status: [exact status]
-Bing verified: yes/no
-Bing sitemap status: [exact status]
-Any screenshot/error text: [paste non-secret text only]
-```
-
-Then a follow-up worker can verify the public sitemap fetch status again and record DONE_SUBMITTED if the search consoles show successful sitemap submission.
+1. Owner should monitor GSC sitemap and URL Inspection states; current GSC submission/indexing request is recorded as owner-reported.
+2. Owner should complete Bing Webmaster Tools setup and submit `https://palcalculator.com/sitemap.xml`.
+3. If Bing/GSC API verification is desired later, provision safe credentials locally and ask a follow-up worker to verify without printing secrets.
+4. Recheck direct apex access from this worker later; public resolvers are propagated, but this worker's default resolver still had stale apex A cache during this run.
