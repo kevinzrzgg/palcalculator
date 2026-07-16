@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+dist/
+.wrangler/
+.env
+.env.*
+*.zip
+.DS_Store
