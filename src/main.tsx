@@ -144,18 +144,21 @@ function DataSources() { return <section className="content"><h2>Data source sta
 function Privacy() { return <section className="content"><h2>Privacy summary</h2><p>PalCalculator is a static, Cloudflare-first calculator hub. MVP inputs such as selected Pals, owned-Pal text, stat fields, and passive choices are handled in the browser UI unless a later owner-approved backend design changes that.</p><ul><li>No account or payment is required for P0 calculators.</li><li>No server-side save-file or raw Palbox upload is implemented.</li><li>Share URLs may include selected Pals or settings; do not share private state.</li><li>Analytics may use Cloudflare Web Analytics for aggregate page views and first-party calculator events for diagnostics; event payloads avoid raw inputs, share URLs, emails, IP addresses, tokens, and save data.</li></ul></section>; }
 function Terms() { return <section className="content"><h2>Unofficial fan-site terms</h2><p>This site is provided as an independent fan tool. References to Palworld, Pal names, game mechanics, or related terms are for identification and compatibility purposes only.</p><ul><li>Do not rely on calculator output as guaranteed, official, always current, or perfectly accurate.</li><li>Results depend on selected data versions, source quality, game patches, formulas, modifiers, and RNG.</li></ul></section>; }
 function JsonLd() { const json = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'PalCalculator', applicationCategory: 'GameApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, description: 'Unofficial fan-made Palworld calculator hub for breeding routes, IV/stat checks, passive planning, and owned-Pal optimization.' }; return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }} />; }
-function AdSlot() {
+function NativeAdSlot({ slotId, src }: { slotId: string; src: string }) {
   React.useEffect(() => {
-    const scriptId = 'effectivecpmnetwork-7cab5da197166bf6297bc9b36ce941d5';
+    const scriptId = `effectivecpmnetwork-${slotId}`;
     if (document.getElementById(scriptId)) return;
     const script = document.createElement('script');
     script.id = scriptId;
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
-    script.src = 'https://pl30389185.effectivecpmnetwork.com/7cab5da197166bf6297bc9b36ce941d5/invoke.js';
+    script.src = src;
     document.body.appendChild(script);
-  }, []);
-  return <section className="ad-slot native-ad" aria-label="Advertisement"><span>Advertisement</span><div id="container-7cab5da197166bf6297bc9b36ce941d5" /></section>;
+  }, [slotId, src]);
+  return <section className="ad-slot native-ad" aria-label="Advertisement"><span>Advertisement</span><div id={`container-${slotId}`} /></section>;
+}
+function NativeAds() {
+  return <><NativeAdSlot slotId="7cab5da197166bf6297bc9b36ce941d5" src="https://pl30389185.effectivecpmnetwork.com/7cab5da197166bf6297bc9b36ce941d5/invoke.js"/><NativeAdSlot slotId="65a8adc79e2c11e5010db2c10551984d" src="https://pl30244826.effectivecpmnetwork.com/65a8adc79e2c11e5010db2c10551984d/invoke.js"/></>;
 }
 function HighPerformanceAd({ adKey, width, height, className }: { adKey: string; width: number; height: number; className?: string }) {
   const mountRef = React.useRef<HTMLDivElement | null>(null);
@@ -175,6 +178,6 @@ function HighPerformanceAd({ adKey, width, height, className }: { adKey: string;
 function HighPerformanceAds() {
   return <div className="iframe-ad-grid"><HighPerformanceAd adKey="4b8893caea5904557bdffe2f2e21ecd1" width={728} height={90} className="desktop-leaderboard"/><HighPerformanceAd adKey="656c670af2a512e3fed20ecd019f9a94" width={320} height={50} className="mobile-banner"/><HighPerformanceAd adKey="b6e34a762ff85ca4762aaa954460ff0b" width={300} height={250} className="rectangle-ad"/><HighPerformanceAd adKey="7b662a721b8b7aa4e2b87b1667d9e25e" width={300} height={250} className="rectangle-ad"/></div>;
 }
-function App() { const { current, navigate } = useRoute(); const route = routes.find(r => r.key === current)!; return <><JsonLd/><Header current={current} navigate={navigate}/><main><ToolHero route={route} navigate={navigate}/><AdSlot/><HighPerformanceAds/>{current === 'hub' && <Hub navigate={navigate}/>} {current === 'breeding' && <BreedingCalculator/>} {current === 'one0' && <BreedingCalculator one0/>} {current === 'route' && <RouteSolver/>} {current === 'iv' && <IvStatsTool kind="iv"/>} {current === 'stats' && <IvStatsTool kind="stats"/>} {current === 'passives' && <PassivePlanner/>} {current === 'data' && <DataSources/>} {current === 'privacy' && <Privacy/>} {current === 'terms' && <Terms/>}</main><footer><Disclaimer/><div className="footer-links">{routes.filter(r => ['data','privacy','terms'].includes(r.key)).map(r => <a key={r.key} href={r.path} onClick={(e) => { e.preventDefault(); navigate(r.key); }}>{r.label}</a>)}<a href="/sitemap.xml">Sitemap <ExternalLink size={12}/></a></div></footer></>; }
+function App() { const { current, navigate } = useRoute(); const route = routes.find(r => r.key === current)!; return <><JsonLd/><Header current={current} navigate={navigate}/><main><ToolHero route={route} navigate={navigate}/><NativeAds/><HighPerformanceAds/>{current === 'hub' && <Hub navigate={navigate}/>} {current === 'breeding' && <BreedingCalculator/>} {current === 'one0' && <BreedingCalculator one0/>} {current === 'route' && <RouteSolver/>} {current === 'iv' && <IvStatsTool kind="iv"/>} {current === 'stats' && <IvStatsTool kind="stats"/>} {current === 'passives' && <PassivePlanner/>} {current === 'data' && <DataSources/>} {current === 'privacy' && <Privacy/>} {current === 'terms' && <Terms/>}</main><footer><Disclaimer/><div className="footer-links">{routes.filter(r => ['data','privacy','terms'].includes(r.key)).map(r => <a key={r.key} href={r.path} onClick={(e) => { e.preventDefault(); navigate(r.key); }}>{r.label}</a>)}<a href="/sitemap.xml">Sitemap <ExternalLink size={12}/></a></div></footer></>; }
 
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
