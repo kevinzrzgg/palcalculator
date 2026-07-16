@@ -1,0 +1,343 @@
+{
+  "cf": {
+    "dns_records": {
+      "root_cname": [
+        {
+          "content": "palcalculator.pages.dev",
+          "name": "palcalculator.com",
+          "proxied": true,
+          "ttl": 1,
+          "type": "CNAME"
+        }
+      ],
+      "www_cname": [
+        {
+          "content": "palcalculator.pages.dev",
+          "name": "www.palcalculator.com",
+          "proxied": true,
+          "ttl": 1,
+          "type": "CNAME"
+        }
+      ]
+    },
+    "pages_domains": [
+      {
+        "created_on": "2026-07-16T06:38:25.405841Z",
+        "name": "palcalculator.com",
+        "status": "active",
+        "verification_data": {
+          "status": "active"
+        },
+        "zone_tag": "ceef051ac72c22911741a8fb604cc393"
+      },
+      {
+        "created_on": "2026-07-16T06:38:25.68595Z",
+        "name": "www.palcalculator.com",
+        "status": "active",
+        "verification_data": {
+          "status": "active"
+        },
+        "zone_tag": "ceef051ac72c22911741a8fb604cc393"
+      }
+    ],
+    "pages_domains_errors": [],
+    "pages_domains_http_status": 200,
+    "pages_domains_success": true,
+    "pages_project": {
+      "canonical_deployment": "https://dbe8dd47.palcalculator.pages.dev",
+      "domains": [
+        "palcalculator.pages.dev",
+        "palcalculator.com",
+        "www.palcalculator.com"
+      ],
+      "errors": [],
+      "name": "palcalculator",
+      "subdomain": "palcalculator.pages.dev",
+      "success": true
+    },
+    "pages_project_http_status": 200,
+    "zone_errors": [],
+    "zone_query_status": 200,
+    "zone_success": true,
+    "zones": [
+      {
+        "id": "ceef051ac72c22911741a8fb604cc393",
+        "name": "palcalculator.com",
+        "name_servers": [
+          "aleena.ns.cloudflare.com",
+          "alex.ns.cloudflare.com"
+        ],
+        "original_name_servers": [
+          "ns1.dyna-ns.net",
+          "ns2.dyna-ns.net"
+        ],
+        "status": "active"
+      }
+    ]
+  },
+  "checked_at_utc": "2026-07-16T07:52:50Z",
+  "dns": {
+    "Cloudflare_1.0.0.1": {
+      "matches_expected": true,
+      "ns": [
+        "aleena.ns.cloudflare.com.",
+        "alex.ns.cloudflare.com."
+      ],
+      "rc": 0,
+      "resolver": "1.0.0.1",
+      "stderr": ""
+    },
+    "Cloudflare_1.1.1.1": {
+      "matches_expected": false,
+      "ns": [
+        "ns1.dyna-ns.net.",
+        "ns2.dyna-ns.net."
+      ],
+      "rc": 0,
+      "resolver": "1.1.1.1",
+      "stderr": ""
+    },
+    "Google_8.8.4.4": {
+      "matches_expected": true,
+      "ns": [
+        "aleena.ns.cloudflare.com.",
+        "alex.ns.cloudflare.com."
+      ],
+      "rc": 0,
+      "resolver": "8.8.4.4",
+      "stderr": ""
+    },
+    "Google_8.8.8.8": {
+      "matches_expected": false,
+      "ns": [
+        "ns1.dyna-ns.net.",
+        "ns2.dyna-ns.net."
+      ],
+      "rc": 0,
+      "resolver": "8.8.8.8",
+      "stderr": ""
+    },
+    "OpenDNS_208.67.222.222": {
+      "matches_expected": true,
+      "ns": [
+        "aleena.ns.cloudflare.com.",
+        "alex.ns.cloudflare.com."
+      ],
+      "rc": 0,
+      "resolver": "208.67.222.222",
+      "stderr": ""
+    },
+    "Quad9_9.9.9.9": {
+      "matches_expected": true,
+      "ns": [
+        "aleena.ns.cloudflare.com.",
+        "alex.ns.cloudflare.com."
+      ],
+      "rc": 0,
+      "resolver": "9.9.9.9",
+      "stderr": ""
+    },
+    "apex_A_from_propagated_ns_resolvers": {
+      "1.0.0.1": [
+        "104.21.59.233",
+        "172.67.185.26"
+      ],
+      "208.67.222.222": [
+        "172.67.185.26",
+        "104.21.59.233"
+      ],
+      "8.8.4.4": [
+        "104.21.59.233",
+        "172.67.185.26"
+      ],
+      "9.9.9.9": [
+        "104.21.59.233",
+        "172.67.185.26"
+      ]
+    },
+    "default_palcalculator.com_A": {
+      "answers": [
+        "185.53.179.146"
+      ],
+      "rc": 0,
+      "stderr": ""
+    },
+    "default_palcalculator.com_CNAME": {
+      "answers": [],
+      "rc": 0,
+      "stderr": ""
+    },
+    "default_palcalculator.com_NS": {
+      "answers": [
+        "ns1.dyna-ns.net.",
+        "ns2.dyna-ns.net."
+      ],
+      "rc": 0,
+      "stderr": ""
+    },
+    "default_www.palcalculator.com_A": {
+      "answers": [
+        "172.67.185.26",
+        "104.21.59.233"
+      ],
+      "rc": 0,
+      "stderr": ""
+    },
+    "default_www.palcalculator.com_CNAME": {
+      "answers": [],
+      "rc": 0,
+      "stderr": ""
+    }
+  },
+  "smoke": {
+    "fallback_pages_dev": {
+      "https://palcalculator.pages.dev/": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "200 https://palcalculator.pages.dev/ text/html; charset=utf-8 0.074584"
+      },
+      "https://palcalculator.pages.dev/results/test": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "404 https://palcalculator.pages.dev/results/test text/html; charset=utf-8 0.070255"
+      },
+      "https://palcalculator.pages.dev/robots.txt": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "200 https://palcalculator.pages.dev/robots.txt text/plain; charset=utf-8 0.068132"
+      },
+      "https://palcalculator.pages.dev/share/test": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "404 https://palcalculator.pages.dev/share/test text/html; charset=utf-8 0.070419"
+      },
+      "https://palcalculator.pages.dev/sitemap.xml": {
+        "rc": 0,
+        "stderr": "",
+        "stdout": "200 https://palcalculator.pages.dev/sitemap.xml application/xml 0.067915"
+      }
+    },
+    "forced_apex_via_cloudflare_ip": {
+      "https://palcalculator.com/": {
+        "forced_ip": "104.21.59.233",
+        "rc": 0,
+        "stderr": "",
+        "stdout": "200 https://palcalculator.com/ text/html; charset=utf-8 0.092846"
+      },
+      "https://palcalculator.com/results/test": {
+        "forced_ip": "104.21.59.233",
+        "rc": 0,
+        "stderr": "",
+        "stdout": "404 https://palcalculator.com/results/test text/html; charset=utf-8 0.094451"
+      },
+      "https://palcalculator.com/robots.txt": {
+        "forced_ip": "104.21.59.233",
+        "rc": 0,
+        "stderr": "",
+        "stdout": "200 https://palcalculator.com/robots.txt text/plain; charset=utf-8 0.068521"
+      },
+      "https://palcalculator.com/share/test": {
+        "forced_ip": "104.21.59.233",
+        "rc": 0,
+        "stderr": "",
+        "stdout": "404 https://palcalculator.com/share/test text/html; charset=utf-8 0.106931"
+      },
+      "https://palcalculator.com/sitemap.xml": {
+        "forced_ip": "104.21.59.233",
+        "rc": 0,
+        "stderr": "",
+        "stdout": "200 https://palcalculator.com/sitemap.xml application/xml 0.078501"
+      }
+    },
+    "https://palcalculator.com/": {
+      "content_type": "",
+      "http_code": "000",
+      "raw": "000 https://palcalculator.com/  20.002667",
+      "rc": 28,
+      "stderr": "curl: (28) Connection timed out after 20002 milliseconds",
+      "time_total": "20.002667",
+      "url_effective": "https://palcalculator.com/"
+    },
+    "https://palcalculator.com/results/test": {
+      "content_type": "",
+      "http_code": "000",
+      "raw": "000 https://palcalculator.com/results/test  20.002585",
+      "rc": 28,
+      "stderr": "curl: (28) Connection timed out after 20002 milliseconds",
+      "time_total": "20.002585",
+      "url_effective": "https://palcalculator.com/results/test"
+    },
+    "https://palcalculator.com/robots.txt": {
+      "content_type": "",
+      "http_code": "000",
+      "raw": "000 https://palcalculator.com/robots.txt  20.002870",
+      "rc": 28,
+      "stderr": "curl: (28) Connection timed out after 20002 milliseconds",
+      "time_total": "20.002870",
+      "url_effective": "https://palcalculator.com/robots.txt"
+    },
+    "https://palcalculator.com/share/test": {
+      "content_type": "",
+      "http_code": "000",
+      "raw": "000 https://palcalculator.com/share/test  20.002541",
+      "rc": 28,
+      "stderr": "curl: (28) Connection timed out after 20002 milliseconds",
+      "time_total": "20.002541",
+      "url_effective": "https://palcalculator.com/share/test"
+    },
+    "https://palcalculator.com/sitemap.xml": {
+      "content_type": "",
+      "http_code": "000",
+      "raw": "000 https://palcalculator.com/sitemap.xml  20.002550",
+      "rc": 28,
+      "stderr": "curl: (28) Connection timed out after 20002 milliseconds",
+      "time_total": "20.002550",
+      "url_effective": "https://palcalculator.com/sitemap.xml"
+    },
+    "https://www.palcalculator.com/": {
+      "content_type": "text/html;",
+      "http_code": "200",
+      "raw": "200 https://www.palcalculator.com/ text/html; charset=utf-8 0.156187",
+      "rc": 0,
+      "stderr": "",
+      "time_total": "charset=utf-8 0.156187",
+      "url_effective": "https://www.palcalculator.com/"
+    },
+    "https://www.palcalculator.com/results/test": {
+      "content_type": "text/html;",
+      "http_code": "404",
+      "raw": "404 https://www.palcalculator.com/results/test text/html; charset=utf-8 0.086093",
+      "rc": 0,
+      "stderr": "",
+      "time_total": "charset=utf-8 0.086093",
+      "url_effective": "https://www.palcalculator.com/results/test"
+    },
+    "https://www.palcalculator.com/robots.txt": {
+      "content_type": "text/plain;",
+      "http_code": "200",
+      "raw": "200 https://www.palcalculator.com/robots.txt text/plain; charset=utf-8 0.113665",
+      "rc": 0,
+      "stderr": "",
+      "time_total": "charset=utf-8 0.113665",
+      "url_effective": "https://www.palcalculator.com/robots.txt"
+    },
+    "https://www.palcalculator.com/share/test": {
+      "content_type": "text/html;",
+      "http_code": "404",
+      "raw": "404 https://www.palcalculator.com/share/test text/html; charset=utf-8 0.099275",
+      "rc": 0,
+      "stderr": "",
+      "time_total": "charset=utf-8 0.099275",
+      "url_effective": "https://www.palcalculator.com/share/test"
+    },
+    "https://www.palcalculator.com/sitemap.xml": {
+      "content_type": "application/xml",
+      "http_code": "200",
+      "raw": "200 https://www.palcalculator.com/sitemap.xml application/xml 0.103112",
+      "rc": 0,
+      "stderr": "",
+      "time_total": "0.103112",
+      "url_effective": "https://www.palcalculator.com/sitemap.xml"
+    }
+  }
+}
