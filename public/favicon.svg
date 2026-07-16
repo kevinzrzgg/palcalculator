@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PalCalculator favicon">
+  <rect width="64" height="64" rx="16" fill="#152447"/>
+  <circle cx="46" cy="18" r="8" fill="#63e6be"/>
+  <path d="M18 42c0-12 8-22 20-22 4 0 7 1 10 3-4 2-7 5-9 9 3 0 6 1 8 3-5 5-12 8-20 8h-9Z" fill="#8ab4ff"/>
+  <path d="M16 48h34" stroke="#f8fbff" stroke-width="5" stroke-linecap="round"/>
+  <text x="14" y="28" fill="#f8fbff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">PC</text>
+</svg>

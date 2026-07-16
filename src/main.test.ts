@@ -58,6 +58,9 @@ describe('static frontend contract', () => {
     expect(fs.readFileSync('public/robots.txt', 'utf8')).toContain('Disallow: /share/');
     expect(fs.existsSync('public/data/version.json')).toBe(true);
     expect(fs.existsSync('public/data/breeding-pairs.latest.json')).toBe(true);
+    expect(fs.existsSync('public/favicon.ico')).toBe(true);
+    expect(fs.existsSync('public/favicon.svg')).toBe(true);
+    expect(fs.existsSync('public/apple-touch-icon.png')).toBe(true);
   });
   it('keeps disclaimer and pricing posture in rendered source', () => {
     const source = fs.readFileSync('src/main.tsx', 'utf8');
@@ -86,5 +89,28 @@ describe('static frontend contract', () => {
     const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     expect(pkg.scripts.preview).toContain('scripts/preview-static.mjs');
     expect(fs.existsSync('scripts/preview-static.mjs')).toBe(true);
+  });
+
+  it('keeps homepage title short and syncs route head metadata in static and SPA paths', () => {
+    const shell = fs.readFileSync('index.html', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+
+    expect(shell).toContain('<title>PalCalculator: Palworld Breeding & IV Tools</title>');
+    expect('PalCalculator: Palworld Breeding & IV Tools'.length).toBeLessThanOrEqual(60);
+    expect(shell).toContain('<link rel="canonical" href="https://palcalculator.com/"/>');
+    expect(shell).toContain('<link rel="icon" href="/favicon.ico" sizes="any"/>');
+    expect(shell).toContain('<meta name="robots" content="index,follow"/>');
+
+    expect(generator).toContain("title: 'PalCalculator: Palworld Breeding & IV Tools'");
+    expect(generator).toContain("<meta name=\"keywords\" content=\"${esc(route.keywords)}\"/>");
+    expect(generator).toContain("<link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\"/>");
+    expect(generator).toContain("canonicalFor(route.path)");
+
+    expect(app).toContain('function updateHead(route: RouteMeta)');
+    expect(app).toContain('document.title = route.title');
+    expect(app).toContain("canonical.setAttribute('href', `${canonicalOrigin}${route.path}`)");
+    expect(app).toContain("upsertMeta('meta[name=\"description\"]'");
+    expect(app).toContain("upsertMeta('meta[name=\"robots\"]'");
   });
 });

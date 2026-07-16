@@ -6,6 +6,7 @@ import './styles.css';
 
 type ToolKey = 'hub' | 'breeding' | 'route' | 'iv' | 'stats' | 'passives' | 'one0' | 'data' | 'privacy' | 'terms';
 type ResultState = { title: string; body: string; code?: string; severity?: 'ok' | 'warn' | 'error'; details?: React.ReactNode };
+type RouteMeta = { key: ToolKey; path: string; label: string; h1: string; title: string; description: string; keywords: string };
 
 type AnalyticsEventName = 'page_view' | 'tool_success' | 'tool_error' | 'share_copy' | 'share_open';
 type SharePayload = Record<string, string | number | boolean | undefined>;
@@ -61,18 +62,36 @@ function shareUrl(tool: ToolKey, payload: SharePayload) {
   return `${window.location.origin}${path}`;
 }
 
-const routes: Array<{ key: ToolKey; path: string; label: string; h1: string; description: string }> = [
-  { key: 'hub', path: '/', label: 'Home', h1: 'PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators', description: 'Unofficial fan-made Palworld 1.0 calculator hub for breeding routes, IV/stat checks, passive planning, and owned-Pal optimization.' },
-  { key: 'breeding', path: '/breeding-calculator/', label: 'Breeding', h1: 'Palworld Breeding Calculator', description: 'Check real parent pairs, target parents, caveats, and route-solver handoffs.' },
-  { key: 'route', path: '/breeding-route-calculator/', label: 'Route', h1: 'Palworld Breeding Route Calculator', description: 'Plan the shortest route found from owned Pals to a target Pal with visible constraints.' },
-  { key: 'iv', path: '/iv-calculator/', label: 'IV', h1: 'Palworld IV Calculator', description: 'Estimate IV ranges from observed stats while showing formula assumptions and unsupported modifiers.' },
-  { key: 'stats', path: '/stats-calculator/', label: 'Stats', h1: 'Palworld Stats Calculator', description: 'Preview expected HP, attack, and defense bands from selected base stat data.' },
-  { key: 'passives', path: '/passive-skill-calculator/', label: 'Passives', h1: 'Palworld Passive Skill Calculator', description: 'Plan target passives with RNG caveats and no deterministic inheritance promises.' },
-  { key: 'one0', path: '/palworld-1-0-breeding-calculator/', label: '1.0 Breeding', h1: 'Palworld 1.0 Breeding Calculator', description: 'A 1.0-focused entry point that shares the breeding calculator and data freshness copy.' },
-  { key: 'data', path: '/data-sources/', label: 'Data Sources', h1: 'PalCalculator Data Sources & Update Policy', description: 'Dataset version, source policy, unsupported domains, and correction workflow.' },
-  { key: 'privacy', path: '/privacy/', label: 'Privacy', h1: 'Privacy Policy', description: 'How PalCalculator handles local calculator state, share URLs, hosting logs, and analytics.' },
-  { key: 'terms', path: '/terms/', label: 'Terms', h1: 'Terms of Use', description: 'Unofficial fan-site terms, caveats, and acceptable use.' },
+const canonicalOrigin = 'https://palcalculator.com';
+const routes: RouteMeta[] = [
+  { key: 'hub', path: '/', label: 'Home', h1: 'PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators', title: 'PalCalculator: Palworld Breeding & IV Tools', description: 'Unofficial fan-made Palworld 1.0 calculator hub for breeding routes, IV/stat checks, passive planning, and owned-Pal optimization.', keywords: 'Palworld calculator, Palworld breeding calculator, Palworld IV calculator' },
+  { key: 'breeding', path: '/breeding-calculator/', label: 'Breeding', h1: 'Palworld Breeding Calculator', title: 'Palworld Breeding Calculator - Parent Pairs', description: 'Check real parent pairs, target parents, caveats, and route-solver handoffs.', keywords: 'Palworld breeding calculator, Palworld parent pairs, Palworld breeding combos' },
+  { key: 'route', path: '/breeding-route-calculator/', label: 'Route', h1: 'Palworld Breeding Route Calculator', title: 'Palworld Breeding Route Calculator', description: 'Plan the shortest route found from owned Pals to a target Pal with visible constraints.', keywords: 'Palworld breeding route calculator, Palworld breeding path, owned Pals route' },
+  { key: 'iv', path: '/iv-calculator/', label: 'IV', h1: 'Palworld IV Calculator', title: 'Palworld IV Calculator', description: 'Estimate IV ranges from observed stats while showing formula assumptions and unsupported modifiers.', keywords: 'Palworld IV calculator, Palworld stats, Pal IV checker' },
+  { key: 'stats', path: '/stats-calculator/', label: 'Stats', h1: 'Palworld Stats Calculator', title: 'Palworld Stats Calculator', description: 'Preview expected HP, attack, and defense bands from selected base stat data.', keywords: 'Palworld stats calculator, Palworld HP attack defense, Pal stats' },
+  { key: 'passives', path: '/passive-skill-calculator/', label: 'Passives', h1: 'Palworld Passive Skill Calculator', title: 'Palworld Passive Skill Calculator', description: 'Plan target passives with RNG caveats and no deterministic inheritance promises.', keywords: 'Palworld passive skill calculator, Palworld passives, passive breeding planner' },
+  { key: 'one0', path: '/palworld-1-0-breeding-calculator/', label: '1.0 Breeding', h1: 'Palworld 1.0 Breeding Calculator', title: 'Palworld 1.0 Breeding Calculator', description: 'A 1.0-focused entry point that shares the breeding calculator and data freshness copy.', keywords: 'Palworld 1.0 breeding calculator, Palworld 1.0 combos, Palworld breeding' },
+  { key: 'data', path: '/data-sources/', label: 'Data Sources', h1: 'PalCalculator Data Sources & Update Policy', title: 'PalCalculator Data Sources & Update Policy', description: 'Dataset version, source policy, unsupported domains, and correction workflow.', keywords: 'PalCalculator data sources, Palworld data version, Palworld calculator policy' },
+  { key: 'privacy', path: '/privacy/', label: 'Privacy', h1: 'Privacy Policy', title: 'Privacy Policy | PalCalculator', description: 'How PalCalculator handles local calculator state, share URLs, hosting logs, and analytics.', keywords: 'PalCalculator privacy policy' },
+  { key: 'terms', path: '/terms/', label: 'Terms', h1: 'Terms of Use', title: 'Terms of Use | PalCalculator', description: 'Unofficial fan-site terms, caveats, and acceptable use.', keywords: 'PalCalculator terms of use' },
 ];
+
+function upsertMeta(selector: string, create: () => HTMLMetaElement, content: string) {
+  const meta = document.head.querySelector<HTMLMetaElement>(selector) ?? create();
+  meta.setAttribute('content', content);
+}
+function updateHead(route: RouteMeta) {
+  document.title = route.title;
+  const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]') ?? document.head.appendChild(document.createElement('link'));
+  canonical.setAttribute('rel', 'canonical');
+  canonical.setAttribute('href', `${canonicalOrigin}${route.path}`);
+  upsertMeta('meta[name="description"]', () => { const meta = document.createElement('meta'); meta.setAttribute('name', 'description'); return document.head.appendChild(meta); }, route.description);
+  upsertMeta('meta[name="robots"]', () => { const meta = document.createElement('meta'); meta.setAttribute('name', 'robots'); return document.head.appendChild(meta); }, 'index,follow');
+  upsertMeta('meta[name="keywords"]', () => { const meta = document.createElement('meta'); meta.setAttribute('name', 'keywords'); return document.head.appendChild(meta); }, route.keywords);
+  upsertMeta('meta[property="og:title"]', () => { const meta = document.createElement('meta'); meta.setAttribute('property', 'og:title'); return document.head.appendChild(meta); }, route.title);
+  upsertMeta('meta[property="og:description"]', () => { const meta = document.createElement('meta'); meta.setAttribute('property', 'og:description'); return document.head.appendChild(meta); }, route.description);
+  upsertMeta('meta[property="og:url"]', () => { const meta = document.createElement('meta'); meta.setAttribute('property', 'og:url'); return document.head.appendChild(meta); }, `${canonicalOrigin}${route.path}`);
+}
 
 function routeFromPath(): ToolKey {
   const path = window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`;
@@ -83,12 +102,14 @@ function useRoute() {
   function navigate(key: ToolKey) {
     const route = routes.find((r) => r.key === key)!;
     window.history.pushState({}, '', route.path);
-    document.title = route.h1;
     setCurrent(key);
-    trackEvent('page_view', { ...analyticsContext(key), page_path: route.path, page_slug: key });
   }
-  React.useEffect(() => { trackEvent('page_view', { ...analyticsContext(current), page_path: window.location.pathname, page_slug: current }); }, []);
-  React.useEffect(() => { const onPop = () => { const next = routeFromPath(); setCurrent(next); trackEvent('page_view', { ...analyticsContext(next), page_slug: next }); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
+  React.useEffect(() => {
+    const route = routes.find((r) => r.key === current)!;
+    updateHead(route);
+    trackEvent('page_view', { ...analyticsContext(current), page_path: route.path, page_slug: current });
+  }, [current]);
+  React.useEffect(() => { const onPop = () => { const next = routeFromPath(); setCurrent(next); }; window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop); }, []);
   return { current, navigate };
 }
 function DataBadge() { return <div className="data-badge"><Database size={16}/><span>{dataVersion.gameVersionLabel}</span><strong>{dataVersion.dataVersion}</strong></div>; }
