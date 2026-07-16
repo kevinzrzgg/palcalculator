@@ -9,10 +9,12 @@ type ResultState = { title: string; body: string; code?: string; severity?: 'ok'
 
 type AnalyticsEventName = 'page_view' | 'tool_success' | 'tool_error' | 'share_copy' | 'share_open';
 type SharePayload = Record<string, string | number | boolean | undefined>;
+type HighPerformanceAdOptions = { key: string; format: 'iframe'; height: number; width: number; params: Record<string, unknown> };
 declare global {
   interface Window {
     palcalculatorEvents?: Array<{ event: AnalyticsEventName; payload: Record<string, unknown>; ts: string }>;
     palcalculatorTrack?: (event: AnalyticsEventName, payload: Record<string, unknown>) => void;
+    atOptions?: HighPerformanceAdOptions;
   }
 }
 function deviceType() {
@@ -153,8 +155,26 @@ function AdSlot() {
     script.src = 'https://pl30389185.effectivecpmnetwork.com/7cab5da197166bf6297bc9b36ce941d5/invoke.js';
     document.body.appendChild(script);
   }, []);
-  return <section className="ad-slot" aria-label="Advertisement"><span>Advertisement</span><div id="container-7cab5da197166bf6297bc9b36ce941d5" /></section>;
+  return <section className="ad-slot native-ad" aria-label="Advertisement"><span>Advertisement</span><div id="container-7cab5da197166bf6297bc9b36ce941d5" /></section>;
 }
-function App() { const { current, navigate } = useRoute(); const route = routes.find(r => r.key === current)!; return <><JsonLd/><Header current={current} navigate={navigate}/><main><ToolHero route={route} navigate={navigate}/><AdSlot/>{current === 'hub' && <Hub navigate={navigate}/>} {current === 'breeding' && <BreedingCalculator/>} {current === 'one0' && <BreedingCalculator one0/>} {current === 'route' && <RouteSolver/>} {current === 'iv' && <IvStatsTool kind="iv"/>} {current === 'stats' && <IvStatsTool kind="stats"/>} {current === 'passives' && <PassivePlanner/>} {current === 'data' && <DataSources/>} {current === 'privacy' && <Privacy/>} {current === 'terms' && <Terms/>}</main><footer><Disclaimer/><div className="footer-links">{routes.filter(r => ['data','privacy','terms'].includes(r.key)).map(r => <a key={r.key} href={r.path} onClick={(e) => { e.preventDefault(); navigate(r.key); }}>{r.label}</a>)}<a href="/sitemap.xml">Sitemap <ExternalLink size={12}/></a></div></footer></>; }
+function HighPerformanceAd({ adKey, width, height, className }: { adKey: string; width: number; height: number; className?: string }) {
+  const mountRef = React.useRef<HTMLDivElement | null>(null);
+  React.useEffect(() => {
+    const mount = mountRef.current;
+    if (!mount) return;
+    mount.innerHTML = '';
+    window.atOptions = { key: adKey, format: 'iframe', height, width, params: {} };
+    const script = document.createElement('script');
+    script.src = `https://www.highperformanceformat.com/${adKey}/invoke.js`;
+    script.async = false;
+    script.setAttribute('data-palcalculator-ad-key', adKey);
+    mount.appendChild(script);
+  }, [adKey, width, height]);
+  return <section className={`ad-slot iframe-ad ${className ?? ''}`} aria-label="Advertisement" style={{ maxWidth: `${width}px` }}><span>Advertisement</span><div ref={mountRef} className="iframe-ad-mount" style={{ width: `${width}px`, minHeight: `${height}px` }} /></section>;
+}
+function HighPerformanceAds() {
+  return <div className="iframe-ad-grid"><HighPerformanceAd adKey="4b8893caea5904557bdffe2f2e21ecd1" width={728} height={90} className="desktop-leaderboard"/><HighPerformanceAd adKey="656c670af2a512e3fed20ecd019f9a94" width={320} height={50} className="mobile-banner"/><HighPerformanceAd adKey="b6e34a762ff85ca4762aaa954460ff0b" width={300} height={250} className="rectangle-ad"/></div>;
+}
+function App() { const { current, navigate } = useRoute(); const route = routes.find(r => r.key === current)!; return <><JsonLd/><Header current={current} navigate={navigate}/><main><ToolHero route={route} navigate={navigate}/><AdSlot/><HighPerformanceAds/>{current === 'hub' && <Hub navigate={navigate}/>} {current === 'breeding' && <BreedingCalculator/>} {current === 'one0' && <BreedingCalculator one0/>} {current === 'route' && <RouteSolver/>} {current === 'iv' && <IvStatsTool kind="iv"/>} {current === 'stats' && <IvStatsTool kind="stats"/>} {current === 'passives' && <PassivePlanner/>} {current === 'data' && <DataSources/>} {current === 'privacy' && <Privacy/>} {current === 'terms' && <Terms/>}</main><footer><Disclaimer/><div className="footer-links">{routes.filter(r => ['data','privacy','terms'].includes(r.key)).map(r => <a key={r.key} href={r.path} onClick={(e) => { e.preventDefault(); navigate(r.key); }}>{r.label}</a>)}<a href="/sitemap.xml">Sitemap <ExternalLink size={12}/></a></div></footer></>; }
 
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
