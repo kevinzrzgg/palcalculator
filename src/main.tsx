@@ -158,7 +158,7 @@ function NativeAdSlot({ slotId, src }: { slotId: string; src: string }) {
   return <section className="ad-slot native-ad" aria-label="Advertisement"><span>Advertisement</span><div id={`container-${slotId}`} /></section>;
 }
 function NativeAds() {
-  return <><NativeAdSlot slotId="7cab5da197166bf6297bc9b36ce941d5" src="https://pl30389185.effectivecpmnetwork.com/7cab5da197166bf6297bc9b36ce941d5/invoke.js"/><NativeAdSlot slotId="65a8adc79e2c11e5010db2c10551984d" src="https://pl30244826.effectivecpmnetwork.com/65a8adc79e2c11e5010db2c10551984d/invoke.js"/><NativeAdSlot slotId="1778ed4b462467bffcb2d45dc079d69b" src="https://pl29617072.effectivecpmnetwork.com/1778ed4b462467bffcb2d45dc079d69b/invoke.js"/></>;
+  return <><NativeAdSlot slotId="7cab5da197166bf6297bc9b36ce941d5" src="https://pl30389185.effectivecpmnetwork.com/7cab5da197166bf6297bc9b36ce941d5/invoke.js"/><NativeAdSlot slotId="65a8adc79e2c11e5010db2c10551984d" src="https://pl30244826.effectivecpmnetwork.com/65a8adc79e2c11e5010db2c10551984d/invoke.js"/><NativeAdSlot slotId="1778ed4b462467bffcb2d45dc079d69b" src="https://pl29617072.effectivecpmnetwork.com/1778ed4b462467bffcb2d45dc079d69b/invoke.js"/><NativeAdSlot slotId="807c291994946e1849fd8875ce6a6c50" src="https://pl30225779.effectivecpmnetwork.com/807c291994946e1849fd8875ce6a6c50/invoke.js"/></>;
 }
 function HighPerformanceAd({ adKey, width, height, className }: { adKey: string; width: number; height: number; className?: string }) {
   const mountRef = React.useRef<HTMLDivElement | null>(null);
