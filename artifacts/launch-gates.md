@@ -64,17 +64,26 @@ A palcalculator.com -> 185.53.179.146
 
 Cloudflare token search / permission check:
 
-- Environment token `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_API_SEORAPIDINDEXCHECKER_TOKEN`: active, can deploy Pages, but lacks `com.cloudflare.api.account.zone.create`.
+- Environment token `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_API_SEORAPIDINDEXCHECKER_TOKEN`: active; after owner changed token resource scope to `Include - All zones`, zone creation succeeded.
 - Server file `/root/.cloudflare-api-token`: found, but Cloudflare API reports it is invalid/expired.
 - No Dynadot API credential was found in environment or searchable project files.
 
-Cloudflare zone creation attempt failed because the active available API token lacks:
+Cloudflare zone created:
 
 ```text
-com.cloudflare.api.account.zone.create
+zone_id: ceef051ac72c22911741a8fb604cc393
+status: pending
+name_servers: aleena.ns.cloudflare.com, alex.ns.cloudflare.com
 ```
 
-Cloudflare Pages custom domain validation is pending because DNS/CNAME is not set.
+Cloudflare DNS records created:
+
+```text
+CNAME palcalculator.com -> palcalculator.pages.dev proxied
+CNAME www.palcalculator.com -> palcalculator.pages.dev proxied
+```
+
+Cloudflare Pages custom domain validation is pending until Dynadot nameservers are changed to the Cloudflare nameservers and DNS propagates.
 
 ## Owner action required
 

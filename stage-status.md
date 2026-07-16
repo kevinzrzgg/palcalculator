@@ -14,7 +14,7 @@
 - 04b compliance recheck：READY/RUNNING — `t_47d82d17`; dispatched after frontend acceptance
 - 02b PM acceptance：WAITING — `t_0f1e01e9`; waits for SEO + compliance recheck
 - 09 QA：DONE/CONDITIONAL_PASS — `t_6f6b8013`; qa_bot found NO-GO, orchestrator repaired share/copy, analytics hooks, preview 404s; test/build/lint/static probes pass
-- 11 launch：PAGES_DEPLOYED_DOMAIN_PENDING — `t_9bed78ed`; Pages live at `https://palcalculator.pages.dev`, custom domain pending Cloudflare zone/DNS owner action
+- 11 launch：PAGES_DEPLOYED_NS_PENDING — `t_9bed78ed`; Pages live, Cloudflare zone/DNS records created; owner must change Dynadot NS to `aleena.ns.cloudflare.com` and `alex.ns.cloudflare.com`
 - 12 review：TODO — `t_9b3f1ac3`; waits for launch
 
 - repair R1 backend/data：DONE/ACCEPTED — `t_1be67cb6`; data-backed calculators added, build/test pass; special combos caveated
@@ -22,4 +22,4 @@
 - repair R3 canonical：ACCEPTED_FOR_RECHECK — `t_a7b1b85f`; using `https://palcalculator.com` for local recheck; production deploy/search still needs owner/Cloudflare setup
 - 10 SEO recheck after repairs：DONE/CONDITIONAL_NO_GO — `t_716f3a37`; technical SEO passes, production indexing waits for owner canonical/deploy approval; QA exploratory running
 
-- launch deploy evidence：DONE_PARTIAL — Pages project `palcalculator` deployed; `palcalculator.com`/`www` custom domains added but pending CNAME/Cloudflare DNS validation
+- launch deploy evidence：DONE_PARTIAL — Pages project deployed; Cloudflare zone + CNAME records created; waiting for Dynadot nameserver change/propagation
