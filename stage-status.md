@@ -13,8 +13,8 @@
 - 10 SEO：RUNNING_RECOVERY — `t_aa4b814f`; seo_bot auth crash fixed by syncing working auth and re-dispatching; currently running
 - 04b compliance recheck：READY/RUNNING — `t_47d82d17`; dispatched after frontend acceptance
 - 02b PM acceptance：WAITING — `t_0f1e01e9`; waits for SEO + compliance recheck
-- 09 QA：RUNNING — `t_6f6b8013`; QA acceptance started after repair + SEO rerun
-- 11 launch：TODO/BLOCKED_BY_SETUP — `t_9bed78ed`; waits for QA_GO + owner setup
+- 09 QA：DONE/CONDITIONAL_PASS — `t_6f6b8013`; qa_bot found NO-GO, orchestrator repaired share/copy, analytics hooks, preview 404s; test/build/lint/static probes pass
+- 11 launch：BLOCKED_BY_OWNER_SETUP — `t_9bed78ed`; waits for Cloudflare DNS/Pages, canonical/indexing confirmation, analytics decision, deploy approval
 - 12 review：TODO — `t_9b3f1ac3`; waits for launch
 
 - repair R1 backend/data：DONE/ACCEPTED — `t_1be67cb6`; data-backed calculators added, build/test pass; special combos caveated

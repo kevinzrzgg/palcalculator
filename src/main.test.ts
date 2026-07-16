@@ -65,4 +65,20 @@ describe('static frontend contract', () => {
     expect(source).toContain('No account or payment is required');
     expect(source).toContain('Special combo overrides remain caveated');
   });
+
+  it('implements share/copy URL state and first-party analytics event hooks', () => {
+    const source = fs.readFileSync('src/main.tsx', 'utf8');
+    expect(source).toContain('URLSearchParams');
+    expect(source).toContain('navigator.clipboard.writeText');
+    expect(source).toContain('Copy/share result URL');
+    expect(source).toContain('palcalculatorEvents');
+    expect(source).toContain('tool_success');
+    expect(source).toContain('tool_error');
+  });
+
+  it('uses the Cloudflare-equivalent static preview server instead of SPA preview fallback', () => {
+    const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+    expect(pkg.scripts.preview).toContain('scripts/preview-static.mjs');
+    expect(fs.existsSync('scripts/preview-static.mjs')).toBe(true);
+  });
 });
