@@ -113,4 +113,22 @@ describe('static frontend contract', () => {
     expect(app).toContain("upsertMeta('meta[name=\"description\"]'");
     expect(app).toContain("upsertMeta('meta[name=\"robots\"]'");
   });
+
+  it('does not ship third-party ad mounts or reserved slot styles', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const styles = fs.readFileSync('src/styles.css', 'utf8');
+    const blockedAppTerms = [
+      'effective' + 'cpmnetwork',
+      'high' + 'performanceformat',
+      'container' + '-',
+      'at' + 'Options',
+      'data-palcalculator-' + 'ad-key',
+      'Native' + 'Ad',
+      'HighPerformance' + 'Ad',
+      'Advert' + 'isement',
+    ];
+
+    for (const term of blockedAppTerms) expect(app).not.toContain(term);
+    for (const term of ['ad' + '-slot', 'native' + '-ad', 'iframe' + '-ad', 'iframe' + '-ad-grid', 'iframe' + '-ad-mount']) expect(styles).not.toContain(term);
+  });
 });
