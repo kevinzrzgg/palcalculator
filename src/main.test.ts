@@ -148,6 +148,18 @@ describe('static frontend contract', () => {
     expect(app).not.toContain('Calculate breeding</button>');
   });
 
+  it('keeps the mobile header and data badge constrained to the viewport', () => {
+    const styles = fs.readFileSync('src/styles.css', 'utf8');
+
+    expect(styles).toContain('html,body,#root{max-width:100%;overflow-x:clip}');
+    expect(styles).toContain('.site-header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:1rem;width:100%;min-width:0');
+    expect(styles).toContain('nav{display:flex;gap:.35rem;min-width:0;max-width:100%;flex-wrap:wrap');
+    expect(styles).toContain('.hero>*{min-width:0}');
+    expect(styles).toContain('.data-badge{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;max-width:100%;min-width:0');
+    expect(styles).toContain('.data-badge strong{color:var(--color-warn);overflow-wrap:anywhere}');
+    expect(styles).toContain('@media (max-width:850px){.site-header{align-items:flex-start;flex-direction:column}.site-header nav{width:100%;justify-content:flex-start}');
+  });
+
   it('does not ship third-party ad mounts or reserved slot styles', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const styles = fs.readFileSync('src/styles.css', 'utf8');
