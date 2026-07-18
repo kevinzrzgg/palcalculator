@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const distDir = path.resolve('dist');
 const canonicalOrigin = process.env.VITE_CANONICAL_ORIGIN || 'https://palcalculator.com';
+const guidePages = JSON.parse(fs.readFileSync(path.resolve('src/guides-data.json'), 'utf8'));
 
 const routes = [
   { path: '/', h1: 'PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators', title: 'PalCalculator: Palworld Breeding & IV Tools', description: 'Unofficial fan-made Palworld 1.0 calculator hub for breeding routes, IV/stat checks, passive planning, and owned-Pal optimization.', keywords: 'Palworld calculator, Palworld breeding calculator, Palworld IV calculator', ogTitle: 'PalCalculator: Palworld Breeding & IV Tools', ogDescription: 'Fan-made Palworld breeding, route, IV, stats, and passive calculators with visible data caveats.', robots: 'index,follow' },
@@ -15,6 +16,7 @@ const routes = [
   { path: '/data-sources/', h1: 'PalCalculator Data Sources & Update Policy', title: 'PalCalculator Data Sources & Update Policy', description: 'Review PalCalculator dataset status, source categories, update policy, formula assumptions, unsupported data, and correction workflow.', keywords: 'PalCalculator data sources, Palworld data version, Palworld calculator policy', ogTitle: 'PalCalculator Data Sources & Update Policy', ogDescription: 'PalCalculator data version, source policy, update status, and unsupported-domain notes.', robots: 'index,follow' },
   { path: '/privacy/', h1: 'Privacy Policy', title: 'Privacy Policy | PalCalculator', description: 'Read the PalCalculator privacy policy for browser-local calculator state, share URLs, hosting logs, and pending analytics disclosures.', keywords: 'PalCalculator privacy policy', ogTitle: 'PalCalculator Privacy Policy', ogDescription: 'How PalCalculator handles local calculator inputs, share URLs, hosting logs, and analytics choices.', robots: 'index,follow' },
   { path: '/terms/', h1: 'Terms of Use', title: 'Terms of Use | PalCalculator', description: 'Read PalCalculator terms covering unofficial fan-site status, data accuracy caveats, user responsibility, and acceptable use.', keywords: 'PalCalculator terms of use', ogTitle: 'PalCalculator Terms of Use', ogDescription: 'Unofficial fan-site terms, Palworld trademark caveats, data accuracy limits, and usage responsibilities.', robots: 'index,follow' },
+  ...guidePages.map((guide) => ({ path: guide.path, h1: guide.h1, title: guide.title, description: guide.description, keywords: guide.keywords, ogTitle: guide.title, ogDescription: guide.ogDescription, robots: 'index,follow', guide })),
 ];
 
 function esc(value) {
@@ -25,6 +27,30 @@ function canonicalFor(routePath) {
   return `${canonicalOrigin}${routePath}`;
 }
 
+function paragraphs(values) {
+  return values.map((value) => `<p>${esc(value)}</p>`).join('');
+}
+
+function guideStructuredData(route) {
+  if (!route.guide) return '';
+  const article = { '@context': 'https://schema.org', '@type': 'TechArticle', headline: route.guide.h1, description: route.guide.description, url: canonicalFor(route.guide.path), isPartOf: { '@type': 'WebSite', name: 'PalCalculator', url: canonicalOrigin } };
+  const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: route.guide.faqs.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) };
+  const safeJson = (value) => JSON.stringify(value).replaceAll('</script', '<\\/script');
+  return `<script type="application/ld+json">${safeJson(article)}</script><script type="application/ld+json">${safeJson(faq)}</script>`;
+}
+
+function bodyFor(route) {
+  if (!route.guide) {
+    return `<p class="eyebrow">Unofficial fan-made Palworld tool</p><h1>${esc(route.h1)}</h1><p>${esc(route.description)}</p><p><a href="/data-sources/">Data sources</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>`;
+  }
+  const guide = route.guide;
+  const intro = paragraphs(guide.intro);
+  const sections = guide.sections.map((section) => `<section><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs)}</section>`).join('');
+  const links = guide.links.map((link) => `<li><a href="${esc(link.href)}">${esc(link.label)}</a></li>`).join('');
+  const faqs = guide.faqs.map((faq) => `<details open><summary>${esc(faq.question)}</summary><p>${esc(faq.answer)}</p></details>`).join('');
+  return `<p class="eyebrow">Unofficial fan-made Palworld guide</p><h1>${esc(guide.h1)}</h1><p>${esc(guide.description)}</p>${intro}<p><a href="${esc(guide.primaryCta.href)}">${esc(guide.primaryCta.label)}</a> · <a href="${esc(guide.secondaryCta.href)}">${esc(guide.secondaryCta.label)}</a></p>${sections}<section><h2>Related PalCalculator tools</h2><ul>${links}</ul></section><section><h2>FAQ</h2>${faqs}</section>`;
+}
+
 const builtIndex = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 const assetTags = [...builtIndex.matchAll(/<(script|link)\b[^>]*(?:src|href)="\/assets\/[^"]+"[^>]*><\/script>|<link\b[^>]*href="\/assets\/[^"]+"[^>]*>/g)].map(m => m[0]).join('');
 const faviconTags = '<link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="apple-touch-icon" href="/apple-touch-icon.png"/>';
@@ -33,8 +59,8 @@ const googleAnalyticsTag = '<script async src="https://www.googletagmanager.com/
 
 function htmlFor(route) {
   const canonical = canonicalFor(route.path);
-  const initial = `<div class="static-prerender"><p class="eyebrow">Unofficial fan-made Palworld tool</p><h1>${esc(route.h1)}</h1><p>${esc(route.description)}</p><p><a href="/data-sources/">Data sources</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p></div>`;
-  return `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>${esc(route.title)}</title><meta name="description" content="${esc(route.description)}"/><meta name="keywords" content="${esc(route.keywords)}"/><link rel="canonical" href="${esc(canonical)}"/>${faviconTags}<meta property="og:title" content="${esc(route.ogTitle)}"/><meta property="og:description" content="${esc(route.ogDescription)}"/><meta property="og:url" content="${esc(canonical)}"/><meta property="og:type" content="website"/><meta name="robots" content="${esc(route.robots)}"/>${clarityTag}${googleAnalyticsTag}${assetTags}</head><body><div id="root">${initial}</div></body></html>
+  const initial = `<div class="static-prerender">${bodyFor(route)}</div>`;
+  return `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>${esc(route.title)}</title><meta name="description" content="${esc(route.description)}"/><meta name="keywords" content="${esc(route.keywords)}"/><link rel="canonical" href="${esc(canonical)}"/>${faviconTags}<meta property="og:title" content="${esc(route.ogTitle)}"/><meta property="og:description" content="${esc(route.ogDescription)}"/><meta property="og:url" content="${esc(canonical)}"/><meta property="og:type" content="website"/><meta name="robots" content="${esc(route.robots)}"/>${guideStructuredData(route)}${clarityTag}${googleAnalyticsTag}${assetTags}</head><body><div id="root">${initial}</div></body></html>
 `;
 }
 

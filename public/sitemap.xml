@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://palcalculator.com/</loc></url>
+  <url><loc>https://palcalculator.com/breeding-calculator/</loc></url>
+  <url><loc>https://palcalculator.com/breeding-route-calculator/</loc></url>
+  <url><loc>https://palcalculator.com/iv-calculator/</loc></url>
+  <url><loc>https://palcalculator.com/stats-calculator/</loc></url>
+  <url><loc>https://palcalculator.com/passive-skill-calculator/</loc></url>
+  <url><loc>https://palcalculator.com/palworld-1-0-breeding-calculator/</loc></url>
   <url><loc>https://palcalculator.com/data-sources/</loc></url>
   <url><loc>https://palcalculator.com/privacy/</loc></url>
   <url><loc>https://palcalculator.com/terms/</loc></url>
+  <url><loc>https://palcalculator.com/guides/palworld-breeding-combos/</loc></url>
+  <url><loc>https://palcalculator.com/guides/palworld-breeding-tree/</loc></url>
+  <url><loc>https://palcalculator.com/guides/palworld-1-0-breeding-guide/</loc></url>
 </urlset>

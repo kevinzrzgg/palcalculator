@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import { childFromParents, dataVersion, estimateStats, parentsForTarget, pals, solveRoute } from './calculators';
+import guidePages from './guides-data.json';
 
 describe('production Palworld data contract', () => {
   it('replaces pending/example-only public data with a versioned Palworld data build', () => {
@@ -130,5 +131,29 @@ describe('static frontend contract', () => {
 
     for (const term of blockedAppTerms) expect(app).not.toContain(term);
     for (const term of ['ad' + '-slot', 'native' + '-ad', 'iframe' + '-ad', 'iframe' + '-ad-grid', 'iframe' + '-ad-mount']) expect(styles).not.toContain(term);
+  });
+
+  it('defines the first three SEO guide routes with safe metadata and sitemap entries', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+
+    expect(guidePages.map((page) => page.path)).toEqual([
+      '/guides/palworld-breeding-combos/',
+      '/guides/palworld-breeding-tree/',
+      '/guides/palworld-1-0-breeding-guide/',
+    ]);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(13);
+    expect(sitemap).not.toContain('/share/');
+    expect(generator).toContain('src/guides-data.json');
+    expect(generator).toContain('FAQPage');
+    expect(app).toContain('function GuidePage');
+    for (const page of guidePages) {
+      expect(page.title.length).toBeLessThanOrEqual(60);
+      expect(page.description.length).toBeLessThanOrEqual(160);
+      expect(page.faqs.length).toBeGreaterThanOrEqual(4);
+      expect(sitemap).toContain(`https://palcalculator.com${page.path}`);
+      expect(page.intro.join(' ')).toContain('unofficial fan-made');
+    }
   });
 });

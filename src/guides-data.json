@@ -1,0 +1,128 @@
+[
+  {
+    "key": "guideCombos",
+    "path": "/guides/palworld-breeding-combos/",
+    "label": "Breeding Combos Guide",
+    "h1": "Palworld Breeding Combos Guide",
+    "title": "Palworld Breeding Combos Guide",
+    "description": "Learn Palworld breeding combos, parent-pair lookup, 1.0 caveats, and when to use PalCalculator's fan-made breeding tools.",
+    "keywords": "palworld breeding combos, palworld breeding combinations, palworld parent pairs, palworld breeding combos 1.0",
+    "ogDescription": "Use PalCalculator to understand Palworld breeding combinations, check parent pairs, review 1.0 caveats, and move from combo ideas to calculator workflows.",
+    "primaryCta": { "label": "Calculate breeding", "href": "/breeding-calculator/" },
+    "secondaryCta": { "label": "Use the 1.0 breeding calculator", "href": "/palworld-1-0-breeding-calculator/" },
+    "intro": [
+      "Palworld breeding combos are useful when you want a quick answer: which child comes from two parents, or which parent pairs can lead to the Pal you want. PalCalculator turns that combo intent into a calculator workflow, so you can check parent pairs, review data-version notes, and move into route planning when one direct pair is not enough.",
+      "PalCalculator is an unofficial fan-made Palworld tool. Use the copy below as guidance, then verify specific parent pairs in the calculator because patches, special-combo rules, and data-source updates can change what a result means."
+    ],
+    "sections": [
+      { "heading": "What are Palworld breeding combos?", "paragraphs": ["A Palworld breeding combo is a parent-pair relationship that helps you answer one of two questions: If I breed these two Pals, what child should I check? Or if I want this target Pal, which parent pairs should I review?", "A breeding combo is a parent-child lookup, not a full breeding plan. If you need multiple generations, use a route calculator instead of treating one combo as the whole answer."] },
+      { "heading": "Parent pair to child vs target child to parent pairs", "paragraphs": ["Parent pair to child mode is quickest when you already have two Pals and want to check what child the selected dataset returns.", "Target child to parent pairs is better for planning because it starts from your goal and shows possible combinations to investigate. A user searching for a combo list may actually need a target search, not a static chart."] },
+      { "heading": "How to check a combo in PalCalculator", "paragraphs": ["Open the Palworld breeding calculator, choose pair-to-child if you have two parents or target-to-parent if you know the Pal you want, then review the returned child or parent pairs with their data-version notes.", "If a Pal name, alias, pair, or special combo is missing, treat the result as unavailable for the current dataset rather than filling the gap with a guess."] },
+      { "heading": "Palworld 1.0 combo caveats", "paragraphs": ["Palworld 1.0 searches often include freshness intent. Players want to know whether a combo is current, whether special combinations are represented, and why two sites may not show the same answer.", "PalCalculator uses fan-made data and selected data-version notes. Different websites can disagree when they update at different times, include different special-combo assumptions, or handle missing data differently."] },
+      { "heading": "Example combo workflows", "paragraphs": ["Use examples as workflows, not as unsupported exact combo claims. Check two parents to see the returned child, search targets like Anubis or Orserk for possible parents, and verify chart results before spending resources.", "If a result looks unexpected, compare data-version notes and special-combo caveats instead of assuming a static chart is always current."] },
+      { "heading": "When to use the route calculator instead", "paragraphs": ["A single breeding combo is not enough when you need a multi-step path. Use the breeding route calculator when you do not own either direct parent, want the shortest practical path from owned Pals, or need missing-Pal and alternative-route notes."] },
+      { "heading": "Data sources and update policy", "paragraphs": ["Before following a long combo plan, review the data sources and update policy. PalCalculator keeps version caveats visible so unsupported states are shown rather than guessed."] }
+    ],
+    "links": [
+      { "label": "Palworld breeding calculator", "href": "/breeding-calculator/" },
+      { "label": "Palworld 1.0 breeding calculator", "href": "/palworld-1-0-breeding-calculator/" },
+      { "label": "breeding route calculator", "href": "/breeding-route-calculator/" },
+      { "label": "passive skill planner", "href": "/passive-skill-calculator/" },
+      { "label": "data sources and update policy", "href": "/data-sources/" }
+    ],
+    "faqs": [
+      { "question": "What is a breeding combo in Palworld?", "answer": "A breeding combo is a parent-pair relationship used to check a child result or find possible parents for a target Pal. It is useful for direct lookups, but it is not the same as a full multi-generation breeding route." },
+      { "question": "Is PalCalculator an official Palworld breeding combo source?", "answer": "No. PalCalculator is an unofficial fan-made calculator and guide site. Use its visible data-version notes and caveats when checking any result." },
+      { "question": "Does PalCalculator include Palworld 1.0 breeding combos?", "answer": "PalCalculator is built around selected Palworld 1.0 breeding workflows where the current dataset supports them. Check the 1.0 calculator and data-source notes before relying on a specific combo." },
+      { "question": "Why do different Palworld breeding combo charts disagree?", "answer": "Charts can differ because of patch timing, data-source choices, special-combo handling, aliases, or missing data. When results disagree, verify the pair in a calculator that shows version and caveat notes." },
+      { "question": "Can a breeding combo guarantee passive skills?", "answer": "No. A parent pair can help with breeding planning, but passive inheritance can involve RNG and supported-data limits. Use the passive skill planner for caveated guidance instead of treating a combo as a certainty." },
+      { "question": "Should I use a combo list or a breeding route calculator?", "answer": "Use a combo list or breeding calculator for direct parent-child questions. Use a route calculator when you need multiple generations, owned-Pal planning, missing-Pal notes, or alternatives." },
+      { "question": "What should I do if a Pal or combo is missing?", "answer": "Check spelling, use selector suggestions, remove filters, and review the data-source notes. If the current dataset does not support the result, the page should show an unavailable state rather than inventing an answer." }
+    ]
+  },
+  {
+    "key": "guideTree",
+    "path": "/guides/palworld-breeding-tree/",
+    "label": "Breeding Tree Guide",
+    "h1": "Palworld Breeding Tree Guide",
+    "title": "Palworld Breeding Tree Guide",
+    "description": "Understand Palworld breeding trees, route steps, owned-Pal paths, and how PalCalculator finds caveated breeding routes.",
+    "keywords": "palworld breeding tree, palworld breeding tree calculator, palworld breeding route, palworld breeding path",
+    "ogDescription": "Learn how Palworld breeding trees work, when a direct combo becomes a route, and how to use PalCalculator's route solver with owned-Pal and data-version caveats.",
+    "primaryCta": { "label": "Find shortest route", "href": "/breeding-route-calculator/" },
+    "secondaryCta": { "label": "Check direct combos", "href": "/breeding-calculator/" },
+    "intro": [
+      "A Palworld breeding tree is a route, not just one combo. Instead of checking a single parent pair, a tree shows how multiple breeding steps can connect the Pals you already have to the target Pal you want.",
+      "PalCalculator is an unofficial fan-made Palworld calculator. Its route tools are designed to help you plan with visible constraints, missing-Pal notes, and data-version caveats rather than hiding uncertainty behind a static chart."
+    ],
+    "sections": [
+      { "heading": "What a Palworld breeding tree means", "paragraphs": ["A breeding tree is a step-by-step path from available parents to a target Pal. Each step produces a child that may become a parent in the next generation.", "Use a breeding tree when the important question is the path. Use a direct breeding combo when the important question is one parent pair."] },
+      { "heading": "Direct combo vs multi-generation route", "paragraphs": ["A direct combo can be enough when you already own both parents and only need to verify the child result. A multi-generation route becomes useful when one parent is missing, several intermediate Pals are required, or you want to compare practical paths."] },
+      { "heading": "How PalCalculator builds route steps", "paragraphs": ["The breeding route calculator takes constraints such as target Pal, owned Pals, max generations, and the current dataset, then searches for supported paths.", "Route output should make generation count, missing Pals, alternatives, and caveats readable without needing a separate chart."] },
+      { "heading": "Example route-tree format", "paragraphs": ["A safe route-tree format includes target Pal, selected data version, constraints, route status, and ordered steps showing parents, child, and caveat notes.", "Do not insert unsupported exact Pal routes unless they are generated from current app data. Visible examples should explain the format, not pretend to be a verified route."] },
+      { "heading": "When a route may not be available", "paragraphs": ["A route may not appear when the target name is not matched, the generation limit is too strict, the owned-Pal list is too small, filters exclude needed parents, or data is missing or unsupported.", "Try increasing max generations, checking Pal names, adding more owned Pals, or reviewing the data-source notes."] },
+      { "heading": "Passive and IV caveats inside breeding trees", "paragraphs": ["A breeding tree can tell you a possible path, but it should not promise ideal passives or perfect stats. Passive inheritance can involve RNG, and IV/stat planning depends on supported formulas, observed stats, and modifiers."] },
+      { "heading": "Next steps after finding a route", "paragraphs": ["After finding a route, open the passive skill planner for desired-passive assumptions, use the IV calculator before keeping breeders, and recheck data-source notes after patches."] }
+    ],
+    "links": [
+      { "label": "Palworld breeding route calculator", "href": "/breeding-route-calculator/" },
+      { "label": "direct breeding combo calculator", "href": "/breeding-calculator/" },
+      { "label": "passive skill planner", "href": "/passive-skill-calculator/" },
+      { "label": "IV calculator", "href": "/iv-calculator/" },
+      { "label": "data version notes", "href": "/data-sources/" }
+    ],
+    "faqs": [
+      { "question": "What is a Palworld breeding tree?", "answer": "A Palworld breeding tree is a multi-step route that shows how parent pairs can lead from available Pals to a target Pal. It is most useful when one direct combo is not enough." },
+      { "question": "Is a breeding tree the same as a breeding combo?", "answer": "No. A combo is one parent-pair relationship, while a tree can include several generations and intermediate Pals. Use a route calculator when you need the path, not just one pair." },
+      { "question": "Can PalCalculator use my owned Pals for a route?", "answer": "The route calculator is designed around owned-Pal planning where the current app supports it. MVP copy keeps owned-Pal inputs browser-first unless a later feature clearly states otherwise." },
+      { "question": "Why does a breeding route show missing Pals?", "answer": "A missing-Pal note means the route may require a parent or intermediate Pal outside the list you provided. Use it to decide whether to catch, breed, trade for, or route around that missing requirement." },
+      { "question": "Can a breeding tree guarantee passives?", "answer": "No. A breeding tree can organize the path, but passive inheritance can involve RNG and supported-data limits. Use passive planning notes as guidance, not as a certainty claim." },
+      { "question": "How many generations should I allow?", "answer": "Start with a smaller generation limit if you want a simple route, then increase it if no path appears. Larger limits may find more options but can also produce routes that are less practical to execute." },
+      { "question": "What should I do if no route appears?", "answer": "Check spelling, add more owned Pals, relax filters, increase max generations, and review data-version notes. If data is unsupported, PalCalculator should say that clearly instead of making up a route." }
+    ]
+  },
+  {
+    "key": "guideOne0",
+    "path": "/guides/palworld-1-0-breeding-guide/",
+    "label": "1.0 Breeding Guide",
+    "h1": "Palworld 1.0 Breeding Guide",
+    "title": "Palworld 1.0 Breeding Guide",
+    "description": "Use this Palworld 1.0 breeding guide to check combos, routes, data-version notes, and fan-made calculator caveats.",
+    "keywords": "palworld 1.0 breeding guide, palworld 1.0 breeding combos, palworld 1.0 breeding calculator",
+    "ogDescription": "Use PalCalculator's fan-made Palworld 1.0 breeding workflows to check parent pairs, target parents, route steps, passives, and data-version caveats.",
+    "primaryCta": { "label": "Use 1.0 calculator", "href": "/palworld-1-0-breeding-calculator/" },
+    "secondaryCta": { "label": "View data sources", "href": "/data-sources/" },
+    "intro": [
+      "Palworld 1.0 breeding searches usually have one hidden question: Is this information updated enough for the plan I am about to follow? This guide explains how to use PalCalculator's 1.0 breeding workflows while keeping data-version notes, unsupported states, and fan-made caveats visible.",
+      "PalCalculator is an unofficial fan-made Palworld calculator. It can help you check parent pairs, target-parent options, route steps, IV/stat planning, and passive notes where the selected dataset supports those workflows."
+    ],
+    "sections": [
+      { "heading": "What this guide covers", "paragraphs": ["This guide is for players who want a version-aware breeding workflow, not a static promise that every possible interaction is covered.", "Use the 1.0 breeding calculator for parent pairs and target parents, the route calculator for owned-Pal paths, and passive, IV, or stats calculators when the plan needs more detail."] },
+      { "heading": "How Palworld 1.0 breeding data is handled", "paragraphs": ["Calculator results depend on the selected Palworld data version and supported source categories. Patches can change breeding, stats, and passive behavior, so check the data-source page before relying on a long route or expensive breeding plan.", "Do not imply instant data refreshes, every special combo is covered, or passive outcomes are certain."] },
+      { "heading": "Use case 1: check parent pair results", "paragraphs": ["If you already have two parents, open the Palworld 1.0 breeding calculator, choose pair-to-child mode where available, enter both parents, and review the returned child, combo type, and data-version note.", "A parent-pair result is a lookup for the selected dataset. If you need a practical path from your Palbox, send the target Pal to the route calculator."] },
+      { "heading": "Use case 2: find parents for a target Pal", "paragraphs": ["If you know the Pal you want, use target-to-parent search instead of scanning a long combo list manually. Review candidate parent pairs and check whether any pair depends on special-combo rules."] },
+      { "heading": "Use case 3: plan a route from owned Pals", "paragraphs": ["A Palworld 1.0 combo can become a multi-step route quickly. Add or paste owned Pals where supported, choose the target Pal, set max generations, and review missing-Pal notes and alternatives before committing resources."] },
+      { "heading": "Use case 4: plan passives without overpromising RNG", "paragraphs": ["Breeding guides often blur the line between reaching a target Pal and getting ideal passives. Use the passive skill calculator after you have a target or route idea, and keep RNG caveats visible."] },
+      { "heading": "Data freshness, unsupported states, and corrections", "paragraphs": ["PalCalculator is maintained as a fan-made planning tool. If a result is unavailable, conflicted, or not supported by the current dataset, the page should show that state directly.", "Think a result is wrong? Review the data-source notes first, then use the listed correction path when available."] },
+      { "heading": "Common mistakes when using 1.0 breeding guides", "paragraphs": ["Avoid treating a saved combo chart as current forever, confusing a direct combo with a full route, assuming passives are solved by the same combo, ignoring unsupported states, or comparing websites without checking patch timing."] }
+    ],
+    "links": [
+      { "label": "Palworld 1.0 breeding calculator", "href": "/palworld-1-0-breeding-calculator/" },
+      { "label": "parent-pair breeding calculator", "href": "/breeding-calculator/" },
+      { "label": "route calculator", "href": "/breeding-route-calculator/" },
+      { "label": "passive skill calculator", "href": "/passive-skill-calculator/" },
+      { "label": "IV calculator", "href": "/iv-calculator/" },
+      { "label": "stats calculator", "href": "/stats-calculator/" },
+      { "label": "PalCalculator data sources", "href": "/data-sources/" }
+    ],
+    "faqs": [
+      { "question": "Is PalCalculator updated for Palworld 1.0?", "answer": "PalCalculator includes 1.0-focused breeding workflows where the selected dataset supports them. Always check the visible data-version and data-source notes before relying on a specific result." },
+      { "question": "What does PalCalculator mean by fan-made data?", "answer": "It means PalCalculator is an independent player-focused tool, not a rights-holder source. Results should be read with the site's version notes, source categories, and caveats." },
+      { "question": "Does the 1.0 calculator include special combos?", "answer": "Special combos should be shown where the current dataset supports them, with clear labels and caveats. If a special combo is unsupported or missing, the tool should show that state instead of guessing." },
+      { "question": "Why should I check data version before using a breeding guide?", "answer": "Palworld patches can change mechanics or make older guides less useful. Data-version notes help you judge whether a result fits the current calculator dataset." },
+      { "question": "Can Palworld 1.0 breeding guarantee passives?", "answer": "No. Passive inheritance can involve RNG and supported-data limits. Use the passive skill calculator for planning guidance while keeping caveats visible." },
+      { "question": "Where can I report a data correction?", "answer": "Use the correction path listed on the data-source page when available. If the page does not yet list a contact or issue path, treat that as a launch blocker for correction workflow copy." },
+      { "question": "Which calculator should I use first?", "answer": "Use the 1.0 breeding calculator for direct parent-pair or target-parent questions. Use the route calculator when you need a multi-generation path from owned Pals." }
+    ]
+  }
+]
