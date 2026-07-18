@@ -115,6 +115,39 @@ describe('static frontend contract', () => {
     expect(app).toContain("upsertMeta('meta[name=\"robots\"]'");
   });
 
+  it('uses the new brand icon asset in the header and route HTML icon links', () => {
+    const shell = fs.readFileSync('index.html', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+
+    expect(fs.existsSync('public/brand-icon.svg')).toBe(true);
+    expect(fs.existsSync('public/icon-192.png')).toBe(true);
+    expect(fs.existsSync('public/icon-512.png')).toBe(true);
+    expect(app).toContain('src="/brand-icon.svg"');
+    expect(app).toContain('className="brand-mark"');
+    expect(app).not.toContain('<span className="brand-mark">PC</span>');
+    for (const html of [shell, generator]) {
+      expect(html).toContain('rel="icon" href="/favicon.ico" sizes="any"');
+      expect(html).toContain('rel="icon" href="/favicon.svg" type="image/svg+xml"');
+      expect(html).toContain('rel="apple-touch-icon" href="/apple-touch-icon.png"');
+      expect(html).toContain('rel="manifest" href="/site.webmanifest"');
+    }
+  });
+
+  it('clarifies homepage and route-specific breeding CTA behavior', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+
+    expect(app).toContain('Plan a breeding route');
+    expect(app).toContain('Check parent pairs');
+    expect(app).toContain('Route planning starts from a target + owned Pals');
+    expect(app).toContain('Choose target Pal below');
+    expect(app).toContain('inputMarker="route-target"');
+    expect(app).toContain('inputMarker="breeding-parent-a"');
+    expect(app).toContain('focusHeroInput');
+    expect(app).not.toContain('Start with a target Pal');
+    expect(app).not.toContain('Calculate breeding</button>');
+  });
+
   it('does not ship third-party ad mounts or reserved slot styles', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const styles = fs.readFileSync('src/styles.css', 'utf8');

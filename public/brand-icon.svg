@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PalCalculator favicon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">PalCalculator brand icon</title>
+  <desc id="desc">Original rounded calculator mark with route nodes and a subtle egg motif.</desc>
   <rect width="64" height="64" rx="16" fill="#17212B"/>
   <rect x="13" y="12" width="38" height="40" rx="10" fill="#FFFDF7"/>
   <rect x="18" y="17" width="21" height="8" rx="4" fill="#2A9D8F"/>
