@@ -1,0 +1,920 @@
+{
+  "layout": [
+    {
+      "path": "/",
+      "innerWidth": 320,
+      "docScrollWidth": 320,
+      "bodyScrollWidth": 320,
+      "maxRight": 320,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators",
+      "ctas": [
+        "Plan a breeding route",
+        "Check parent pairs"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/home-320.png"
+    },
+    {
+      "path": "/breeding-route-calculator/",
+      "innerWidth": 320,
+      "docScrollWidth": 320,
+      "bodyScrollWidth": 320,
+      "maxRight": 320,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "Palworld Breeding Route Calculator",
+      "ctas": [
+        "Choose target Pal below",
+        "Need parent/child lookup?"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-route-calculator-320.png"
+    },
+    {
+      "path": "/breeding-calculator/",
+      "innerWidth": 320,
+      "docScrollWidth": 320,
+      "bodyScrollWidth": 320,
+      "maxRight": 320,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "Palworld Breeding Calculator",
+      "ctas": [
+        "Check parent pairs below",
+        "Plan multi-step route"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-calculator-320.png"
+    },
+    {
+      "path": "/",
+      "innerWidth": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "maxRight": 360,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators",
+      "ctas": [
+        "Plan a breeding route",
+        "Check parent pairs"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/home-360.png"
+    },
+    {
+      "path": "/breeding-route-calculator/",
+      "innerWidth": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "maxRight": 360,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "Palworld Breeding Route Calculator",
+      "ctas": [
+        "Choose target Pal below",
+        "Need parent/child lookup?"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-route-calculator-360.png"
+    },
+    {
+      "path": "/breeding-calculator/",
+      "innerWidth": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "maxRight": 360,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "Palworld Breeding Calculator",
+      "ctas": [
+        "Check parent pairs below",
+        "Plan multi-step route"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-calculator-360.png"
+    },
+    {
+      "path": "/",
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "maxRight": 390,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators",
+      "ctas": [
+        "Plan a breeding route",
+        "Check parent pairs"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/home-390.png"
+    },
+    {
+      "path": "/breeding-route-calculator/",
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "maxRight": 390,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "Palworld Breeding Route Calculator",
+      "ctas": [
+        "Choose target Pal below",
+        "Need parent/child lookup?"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-route-calculator-390.png"
+    },
+    {
+      "path": "/breeding-calculator/",
+      "innerWidth": 390,
+      "docScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "maxRight": 390,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 16,
+          "right": 110.828125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Route",
+          "left": 116.421875,
+          "right": 185.90625,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "IV",
+          "left": 191.5,
+          "right": 230.203125,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Stats",
+          "left": 235.796875,
+          "right": 299.671875,
+          "top": 72,
+          "bottom": 110.8125
+        },
+        {
+          "text": "Passives",
+          "left": 16,
+          "right": 106.53125,
+          "top": 116.40625,
+          "bottom": 155.21875
+        },
+        {
+          "text": "Data Sources",
+          "left": 112.125,
+          "right": 241.734375,
+          "top": 116.40625,
+          "bottom": 155.21875
+        }
+      ],
+      "h1": "Palworld Breeding Calculator",
+      "ctas": [
+        "Check parent pairs below",
+        "Plan multi-step route"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-calculator-390.png"
+    },
+    {
+      "path": "/",
+      "innerWidth": 1280,
+      "docScrollWidth": 1280,
+      "bodyScrollWidth": 1280,
+      "maxRight": 1280,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 698.4375,
+          "right": 795.828125,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Route",
+          "left": 801.421875,
+          "right": 873.46875,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "IV",
+          "left": 879.0625,
+          "right": 920.328125,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Stats",
+          "left": 925.921875,
+          "right": 992.359375,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Passives",
+          "left": 997.953125,
+          "right": 1091.046875,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Data Sources",
+          "left": 1096.640625,
+          "right": 1228.8125,
+          "top": 16,
+          "bottom": 57.375
+        }
+      ],
+      "h1": "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators",
+      "ctas": [
+        "Plan a breeding route",
+        "Check parent pairs"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/home-1280.png"
+    },
+    {
+      "path": "/breeding-route-calculator/",
+      "innerWidth": 1280,
+      "docScrollWidth": 1280,
+      "bodyScrollWidth": 1280,
+      "maxRight": 1280,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 698.4375,
+          "right": 795.828125,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Route",
+          "left": 801.421875,
+          "right": 873.46875,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "IV",
+          "left": 879.0625,
+          "right": 920.328125,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Stats",
+          "left": 925.921875,
+          "right": 992.359375,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Passives",
+          "left": 997.953125,
+          "right": 1091.046875,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Data Sources",
+          "left": 1096.640625,
+          "right": 1228.8125,
+          "top": 16,
+          "bottom": 57.375
+        }
+      ],
+      "h1": "Palworld Breeding Route Calculator",
+      "ctas": [
+        "Choose target Pal below",
+        "Need parent/child lookup?"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-route-calculator-1280.png"
+    },
+    {
+      "path": "/breeding-calculator/",
+      "innerWidth": 1280,
+      "docScrollWidth": 1280,
+      "bodyScrollWidth": 1280,
+      "maxRight": 1280,
+      "minLeft": 0,
+      "overflowing": [],
+      "brandText": "PalCalculator",
+      "brandImageSrc": "/brand-icon.svg",
+      "brandImageComplete": true,
+      "brandImageNatural": [
+        150,
+        150
+      ],
+      "navTexts": [
+        "Breeding",
+        "Route",
+        "IV",
+        "Stats",
+        "Passives",
+        "Data Sources"
+      ],
+      "navRects": [
+        {
+          "text": "Breeding",
+          "left": 698.4375,
+          "right": 795.828125,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Route",
+          "left": 801.421875,
+          "right": 873.46875,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "IV",
+          "left": 879.0625,
+          "right": 920.328125,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Stats",
+          "left": 925.921875,
+          "right": 992.359375,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Passives",
+          "left": 997.953125,
+          "right": 1091.046875,
+          "top": 16,
+          "bottom": 57.375
+        },
+        {
+          "text": "Data Sources",
+          "left": 1096.640625,
+          "right": 1228.8125,
+          "top": 16,
+          "bottom": 57.375
+        }
+      ],
+      "h1": "Palworld Breeding Calculator",
+      "ctas": [
+        "Check parent pairs below",
+        "Plan multi-step route"
+      ],
+      "screenshot": "/root/projects/palcalculator/artifacts/qa-screenshots/breeding-calculator-1280.png"
+    }
+  ],
+  "cta": {
+    "route_primary": {
+      "clicked": true,
+      "path": "/breeding-route-calculator/",
+      "scrollY": 37,
+      "activeMarker": "route-target",
+      "activeLabel": "Target Pal",
+      "ctas": [
+        "Choose target Pal below",
+        "Need parent/child lookup?"
+      ],
+      "found": true,
+      "clickedText": "Choose target Pal below"
+    },
+    "breeding_primary": {
+      "clicked": true,
+      "path": "/breeding-calculator/",
+      "scrollY": 451,
+      "activeMarker": "breeding-parent-a",
+      "activeLabel": "Parent A",
+      "ctas": [
+        "Check parent pairs below",
+        "Plan multi-step route"
+      ],
+      "found": true,
+      "clickedText": "Check parent pairs below"
+    }
+  }
+}

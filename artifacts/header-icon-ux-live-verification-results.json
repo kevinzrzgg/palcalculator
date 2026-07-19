@@ -1,0 +1,133 @@
+{
+  "verified_at": "2026-07-19T03:11:22.332276+00:00",
+  "base": "https://palcalculator.com",
+  "deployment_url": "https://10b3ab96.palcalculator.pages.dev",
+  "pages": {
+    "/": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "length": 2774,
+      "canonical_ok": true,
+      "expected_canonical": "https://palcalculator.com/",
+      "ad_markers": [],
+      "pass": true
+    },
+    "/breeding-route-calculator/": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "length": 2779,
+      "canonical_ok": true,
+      "expected_canonical": "https://palcalculator.com/breeding-route-calculator/",
+      "ad_markers": [],
+      "pass": true
+    },
+    "/breeding-calculator/": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "length": 2780,
+      "canonical_ok": true,
+      "expected_canonical": "https://palcalculator.com/breeding-calculator/",
+      "ad_markers": [],
+      "pass": true
+    }
+  },
+  "assets": {
+    "/brand-icon.svg": {
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "length": 929,
+      "pass": true
+    },
+    "/favicon.svg": {
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "length": 783,
+      "pass": true
+    },
+    "/favicon.ico": {
+      "status": 200,
+      "content_type": "image/vnd.microsoft.icon",
+      "length": 13942,
+      "pass": true
+    },
+    "/apple-touch-icon.png": {
+      "status": 200,
+      "content_type": "image/png",
+      "length": 56500,
+      "pass": true
+    },
+    "/icon-192.png": {
+      "status": 200,
+      "content_type": "image/png",
+      "length": 58147,
+      "pass": true
+    },
+    "/icon-512.png": {
+      "status": 200,
+      "content_type": "image/png",
+      "length": 359926,
+      "pass": true
+    },
+    "/site.webmanifest": {
+      "status": 200,
+      "content_type": "application/manifest+json",
+      "length": 433,
+      "pass": true
+    }
+  },
+  "meta": {
+    "/sitemap.xml": {
+      "status": 200,
+      "content_type": "application/xml",
+      "length": 1032,
+      "details": {
+        "url_count": 13,
+        "sample_urls": [
+          "https://palcalculator.com/",
+          "https://palcalculator.com/breeding-calculator/",
+          "https://palcalculator.com/breeding-route-calculator/",
+          "https://palcalculator.com/iv-calculator/",
+          "https://palcalculator.com/stats-calculator/"
+        ]
+      },
+      "pass": true
+    },
+    "/robots.txt": {
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "length": 88,
+      "details": {
+        "has_sitemap": true,
+        "allows_root": true,
+        "disallows_share": true
+      },
+      "pass": true
+    }
+  },
+  "app_bundle": {
+    "/assets/index-D2sI5hFM.js": {
+      "status": 200,
+      "content_type": "application/javascript",
+      "length": 357179,
+      "ad_markers": [],
+      "pass": true
+    },
+    "/assets/index-DmYRTTkN.css": {
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "length": 7040,
+      "ad_markers": [],
+      "pass": true
+    }
+  },
+  "ad_markers_found": [],
+  "sitemap_url_count": 13,
+  "pass": true,
+  "app_bundle_requirements": {
+    "brand_icon_svg_reference": true,
+    "home_route_cta": true,
+    "home_breeding_cta": true,
+    "route_cta": true,
+    "breeding_cta": true
+  }
+}
