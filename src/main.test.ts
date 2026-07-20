@@ -178,7 +178,7 @@ describe('static frontend contract', () => {
     for (const term of ['ad' + '-slot', 'native' + '-ad', 'iframe' + '-ad', 'iframe' + '-ad-grid', 'iframe' + '-ad-mount']) expect(styles).not.toContain(term);
   });
 
-  it('defines the first three SEO guide routes with safe metadata and sitemap entries', () => {
+  it('defines SEO guide routes with safe metadata and sitemap entries', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
     const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
@@ -187,18 +187,49 @@ describe('static frontend contract', () => {
       '/guides/palworld-breeding-combos/',
       '/guides/palworld-breeding-tree/',
       '/guides/palworld-1-0-breeding-guide/',
+      '/guides/palworld-iv-explained/',
+      '/guides/best-passive-skills-for-breeding-palworld/',
+      '/guides/how-to-breed-anubis-palworld/',
+      '/guides/how-to-breed-jetragon-palworld/',
+      '/guides/palworld-breeding-route-examples/',
     ]);
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(13);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(18);
     expect(sitemap).not.toContain('/share/');
     expect(generator).toContain('src/guides-data.json');
     expect(generator).toContain('FAQPage');
     expect(app).toContain('function GuidePage');
+    expect(app).toContain("'guideIvExplained'");
+    expect(app).toContain('<GuideLinks navigate={navigate}/>');
     for (const page of guidePages) {
       expect(page.title.length).toBeLessThanOrEqual(60);
       expect(page.description.length).toBeLessThanOrEqual(160);
-      expect(page.faqs.length).toBeGreaterThanOrEqual(4);
+      expect(page.faqs.length).toBeGreaterThanOrEqual(7);
+      expect(page.sections.length).toBeGreaterThanOrEqual(6);
       expect(sitemap).toContain(`https://palcalculator.com${page.path}`);
       expect(page.intro.join(' ')).toContain('unofficial fan-made');
+      expect(page.links.some((link) => link.href === '/data-sources/')).toBe(true);
+    }
+  });
+
+  it('keeps P2 guide metadata, internal links, and ad exclusions aligned', () => {
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+    const p2Paths = [
+      '/guides/palworld-iv-explained/',
+      '/guides/best-passive-skills-for-breeding-palworld/',
+      '/guides/how-to-breed-anubis-palworld/',
+      '/guides/how-to-breed-jetragon-palworld/',
+      '/guides/palworld-breeding-route-examples/',
+    ];
+    for (const route of p2Paths) {
+      const page = guidePages.find((entry) => entry.path === route);
+      expect(page).toBeTruthy();
+      expect(page?.title.length).toBeLessThanOrEqual(60);
+      expect(page?.description.length).toBeLessThanOrEqual(160);
+      expect(page?.primaryCta.href.startsWith('/')).toBe(true);
+      expect(page?.secondaryCta.href.startsWith('/')).toBe(true);
+      expect(page?.links.length).toBeGreaterThanOrEqual(6);
+      expect(sitemap).toContain(`https://palcalculator.com${route}`);
+      expect(JSON.stringify(page)).not.toMatch(/ad-slot|native-ad|data-palcalculator-ad-key/i);
     }
   });
 });
