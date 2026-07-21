@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
-import { childFromParents, dataVersion, estimateStats, parentsForTarget, pals, solveRoute } from './calculators';
+import { childFromParents, dataVersion, estimateStats, parentsForTarget, pals, passives, solveRoute } from './calculators';
 import guidePages from './guides-data.json';
 
 describe('production Palworld data contract', () => {
@@ -201,6 +201,21 @@ describe('static frontend contract', () => {
     expect(app).not.toContain('data-palcalculator-' + 'ad-key');
     expect(styles).toContain('.examples-row');
     expect(styles).toContain('.result-explainer');
+  });
+
+  it('keeps passive examples supported and treats zero recognized passives as recoverable unsupported input', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const supportedPassiveNames = new Set(passives.flatMap((passive) => [passive.id.toLowerCase(), passive.displayName.toLowerCase()]));
+    const passiveExampleInputs = [...app.matchAll(/setDesired\('([^']+)'\)/g)].map((match) => match[1]);
+
+    expect(passiveExampleInputs.length).toBeGreaterThan(0);
+    for (const input of passiveExampleInputs) {
+      const recognized = input.split(',').map((name) => name.trim().toLowerCase()).filter((name) => supportedPassiveNames.has(name));
+      expect(recognized.length, `${input} should recognize at least one supported passive`).toBeGreaterThan(0);
+    }
+    expect(app).toContain('No desired passives recognized');
+    expect(app).toContain("severity: targetPal && recognizedCount > 0 ? 'ok' : 'error'");
+    expect(app).toContain('Use supported passive names from this data version');
   });
 
   it('keeps sitemap unchanged while adding beginner guide CTAs', () => {

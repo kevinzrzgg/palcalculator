@@ -1,0 +1,221 @@
+{
+  "sitemap_url_count": 18,
+  "sitemap_ok": true,
+  "missing_source_strings": [],
+  "route_meta": [
+    {
+      "route": "/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    },
+    {
+      "route": "/breeding-calculator/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    },
+    {
+      "route": "/breeding-route-calculator/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    },
+    {
+      "route": "/iv-calculator/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    },
+    {
+      "route": "/stats-calculator/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    },
+    {
+      "route": "/passive-skill-calculator/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    },
+    {
+      "route": "/palworld-1-0-breeding-calculator/",
+      "html_exists": true,
+      "canonical_ok": true,
+      "robots_ok": true,
+      "icon_ok": true
+    }
+  ],
+  "all_route_meta_ok": true,
+  "guide_ctas": [
+    {
+      "guide": "/guides/palworld-breeding-combos/",
+      "kind": "primaryCta",
+      "label": "Try Anubis parent lookup",
+      "href": "/breeding-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-breeding-combos/",
+      "kind": "secondaryCta",
+      "label": "Check Penking + Bushi",
+      "href": "/palworld-1-0-breeding-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-breeding-tree/",
+      "kind": "primaryCta",
+      "label": "Try the Anubis route demo",
+      "href": "/breeding-route-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-breeding-tree/",
+      "kind": "secondaryCta",
+      "label": "Check direct parent pairs",
+      "href": "/breeding-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-1-0-breeding-guide/",
+      "kind": "primaryCta",
+      "label": "Open 1.0 breeding calculator",
+      "href": "/palworld-1-0-breeding-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-1-0-breeding-guide/",
+      "kind": "secondaryCta",
+      "label": "View data sources",
+      "href": "/data-sources/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-iv-explained/",
+      "kind": "primaryCta",
+      "label": "Try level 50 Anubis IV bands",
+      "href": "/iv-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-iv-explained/",
+      "kind": "secondaryCta",
+      "label": "Compare expected stats",
+      "href": "/stats-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/best-passive-skills-for-breeding-palworld/",
+      "kind": "primaryCta",
+      "label": "Try Artisan + Serious passive plan",
+      "href": "/passive-skill-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/best-passive-skills-for-breeding-palworld/",
+      "kind": "secondaryCta",
+      "label": "Find a breeding route",
+      "href": "/breeding-route-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/how-to-breed-anubis-palworld/",
+      "kind": "primaryCta",
+      "label": "Try Anubis parent lookup",
+      "href": "/breeding-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/how-to-breed-anubis-palworld/",
+      "kind": "secondaryCta",
+      "label": "Plan an Anubis route",
+      "href": "/breeding-route-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/how-to-breed-jetragon-palworld/",
+      "kind": "primaryCta",
+      "label": "Try Jetragon target lookup",
+      "href": "/breeding-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/how-to-breed-jetragon-palworld/",
+      "kind": "secondaryCta",
+      "label": "Review data sources",
+      "href": "/breeding-route-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-breeding-route-examples/",
+      "kind": "primaryCta",
+      "label": "Try the route demo",
+      "href": "/breeding-route-calculator/",
+      "href_resolves_to_static_route": true
+    },
+    {
+      "guide": "/guides/palworld-breeding-route-examples/",
+      "kind": "secondaryCta",
+      "label": "Check direct combos",
+      "href": "/guides/palworld-breeding-tree/",
+      "href_resolves_to_static_route": true
+    }
+  ],
+  "all_guide_ctas_ok": true,
+  "ad_hits": [],
+  "no_ad_markers_ok": true,
+  "passive_dataset_names": [
+    "artisan",
+    "serious",
+    "swift"
+  ],
+  "combat_example_present": false,
+  "swift_example_present": true,
+  "combat_example_supported": false,
+  "known_p1_blocker_present": false,
+  "passive_repair_ok": true,
+  "ok": true,
+  "build_commands": {
+    "npm_run_test": "PASS 18/18",
+    "npm_run_lint": "PASS 0 errors, 28 existing warnings",
+    "npm_run_build": "PASS; 18 route-specific HTML files, 18 sitemap URLs"
+  },
+  "mobile_overflow": {
+    "widths": [
+      320,
+      360,
+      390,
+      768
+    ],
+    "routes": [
+      "/",
+      "/breeding-calculator/",
+      "/breeding-route-calculator/",
+      "/iv-calculator/",
+      "/stats-calculator/",
+      "/passive-skill-calculator/",
+      "/guides/how-to-breed-anubis-palworld/"
+    ],
+    "combinations_checked": 28,
+    "all_overflow_ok": true,
+    "failures": []
+  },
+  "interactive_examples": {
+    "homepage_try_anubis": "PASS -> /breeding-calculator/ target Anubis, 66 parent pairs found",
+    "breeding_penking_bushi": "PASS -> Penking + Bushi \u2192 Sibelyx",
+    "breeding_jetragon_target": "PASS -> 10 parent pairs found for Jetragon",
+    "route_no_owned": "PASS -> Route found to Anubis with missing-parent context",
+    "iv_modifier_caveat": "PASS -> Caveated IV bands calculated",
+    "stats_level_comparison": "PASS -> Expected stat bands calculated",
+    "passive_swift": "PASS -> 1 desired passive recognized, PASSIVE_RNG_CAVEATED",
+    "passive_unsupported_manual": "PASS -> Musclehead, Ferocious shows No desired passives recognized / PASSIVE_NAMES_UNSUPPORTED"
+  },
+  "verdict": "GO / PASS"
+}
