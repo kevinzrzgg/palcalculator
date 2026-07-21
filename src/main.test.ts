@@ -178,6 +178,44 @@ describe('static frontend contract', () => {
     for (const term of ['ad' + '-slot', 'native' + '-ad', 'iframe' + '-ad', 'iframe' + '-ad-grid', 'iframe' + '-ad-mount']) expect(styles).not.toContain(term);
   });
 
+  it('implements P4 beginner examples, helper copy, and result explainers without adding ads', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const styles = fs.readFileSync('src/styles.css', 'utf8');
+
+    expect(app).toContain('How to use PalCalculator');
+    expect(app).toContain('Choose your goal');
+    expect(app).toContain('Try an example');
+    expect(app).toContain('Read what it means');
+    expect(app).toContain('Try: Anubis parent lookup');
+    expect(app).toContain('Try: route to Anubis from Penking + Bushi');
+    expect(app).toContain('Try: level 50 Anubis IV bands');
+    expect(app).toContain('Try: Anubis expected stats');
+    expect(app).toContain('Try: Artisan + Serious passive plan');
+    expect(app).toContain('Type one Pal you own or want to test, e.g. Penking.');
+    expect(app).toContain('Optional. Paste names you already have, separated by commas or new lines. This stays browser-local in the MVP.');
+    expect(app).toContain('This means...');
+    expect(app).toContain('Next step...');
+    expect(app).toContain('Caveat...');
+    expect(app).toContain('beginner_example_click');
+    expect(app).toContain('result_explainer_view');
+    expect(app).not.toContain('data-palcalculator-' + 'ad-key');
+    expect(styles).toContain('.examples-row');
+    expect(styles).toContain('.result-explainer');
+  });
+
+  it('keeps sitemap unchanged while adding beginner guide CTAs', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(18);
+    expect(sitemap).not.toContain('/share/');
+    expect(app).toContain('Try this in PalCalculator');
+    expect(app).toContain('Check a combo in the calculator');
+    expect(app).toContain('Plan a route instead of one combo');
+    expect(app).toContain('Try an IV estimate with caveats visible');
+    expect(app).toContain('Plan passives without hiding RNG');
+  });
+
   it('defines SEO guide routes with safe metadata and sitemap entries', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');

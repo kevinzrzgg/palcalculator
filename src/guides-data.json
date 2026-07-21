@@ -9,11 +9,11 @@
     "keywords": "palworld breeding combos, palworld breeding combinations, palworld parent pairs, palworld breeding combos 1.0",
     "ogDescription": "Use PalCalculator to understand Palworld breeding combinations, check parent pairs, review 1.0 caveats, and move from combo ideas to calculator workflows.",
     "primaryCta": {
-      "label": "Calculate breeding",
+      "label": "Try Anubis parent lookup",
       "href": "/breeding-calculator/"
     },
     "secondaryCta": {
-      "label": "Use the 1.0 breeding calculator",
+      "label": "Check Penking + Bushi",
       "href": "/palworld-1-0-breeding-calculator/"
     },
     "intro": [
@@ -144,11 +144,11 @@
     "keywords": "palworld breeding tree, palworld breeding tree calculator, palworld breeding route, palworld breeding path",
     "ogDescription": "Learn how Palworld breeding trees work, when a direct combo becomes a route, and how to use PalCalculator's route solver with owned-Pal and data-version caveats.",
     "primaryCta": {
-      "label": "Find shortest route",
+      "label": "Try the Anubis route demo",
       "href": "/breeding-route-calculator/"
     },
     "secondaryCta": {
-      "label": "Check direct combos",
+      "label": "Check direct parent pairs",
       "href": "/breeding-calculator/"
     },
     "intro": [
@@ -278,7 +278,7 @@
     "keywords": "palworld 1.0 breeding guide, palworld 1.0 breeding combos, palworld 1.0 breeding calculator",
     "ogDescription": "Use PalCalculator's fan-made Palworld 1.0 breeding workflows to check parent pairs, target parents, route steps, passives, and data-version caveats.",
     "primaryCta": {
-      "label": "Use 1.0 calculator",
+      "label": "Open 1.0 breeding calculator",
       "href": "/palworld-1-0-breeding-calculator/"
     },
     "secondaryCta": {
@@ -430,7 +430,7 @@
     "keywords": "Palworld IV explained, Palworld IV guide, Palworld IV calculator, Palworld stats calculator",
     "ogDescription": "Understand Palworld IVs, stat variation, calculator inputs, estimate ranges, and fan-made formula caveats before judging a breeder Pal.",
     "primaryCta": {
-      "label": "Use the Palworld IV calculator",
+      "label": "Try level 50 Anubis IV bands",
       "href": "/iv-calculator/"
     },
     "secondaryCta": {
@@ -559,7 +559,7 @@
     "keywords": "best passive skills for breeding Palworld, Palworld breeding passives, Palworld passive skill calculator",
     "ogDescription": "Choose Palworld breeding passives by role, plan with PalCalculator, and avoid treating passive inheritance as guaranteed.",
     "primaryCta": {
-      "label": "Plan passive skills",
+      "label": "Try Artisan + Serious passive plan",
       "href": "/passive-skill-calculator/"
     },
     "secondaryCta": {
@@ -697,11 +697,11 @@
     "keywords": "how to breed Anubis Palworld, Palworld Anubis breeding, Anubis parent pairs, Anubis breeding route",
     "ogDescription": "Plan an Anubis breeding workflow with parent-pair checks, route solving, passive planning, IV checks, and data-version caveats.",
     "primaryCta": {
-      "label": "Find Anubis parent pairs",
+      "label": "Try Anubis parent lookup",
       "href": "/breeding-calculator/"
     },
     "secondaryCta": {
-      "label": "Plan an Anubis breeding route",
+      "label": "Plan an Anubis route",
       "href": "/breeding-route-calculator/"
     },
     "intro": [
@@ -840,11 +840,11 @@
     "keywords": "how to breed Jetragon Palworld, Palworld Jetragon breeding, Jetragon parent pairs, Jetragon breeding route",
     "ogDescription": "Use PalCalculator to check Jetragon parent-pair and route availability with legendary, special-combo, and data-version caveats visible.",
     "primaryCta": {
-      "label": "Check Jetragon parent pairs",
+      "label": "Try Jetragon target lookup",
       "href": "/breeding-calculator/"
     },
     "secondaryCta": {
-      "label": "Try a Jetragon route",
+      "label": "Review data sources",
       "href": "/breeding-route-calculator/"
     },
     "intro": [
@@ -979,11 +979,11 @@
     "keywords": "Palworld breeding route examples, Palworld breeding path examples, Palworld route calculator examples",
     "ogDescription": "Learn how to read Palworld breeding route examples, compare route options, and use PalCalculator without relying on unverified exact paths.",
     "primaryCta": {
-      "label": "Try the breeding route calculator",
+      "label": "Try the route demo",
       "href": "/breeding-route-calculator/"
     },
     "secondaryCta": {
-      "label": "Learn breeding tree basics",
+      "label": "Check direct combos",
       "href": "/guides/palworld-breeding-tree/"
     },
     "intro": [
