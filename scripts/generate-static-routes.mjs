@@ -56,11 +56,12 @@ const assetTags = [...builtIndex.matchAll(/<(script|link)\b[^>]*(?:src|href)="\/
 const faviconTags = '<link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="apple-touch-icon" href="/apple-touch-icon.png"/><link rel="manifest" href="/site.webmanifest"/>';
 const clarityTag = '<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xncq8hrmtz");</script>';
 const googleAnalyticsTag = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G78ED7TNS"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-8G78ED7TNS");</script>';
+const googleAdsenseTag = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8075999128078609" crossorigin="anonymous"></script>';
 
 function htmlFor(route) {
   const canonical = canonicalFor(route.path);
   const initial = `<div class="static-prerender">${bodyFor(route)}</div>`;
-  return `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>${esc(route.title)}</title><meta name="description" content="${esc(route.description)}"/><meta name="keywords" content="${esc(route.keywords)}"/><link rel="canonical" href="${esc(canonical)}"/>${faviconTags}<meta property="og:title" content="${esc(route.ogTitle)}"/><meta property="og:description" content="${esc(route.ogDescription)}"/><meta property="og:url" content="${esc(canonical)}"/><meta property="og:type" content="website"/><meta name="robots" content="${esc(route.robots)}"/>${guideStructuredData(route)}${clarityTag}${googleAnalyticsTag}${assetTags}</head><body><div id="root">${initial}</div></body></html>
+  return `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>${esc(route.title)}</title><meta name="description" content="${esc(route.description)}"/><meta name="keywords" content="${esc(route.keywords)}"/><link rel="canonical" href="${esc(canonical)}"/>${faviconTags}<meta property="og:title" content="${esc(route.ogTitle)}"/><meta property="og:description" content="${esc(route.ogDescription)}"/><meta property="og:url" content="${esc(canonical)}"/><meta property="og:type" content="website"/><meta name="robots" content="${esc(route.robots)}"/>${guideStructuredData(route)}${clarityTag}${googleAnalyticsTag}${googleAdsenseTag}${assetTags}</head><body><div id="root">${initial}</div></body></html>
 `;
 }
 
@@ -77,7 +78,7 @@ fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
 const redirects = routes.filter(r => r.path !== '/').map(r => `${r.path.slice(0, -1)} ${r.path} 301`).join('\n') + '\n';
 fs.writeFileSync(path.join(distDir, '_redirects'), redirects);
 
-const notFound = `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>404 - Page Not Found | PalCalculator</title><meta name="robots" content="noindex,follow"/><meta name="description" content="The requested PalCalculator page was not found."/>${faviconTags}${clarityTag}${googleAnalyticsTag}${assetTags}</head><body><main class="static-prerender"><h1>404 - Page Not Found</h1><p>This PalCalculator URL does not exist. Return to the <a href="/">PalCalculator homepage</a>.</p></main></body></html>
+const notFound = `<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>404 - Page Not Found | PalCalculator</title><meta name="robots" content="noindex,follow"/><meta name="description" content="The requested PalCalculator page was not found."/>${faviconTags}${clarityTag}${googleAnalyticsTag}${googleAdsenseTag}${assetTags}</head><body><main class="static-prerender"><h1>404 - Page Not Found</h1><p>This PalCalculator URL does not exist. Return to the <a href="/">PalCalculator homepage</a>.</p></main></body></html>
 `;
 fs.writeFileSync(path.join(distDir, '404.html'), notFound);
 console.log(`Generated ${routes.length} route-specific HTML files, ${indexableRoutes.length} sitemap URLs, explicit slash redirects, and 404.html.`);
