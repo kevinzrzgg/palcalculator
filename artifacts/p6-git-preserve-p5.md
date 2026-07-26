@@ -52,7 +52,7 @@ Command run from `/root/projects/palcalculator`:
 
 P5 preservation commit SHA: `63d7729`
 Commit message: `feat: add browser-local owned Pal route helper`
-Remote push: pending at report-write time.
+Remote push: PASS — pushed to `origin/main`.
 
 ## Notes
 
