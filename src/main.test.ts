@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
-import { childFromParents, dataVersion, estimateStats, parentsForTarget, pals, passives, solveRoute } from './calculators';
+import { childFromParents, dataVersion, estimateStats, findPal, parentsForTarget, pals, passives, solveRoute } from './calculators';
 import guidePages from './guides-data.json';
 
 describe('production Palworld data contract', () => {
@@ -49,6 +49,74 @@ describe('production Palworld data contract', () => {
     if (estimate.ok) {
       expect(estimate.confidence).toBe('caveated_range');
       expect(estimate.caveats.some((c) => c.code === 'EXACT_FORMULA_UNSUPPORTED')).toBe(true);
+    }
+  });
+
+  it('keeps alias data resolvable by the calculator lookup map', () => {
+    const aliasesJson = JSON.parse(fs.readFileSync('src/data/aliases.latest.json', 'utf8')) as { aliases: { normalized: string; palId: string }[] };
+    const palIds = new Set(pals.map((pal) => pal.id));
+
+    expect(aliasesJson.aliases.length).toBeGreaterThanOrEqual(pals.length * 2);
+    for (const alias of aliasesJson.aliases) {
+      expect(palIds.has(alias.palId), `${alias.normalized} should point at an existing Pal`).toBe(true);
+      expect(findPal(alias.normalized)?.id, `${alias.normalized} should resolve through findPal`).toBe(alias.palId);
+    }
+  });
+
+  it('keeps generated breeding-pair data internally valid and aligned with normal formula output', () => {
+    const breedingJson = JSON.parse(fs.readFileSync('src/data/breeding-pairs.latest.json', 'utf8')) as { pairs: { parentAId: string; parentBId: string; childId: string; comboType: string; ruleId: string; isOrderSensitive: boolean; dataVersion: string; caveats: { code: string }[] }[] };
+    const palIds = new Set(pals.map((pal) => pal.id));
+    const unorderedParentKeys = new Set<string>();
+
+    expect(breedingJson.pairs.length).toBe((pals.length * (pals.length + 1)) / 2);
+    for (const pair of breedingJson.pairs) {
+      if (!palIds.has(pair.parentAId) || !palIds.has(pair.parentBId) || !palIds.has(pair.childId)) throw new Error(`Unknown Pal id in pair ${pair.parentAId}+${pair.parentBId}->${pair.childId}`);
+      if (pair.comboType !== 'normal' || pair.ruleId !== 'normal-combirank-closest-average' || pair.isOrderSensitive || pair.dataVersion !== dataVersion.dataVersion) throw new Error(`Unexpected pair metadata for ${pair.parentAId}+${pair.parentBId}`);
+      if (!pair.caveats.some((c) => c.code === 'SPECIAL_COMBO_NOT_APPLIED')) throw new Error(`Missing special-combo caveat for ${pair.parentAId}+${pair.parentBId}`);
+      const parentKey = [pair.parentAId, pair.parentBId].sort().join('|');
+      if (unorderedParentKeys.has(parentKey)) throw new Error(`${parentKey} should appear once`);
+      unorderedParentKeys.add(parentKey);
+    }
+
+    const sampledPairs = [breedingJson.pairs[0], breedingJson.pairs[Math.floor(breedingJson.pairs.length / 2)], breedingJson.pairs[breedingJson.pairs.length - 1]];
+    for (const pair of sampledPairs) {
+      const generated = childFromParents(pair.parentAId, pair.parentBId);
+      expect(generated.ok).toBe(true);
+      if (generated.ok) expect(generated.child.id).toBe(pair.childId);
+    }
+  });
+
+  it('keeps special-combo and passive seed limits explicit until datasets are expanded', () => {
+    const specialCombos = JSON.parse(fs.readFileSync('src/data/special-combos.latest.json', 'utf8')) as { combos: unknown[]; caveats: { code: string; severity: string }[] };
+    const passiveIds = new Set<string>();
+
+    expect(specialCombos.combos).toHaveLength(0);
+    expect(specialCombos.caveats.some((c) => c.code === 'SPECIAL_COMBO_TABLE_PENDING' && c.severity === 'blocking')).toBe(true);
+    expect(dataVersion.unsupportedDomains).toContain('verified special combo override table');
+    expect(passives.length).toBe(3);
+    for (const passive of passives) {
+      expect(passiveIds.has(passive.id)).toBe(false);
+      passiveIds.add(passive.id);
+      expect(passive.effects.length).toBeGreaterThan(0);
+      expect(passive.caveats.some((c) => c.code === 'PASSIVE_SEED')).toBe(true);
+    }
+  });
+
+  it('handles route and stat unsupported edge cases without implying exact support', () => {
+    const tooShallow = solveRoute('Anubis', 'Penking, Bushi', 0);
+    expect(tooShallow.ok).toBe(false);
+    if (!tooShallow.ok) expect(tooShallow.error.code).toBe('MAX_GENERATIONS_TOO_LOW');
+
+    const alreadyOwned = solveRoute('Anubis', 'Anubis', 0);
+    expect(alreadyOwned.ok && alreadyOwned.targetAlreadyOwned && alreadyOwned.generations === 0).toBe(true);
+
+    const unsupportedStats = estimateStats('Aegidron', 50, { hp: 500, attack: 100, defense: 100 });
+    expect(unsupportedStats.ok).toBe(true);
+    if (unsupportedStats.ok) {
+      expect(Object.keys(unsupportedStats.expectedStats)).toHaveLength(0);
+      expect(Object.keys(unsupportedStats.ivRangeByStat)).toHaveLength(0);
+      expect(unsupportedStats.caveats.some((c) => c.code === 'BASE_STATS_PARTIAL' && c.message.includes('hp, attack, defense'))).toBe(true);
+      expect(unsupportedStats.confidence).toBe('caveated_range');
     }
   });
 });
@@ -148,6 +216,32 @@ describe('static frontend contract', () => {
     expect(app).not.toContain('Calculate breeding</button>');
   });
 
+  it('adds browser-local owned Pal helper without raw owned-Pal analytics', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const styles = fs.readFileSync('src/styles.css', 'utf8');
+
+    expect(app).toContain("ownedPalStorageKey = 'palcalculator:owned-pals:v1'");
+    expect(app).toContain('window.localStorage.getItem(ownedPalStorageKey)');
+    expect(app).toContain('window.localStorage.setItem(ownedPalStorageKey, JSON.stringify(ids))');
+    expect(app).toContain('Browser-local owned Pal helper');
+    expect(app).toContain('Stored only in this browser with localStorage');
+    expect(app).toContain('No account, upload, backend sync, cookie identity, or raw owned-Pal analytics is added');
+    expect(app).toContain('localStorage is unavailable, so the helper works only for this open page. The route text box still works.');
+    expect(app).toContain('Use local list in route');
+    expect(app).toContain('Clear local list');
+    expect(app).toContain('data-owned-pal-helper="browser-local-list"');
+    expect(app).toContain('owned_list_add');
+    expect(app).toContain('owned_list_remove');
+    expect(app).toContain('owned_list_clear');
+    expect(app).toContain('owned_list_apply');
+    expect(app).toContain('owned_count_bucket');
+    expect(app).toContain("storage_scope: 'browser_local'");
+    expect(app).not.toContain('owned_pals: owned');
+    expect(app).not.toContain('owned_list: owned');
+    expect(styles).toContain('.owned-pal-helper');
+    expect(styles).toContain('.owned-pal-chip');
+  });
+
   it('keeps the mobile header and data badge constrained to the viewport', () => {
     const styles = fs.readFileSync('src/styles.css', 'utf8');
 
@@ -192,7 +286,7 @@ describe('static frontend contract', () => {
     expect(app).toContain('Try: Anubis expected stats');
     expect(app).toContain('Try: Artisan + Serious passive plan');
     expect(app).toContain('Type one Pal you own or want to test, e.g. Penking.');
-    expect(app).toContain('Optional. Paste names you already have, separated by commas or new lines. This stays browser-local in the MVP.');
+    expect(app).toContain('Optional. Paste names you already have, separated by commas or new lines, or apply the browser-local helper above. This text is not sent in analytics events.');
     expect(app).toContain('This means...');
     expect(app).toContain('Next step...');
     expect(app).toContain('Caveat...');

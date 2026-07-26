@@ -1,0 +1,176 @@
+{
+  "checked_at": "2026-07-21T02:59:46.570817+00:00",
+  "base": "https://palcalculator.com",
+  "home_status_code": 200,
+  "dist_assets": [
+    "index-CpDzVnKF.css",
+    "index-edStYQzY.js"
+  ],
+  "live_assets": [
+    "index-edStYQzY.js",
+    "index-CpDzVnKF.css"
+  ],
+  "live_assets_match_dist": true,
+  "script_assets": [
+    "/assets/index-edStYQzY.js"
+  ],
+  "css_assets": [
+    "/assets/index-CpDzVnKF.css"
+  ],
+  "bundle_status": [
+    {
+      "asset": "/assets/index-edStYQzY.js",
+      "status_code": 200,
+      "bytes": 419581
+    }
+  ],
+  "missing_bundle_strings": [],
+  "beginner_bundle_ok": true,
+  "page_results": [
+    {
+      "route": "/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/",
+      "canonical": "https://palcalculator.com/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/breeding-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/breeding-calculator/",
+      "canonical": "https://palcalculator.com/breeding-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/breeding-route-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/breeding-route-calculator/",
+      "canonical": "https://palcalculator.com/breeding-route-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/iv-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/iv-calculator/",
+      "canonical": "https://palcalculator.com/iv-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/stats-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/stats-calculator/",
+      "canonical": "https://palcalculator.com/stats-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/passive-skill-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/passive-skill-calculator/",
+      "canonical": "https://palcalculator.com/passive-skill-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/palworld-1-0-breeding-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "canonical": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    },
+    {
+      "route": "/guides/how-to-breed-anubis-palworld/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "canonical": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "favicon_links": [
+        "/favicon.ico",
+        "/favicon.svg",
+        "/apple-touch-icon.png"
+      ],
+      "favicon_ok": true,
+      "ad_marker_hits": []
+    }
+  ],
+  "pages_ok": true,
+  "sitemap_status_code": 200,
+  "sitemap_url_count": 18,
+  "sitemap_ok": true,
+  "robots_status_code": 200,
+  "robots_ok": true,
+  "favicon_ico_status_code": 200,
+  "favicon_svg_status_code": 200,
+  "favicons_ok": true,
+  "browser_checks": {
+    "homepage_anubis_example": "PASS",
+    "breeding_pair_example": "PASS",
+    "passive_swift_example": "PASS",
+    "route_no_owned_example": "PASS"
+  },
+  "browser_ok": true,
+  "ok": true
+}

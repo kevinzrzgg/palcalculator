@@ -1,0 +1,104 @@
+{
+  "task_id": "t_c35cb8e9",
+  "status": "GO",
+  "production_deploy_performed": false,
+  "generated_at_utc": "2026-07-26T23:26:05Z",
+  "workspace": "/root/projects/palcalculator",
+  "parent_artifacts_read": [
+    "artifacts/p5-owned-pal-route-ux.md",
+    "artifacts/p5-data-quality.md",
+    "artifacts/p5-seo-copy.md"
+  ],
+  "commands": [
+    {
+      "command": "npm run test",
+      "status": "pass",
+      "evidence": "src/main.test.ts: 23 tests passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "pass",
+      "evidence": "0 errors, 28 existing react-refresh/react-hooks warnings in src/main.tsx"
+    },
+    {
+      "command": "npm run build",
+      "status": "pass",
+      "evidence": "tsc + vite build passed; generated 18 route-specific HTML files, 18 sitemap URLs, redirects, and 404.html"
+    }
+  ],
+  "static_checks": [
+    {
+      "name": "dist route count",
+      "status": "pass",
+      "evidence": { "dist_index_html_count": 18 }
+    },
+    {
+      "name": "sitemap count and share exclusion",
+      "status": "pass",
+      "evidence": { "sitemap_loc_count": 18, "share_url_excluded": true }
+    },
+    {
+      "name": "canonical and robots metadata",
+      "status": "pass",
+      "evidence": { "homepage_canonical": "https://palcalculator.com/", "browser_home_robots": "index,follow", "route_canonical": "https://palcalculator.com/breeding-route-calculator/" }
+    },
+    {
+      "name": "owned Pal helper source/privacy contract",
+      "status": "pass",
+      "evidence": {
+        "storage_key_present": "palcalculator:owned-pals:v1",
+        "copy_present": "Stored only in this browser with localStorage. No account, upload, backend sync, cookie identity, or raw owned-Pal analytics is added.",
+        "events": ["owned_list_add", "owned_list_remove", "owned_list_clear", "owned_list_apply"],
+        "payload_contract": "owned_count_bucket + storage_scope=browser_local; raw owned list exclusions present"
+      }
+    },
+    {
+      "name": "privacy sensitive payload copy",
+      "status": "pass",
+      "evidence": "Privacy page states no server-side save-file/raw Palbox upload and analytics payloads avoid raw inputs, share URLs, emails, IP addresses, tokens, and save data."
+    },
+    {
+      "name": "ad/sensitive marker scan",
+      "status": "pass",
+      "evidence": "No blocked legacy ad mount/style markers found in src/main.tsx or src/styles.css."
+    },
+    {
+      "name": "mobile/static layout contracts",
+      "status": "pass",
+      "evidence": {
+        "css_contracts": ["html,body,#root max-width 100% overflow-x clip", "nav flex-wrap", "hero min-width 0", "data badge overflow-wrap anywhere"],
+        "screenshots": ["artifacts/p5-qa-screenshots/home-320.png", "artifacts/p5-qa-screenshots/route-390.png"],
+        "note": "Headless screenshots captured at 320px and 390px; no broken header/nav stack or blank content observed. Some long CTA/heading text is clipped by the screenshot viewport edge but protected by the existing overflow contract."
+      }
+    },
+    {
+      "name": "P5 SEO copy implementation status",
+      "status": "info",
+      "evidence": {
+        "copy_artifact_exists": "artifacts/p5-seo-copy.md",
+        "p5_copy_routes_present_in_app": [],
+        "implemented_guide_routes_count": 8,
+        "note": "The P5 copy artifact exists, but the six P5 SEO routes are not implemented in src/guides-data.json/dist/sitemap in this workspace. QA treated them as not in deploy scope per 'new content pages if implemented'."
+      }
+    }
+  ],
+  "browser_checks": [
+    {
+      "url": "http://127.0.0.1:4173/",
+      "status": "pass",
+      "evidence": "Home page loaded; title/canonical/robots correct; no JS console errors; no horizontal overflow at desktop browser width."
+    },
+    {
+      "url": "http://127.0.0.1:4173/breeding-route-calculator/",
+      "status": "pass",
+      "evidence": "Route page loaded; owned Pal helper visible; adding Anubis creates a chip; applying local list writes Anubis into route input; route result changes to target-owned shortcut; no JS console errors."
+    },
+    {
+      "url": "http://127.0.0.1:4173/guides/how-to-breed-orserk-palworld/",
+      "status": "info",
+      "evidence": "Returns 404 because P5 SEO copy pages are not implemented in this workspace and are absent from sitemap."
+    }
+  ],
+  "issues": [],
+  "go_no_go_reason": "GO for deploying the currently implemented P5 frontend/backend/data changes. No blocking functional, build, sitemap, canonical, privacy, analytics, or layout issues found. No production deploy was performed."
+}

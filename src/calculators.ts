@@ -86,6 +86,7 @@ export function solveRoute(targetInput: string, ownedInput: string, maxGeneratio
   if (ownedIds.has(target.id)) {
     return { ok: true as const, mode: 'route_solve', target: summarize(target), ownedPals: owned.map(summarize), targetAlreadyOwned: true, generations: 0, steps: [], missingPals: [], alternatives: [], constraints: { maxGenerations, includeSpecialCombos: false }, tieBreakRule: 'target-owned shortcut', dataVersion: dataVersion.dataVersion, caveats: [] as Caveat[] };
   }
+  if (maxGenerations < 1) return { ok: false as const, error: { code: 'MAX_GENERATIONS_TOO_LOW', message: 'Route search needs at least 1 generation unless the target is already owned.' }, dataVersion: dataVersion.dataVersion };
   const targetPairs = pairsByChild.get(target.id) ?? [];
   if (!owned.length) {
     const pair = targetPairs[0];
