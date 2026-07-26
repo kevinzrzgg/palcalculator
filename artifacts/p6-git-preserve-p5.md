@@ -1,7 +1,7 @@
 # P6 Git Preserve P5 State
 
 Task: `t_145efc8e`
-Status: in progress until final commit SHA is amended below.
+Status: PASS
 Generated at: 2026-07-26T23:48:32Z
 
 ## Scope preserved
@@ -50,8 +50,9 @@ Command run from `/root/projects/palcalculator`:
 
 ## Commit / push
 
-Final commit SHA: `PENDING_AMEND`
-Remote push: `PENDING_AMEND`
+P5 preservation commit SHA: `63d7729`
+Commit message: `feat: add browser-local owned Pal route helper`
+Remote push: pending at report-write time.
 
 ## Notes
 
