@@ -1,0 +1,447 @@
+{
+  "checked_at": "2026-07-27T02:00:13.078128+00:00",
+  "base": "https://palcalculator.com",
+  "deployment_url": "https://6fa54afe.palcalculator.pages.dev",
+  "production_home_status_code": 200,
+  "deployment_url_status_code": 200,
+  "dist_assets": [
+    "index-CVQJ2JnN.js",
+    "index-yHrI7ep4.css"
+  ],
+  "live_assets": [
+    "index-CVQJ2JnN.js",
+    "index-yHrI7ep4.css"
+  ],
+  "live_assets_match_dist": true,
+  "sitemap_status_code": 200,
+  "sitemap_url_count": 24,
+  "sitemap_urls": [
+    "https://palcalculator.com/",
+    "https://palcalculator.com/breeding-calculator/",
+    "https://palcalculator.com/breeding-route-calculator/",
+    "https://palcalculator.com/iv-calculator/",
+    "https://palcalculator.com/stats-calculator/",
+    "https://palcalculator.com/passive-skill-calculator/",
+    "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+    "https://palcalculator.com/data-sources/",
+    "https://palcalculator.com/privacy/",
+    "https://palcalculator.com/terms/",
+    "https://palcalculator.com/guides/palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-breeding-tree/",
+    "https://palcalculator.com/guides/palworld-1-0-breeding-guide/",
+    "https://palcalculator.com/guides/palworld-iv-explained/",
+    "https://palcalculator.com/guides/best-passive-skills-for-breeding-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-jetragon-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-route-examples/",
+    "https://palcalculator.com/guides/palworld-breeding-faq/",
+    "https://palcalculator.com/guides/how-to-breed-orserk-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-shadowbeak-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-with-owned-pals/",
+    "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-base-worker-passives/"
+  ],
+  "sitemap_ok": true,
+  "robots_status_code": 200,
+  "robots_text": "User-agent: *\nAllow: /\nDisallow: /share/\nSitemap: https://palcalculator.com/sitemap.xml\n",
+  "robots_ok": true,
+  "representative_routes": [
+    "/",
+    "/breeding-calculator/",
+    "/iv-calculator/",
+    "/passive-skill-calculator/",
+    "/guides/palworld-breeding-faq/",
+    "/guides/palworld-base-worker-passives/"
+  ],
+  "representative_routes_in_sitemap": true,
+  "html_results": [
+    {
+      "route": "/",
+      "url": "https://palcalculator.com/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/",
+      "title": "PalCalculator: Palworld Breeding & IV Tools",
+      "title_length": 43,
+      "title_ok": true,
+      "description": "Fan-made Palworld 1.0 calculator hub for breeding routes, parent pairs, IV/stat estimates, passive planning, and owned-Pal optimization with caveats.",
+      "description_length": 149,
+      "description_ok": true,
+      "canonical": "https://palcalculator.com/",
+      "canonical_ok": true,
+      "h1_count": 1,
+      "h1_ok": true,
+      "h2_count": 0,
+      "h2_static_present": false,
+      "img_count": 0,
+      "missing_alt": [],
+      "img_alt_ok": true,
+      "ok": true
+    },
+    {
+      "route": "/breeding-calculator/",
+      "url": "https://palcalculator.com/breeding-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/breeding-calculator/",
+      "title": "Palworld Breeding Calculator - Parent Pairs",
+      "title_length": 43,
+      "title_ok": true,
+      "description": "Check Palworld parent pairs, target parents, child results, special-combo caveats, and data-version-aware breeding notes in a fan-made calculator.",
+      "description_length": 146,
+      "description_ok": true,
+      "canonical": "https://palcalculator.com/breeding-calculator/",
+      "canonical_ok": true,
+      "h1_count": 1,
+      "h1_ok": true,
+      "h2_count": 0,
+      "h2_static_present": false,
+      "img_count": 0,
+      "missing_alt": [],
+      "img_alt_ok": true,
+      "ok": true
+    },
+    {
+      "route": "/iv-calculator/",
+      "url": "https://palcalculator.com/iv-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/iv-calculator/",
+      "title": "Palworld IV Calculator",
+      "title_length": 22,
+      "title_ok": true,
+      "description": "Estimate Palworld IV ranges from observed HP, attack, defense, level, and modifier notes while keeping formula assumptions and data caveats visible.",
+      "description_length": 148,
+      "description_ok": true,
+      "canonical": "https://palcalculator.com/iv-calculator/",
+      "canonical_ok": true,
+      "h1_count": 1,
+      "h1_ok": true,
+      "h2_count": 0,
+      "h2_static_present": false,
+      "img_count": 0,
+      "missing_alt": [],
+      "img_alt_ok": true,
+      "ok": true
+    },
+    {
+      "route": "/passive-skill-calculator/",
+      "url": "https://palcalculator.com/passive-skill-calculator/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/passive-skill-calculator/",
+      "title": "Palworld Passive Skill Calculator",
+      "title_length": 33,
+      "title_ok": true,
+      "description": "Plan Palworld passive skill targets for breeding, compare desired passives, and keep inheritance RNG caveats clear without unsupported probability claims.",
+      "description_length": 154,
+      "description_ok": true,
+      "canonical": "https://palcalculator.com/passive-skill-calculator/",
+      "canonical_ok": true,
+      "h1_count": 1,
+      "h1_ok": true,
+      "h2_count": 0,
+      "h2_static_present": false,
+      "img_count": 0,
+      "missing_alt": [],
+      "img_alt_ok": true,
+      "ok": true
+    },
+    {
+      "route": "/guides/palworld-breeding-faq/",
+      "url": "https://palcalculator.com/guides/palworld-breeding-faq/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/palworld-breeding-faq/",
+      "title": "Palworld Breeding FAQ",
+      "title_length": 21,
+      "title_ok": true,
+      "description": "Get quick answers about Palworld breeding combos, routes, passives, 1.0 data, owned-Pal planning, and PalCalculator fan-made caveats safely.",
+      "description_length": 140,
+      "description_ok": true,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-faq/",
+      "canonical_ok": true,
+      "h1_count": 1,
+      "h1_ok": true,
+      "h2_count": 8,
+      "h2_static_present": true,
+      "img_count": 0,
+      "missing_alt": [],
+      "img_alt_ok": true,
+      "ok": true
+    },
+    {
+      "route": "/guides/palworld-base-worker-passives/",
+      "url": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+      "title": "Palworld Base Worker Passives",
+      "title_length": 29,
+      "title_ok": true,
+      "description": "Plan Palworld base worker passives by role, compare work-speed skills, use PalCalculator planning notes, and avoid guaranteed inheritance claims.",
+      "description_length": 145,
+      "description_ok": true,
+      "canonical": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+      "canonical_ok": true,
+      "h1_count": 1,
+      "h1_ok": true,
+      "h2_count": 9,
+      "h2_static_present": true,
+      "img_count": 0,
+      "missing_alt": [],
+      "img_alt_ok": true,
+      "ok": true
+    }
+  ],
+  "html_ok": true,
+  "html_h2_static_note": "Core static app shells may not include H2 before hydration; rendered browser checks verify H2 in the live DOM.",
+  "browser_checks": {
+    "routes_checked": 6,
+    "route_results": [
+      {
+        "route": "/",
+        "url": "https://palcalculator.com/",
+        "title": "PalCalculator: Palworld Breeding & IV Tools",
+        "titleLength": 43,
+        "descriptionCount": 1,
+        "description": "Fan-made Palworld 1.0 calculator hub for breeding routes, parent pairs, IV/stat estimates, passive planning, and owned-Pal optimization with caveats.",
+        "descriptionLength": 149,
+        "canonicalCount": 1,
+        "canonical": "https://palcalculator.com/",
+        "h1Count": 1,
+        "h1": [
+          "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators"
+        ],
+        "h2Count": 3,
+        "h2": [
+          "How to use PalCalculator",
+          "Production data status",
+          "Palworld breeding guides"
+        ],
+        "imgs": [
+          {
+            "src": "/brand-icon.svg",
+            "alt": "PalCalculator logo",
+            "ariaHidden": null
+          }
+        ],
+        "missingAlt": [],
+        "brandAlt": "PalCalculator logo",
+        "brandAriaHidden": null,
+        "title_ok": true,
+        "description_ok": true,
+        "canonical_ok": true,
+        "h1_ok": true,
+        "h2_ok": true,
+        "img_alt_ok": true,
+        "ok": true
+      },
+      {
+        "route": "/breeding-calculator/",
+        "url": "https://palcalculator.com/breeding-calculator/",
+        "title": "Palworld Breeding Calculator - Parent Pairs",
+        "titleLength": 43,
+        "descriptionCount": 1,
+        "description": "Check Palworld parent pairs, target parents, child results, special-combo caveats, and data-version-aware breeding notes in a fan-made calculator.",
+        "descriptionLength": 146,
+        "canonicalCount": 1,
+        "canonical": "https://palcalculator.com/breeding-calculator/",
+        "h1Count": 1,
+        "h1": [
+          "Palworld Breeding Calculator"
+        ],
+        "h2Count": 2,
+        "h2": [
+          "Breeding workspace",
+          "Palworld breeding guides"
+        ],
+        "imgs": [
+          {
+            "src": "/brand-icon.svg",
+            "alt": "PalCalculator logo",
+            "ariaHidden": null
+          }
+        ],
+        "missingAlt": [],
+        "brandAlt": "PalCalculator logo",
+        "brandAriaHidden": null,
+        "title_ok": true,
+        "description_ok": true,
+        "canonical_ok": true,
+        "h1_ok": true,
+        "h2_ok": true,
+        "img_alt_ok": true,
+        "ok": true
+      },
+      {
+        "route": "/iv-calculator/",
+        "url": "https://palcalculator.com/iv-calculator/",
+        "title": "Palworld IV Calculator",
+        "titleLength": 22,
+        "descriptionCount": 1,
+        "description": "Estimate Palworld IV ranges from observed HP, attack, defense, level, and modifier notes while keeping formula assumptions and data caveats visible.",
+        "descriptionLength": 148,
+        "canonicalCount": 1,
+        "canonical": "https://palcalculator.com/iv-calculator/",
+        "h1Count": 1,
+        "h1": [
+          "Palworld IV Calculator"
+        ],
+        "h2Count": 2,
+        "h2": [
+          "IV estimate workspace",
+          "Palworld breeding guides"
+        ],
+        "imgs": [
+          {
+            "src": "/brand-icon.svg",
+            "alt": "PalCalculator logo",
+            "ariaHidden": null
+          }
+        ],
+        "missingAlt": [],
+        "brandAlt": "PalCalculator logo",
+        "brandAriaHidden": null,
+        "title_ok": true,
+        "description_ok": true,
+        "canonical_ok": true,
+        "h1_ok": true,
+        "h2_ok": true,
+        "img_alt_ok": true,
+        "ok": true
+      },
+      {
+        "route": "/passive-skill-calculator/",
+        "url": "https://palcalculator.com/passive-skill-calculator/",
+        "title": "Palworld Passive Skill Calculator",
+        "titleLength": 33,
+        "descriptionCount": 1,
+        "description": "Plan Palworld passive skill targets for breeding, compare desired passives, and keep inheritance RNG caveats clear without unsupported probability claims.",
+        "descriptionLength": 154,
+        "canonicalCount": 1,
+        "canonical": "https://palcalculator.com/passive-skill-calculator/",
+        "h1Count": 1,
+        "h1": [
+          "Palworld Passive Skill Calculator"
+        ],
+        "h2Count": 2,
+        "h2": [
+          "Passive planner shell",
+          "Palworld breeding guides"
+        ],
+        "imgs": [
+          {
+            "src": "/brand-icon.svg",
+            "alt": "PalCalculator logo",
+            "ariaHidden": null
+          }
+        ],
+        "missingAlt": [],
+        "brandAlt": "PalCalculator logo",
+        "brandAriaHidden": null,
+        "title_ok": true,
+        "description_ok": true,
+        "canonical_ok": true,
+        "h1_ok": true,
+        "h2_ok": true,
+        "img_alt_ok": true,
+        "ok": true
+      },
+      {
+        "route": "/guides/palworld-breeding-faq/",
+        "url": "https://palcalculator.com/guides/palworld-breeding-faq/",
+        "title": "Palworld Breeding FAQ",
+        "titleLength": 21,
+        "descriptionCount": 1,
+        "description": "Get quick answers about Palworld breeding combos, routes, passives, 1.0 data, owned-Pal planning, and PalCalculator fan-made caveats safely.",
+        "descriptionLength": 140,
+        "canonicalCount": 1,
+        "canonical": "https://palcalculator.com/guides/palworld-breeding-faq/",
+        "h1Count": 1,
+        "h1": [
+          "Palworld Breeding FAQ"
+        ],
+        "h2Count": 9,
+        "h2": [
+          "Check parent pairs",
+          "Fast answers before you choose a tool",
+          "What PalCalculator can help with",
+          "What to verify before following a result",
+          "Privacy and owned-Pal inputs",
+          "Corrections and unsupported states",
+          "Choose the right next calculator",
+          "Related PalCalculator tools",
+          "FAQ"
+        ],
+        "imgs": [
+          {
+            "src": "/brand-icon.svg",
+            "alt": "PalCalculator logo",
+            "ariaHidden": null
+          }
+        ],
+        "missingAlt": [],
+        "brandAlt": "PalCalculator logo",
+        "brandAriaHidden": null,
+        "title_ok": true,
+        "description_ok": true,
+        "canonical_ok": true,
+        "h1_ok": true,
+        "h2_ok": true,
+        "img_alt_ok": true,
+        "ok": true
+      },
+      {
+        "route": "/guides/palworld-base-worker-passives/",
+        "url": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+        "title": "Palworld Base Worker Passives",
+        "titleLength": 29,
+        "descriptionCount": 1,
+        "description": "Plan Palworld base worker passives by role, compare work-speed skills, use PalCalculator planning notes, and avoid guaranteed inheritance claims.",
+        "descriptionLength": 145,
+        "canonicalCount": 1,
+        "canonical": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+        "h1Count": 1,
+        "h1": [
+          "Palworld Base Worker Passives"
+        ],
+        "h2Count": 10,
+        "h2": [
+          "Open the passive planner",
+          "Base-worker passives by role",
+          "Current passive data limits",
+          "Work speed and productivity planning",
+          "Stamina, movement, and transport utility",
+          "Route to the worker before optimizing traits",
+          "Avoid passive inheritance certainty claims",
+          "How this page differs from the broad passive guide",
+          "Related PalCalculator tools",
+          "FAQ"
+        ],
+        "imgs": [
+          {
+            "src": "/brand-icon.svg",
+            "alt": "PalCalculator logo",
+            "ariaHidden": null
+          }
+        ],
+        "missingAlt": [],
+        "brandAlt": "PalCalculator logo",
+        "brandAriaHidden": null,
+        "title_ok": true,
+        "description_ok": true,
+        "canonical_ok": true,
+        "h1_ok": true,
+        "h2_ok": true,
+        "img_alt_ok": true,
+        "ok": true
+      }
+    ],
+    "console_errors": [],
+    "brand_alts": {
+      "/": "PalCalculator logo",
+      "/breeding-calculator/": "PalCalculator logo",
+      "/iv-calculator/": "PalCalculator logo",
+      "/passive-skill-calculator/": "PalCalculator logo",
+      "/guides/palworld-breeding-faq/": "PalCalculator logo",
+      "/guides/palworld-base-worker-passives/": "PalCalculator logo"
+    },
+    "ok": true
+  },
+  "ok": true
+}

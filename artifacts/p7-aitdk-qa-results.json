@@ -1,0 +1,74 @@
+{
+  "task_id": "t_e4551993",
+  "conclusion": "GO",
+  "safe_to_deploy": true,
+  "production_deploy_performed": false,
+  "telegram_self_report": {
+    "running_send": "attempted; hermes send returned pending_approval/high confusable Unicode scan, work continued per task instruction",
+    "done_send": "sent after QA with ASCII status"
+  },
+  "commands": [
+    {
+      "command": "npm run test",
+      "exit_code": 0,
+      "result": "PASS: 1 test file, 25 tests passed"
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 0,
+      "result": "PASS: 0 errors, 28 existing warnings in src/main.tsx"
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "result": "PASS: Vite build succeeded; generated 24 route-specific HTML files, 24 sitemap URLs, explicit slash redirects, and 404.html"
+    }
+  ],
+  "static_html_scan": {
+    "indexable_html_files": 24,
+    "description_check": "PASS: every dist/**/index.html has exactly one meta description with length 140-160",
+    "image_alt_check": "PASS: no static img tags with missing or empty alt",
+    "canonical_check": "PASS: every dist indexable HTML file has exactly one canonical link",
+    "title_check": "PASS: every dist indexable HTML title is non-empty and <= 60 characters",
+    "h1_check": "PASS: every dist indexable HTML file has exactly one h1",
+    "static_h2_note": "Core static prerender shells do not include h2 before hydration; rendered DOM check below verifies AITDK-visible h2 health. Guide static pages include h2 content.",
+    "homepage_description_length": 149,
+    "homepage_canonical": "https://palcalculator.com/"
+  },
+  "rendered_dom_scan": {
+    "preview_url": "http://127.0.0.1:4174/",
+    "routes_checked": 24,
+    "failures": [],
+    "image_alt_check": "PASS: zero rendered img elements missing non-empty alt across 24 routes",
+    "brand_icon": {
+      "selector": "img.brand-mark[src='/brand-icon.svg']",
+      "alt": "PalCalculator logo",
+      "aria_hidden": null
+    },
+    "metadata_check": "PASS: every rendered route has one meta description, all 140-160 chars",
+    "title_check": "PASS: every rendered route title is non-empty and <= 60 chars; homepage title length 43",
+    "canonical_check": "PASS: every rendered route has one self canonical URL under https://palcalculator.com",
+    "h1_check": "PASS: every rendered route has exactly one h1",
+    "h2_check": "PASS: every rendered route has at least one h2; homepage has 3 h2 elements",
+    "browser_console": "PASS: no console messages or JS errors after route scan"
+  },
+  "sitemap": {
+    "public_url_count": 24,
+    "dist_url_count": 24,
+    "sets_match": true,
+    "unchanged_route_count": true,
+    "share_route_absent": true
+  },
+  "aitdk_issue_repairs": {
+    "image_alt_text_check_expected": "PASS/green after deploy: rendered brand icon has descriptive alt and no aria-hidden",
+    "meta_description_check_expected": "PASS/green after deploy: homepage and all indexable route descriptions are 140-160 chars",
+    "meta_title_check": "healthy",
+    "canonical_url_check": "healthy",
+    "h1_check": "healthy",
+    "h2_check": "healthy in rendered DOM"
+  },
+  "artifacts": [
+    "artifacts/p7-aitdk-qa.md",
+    "artifacts/p7-aitdk-qa-results.json"
+  ]
+}

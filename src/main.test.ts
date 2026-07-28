@@ -3,6 +3,15 @@ import fs from 'node:fs';
 import { childFromParents, dataVersion, estimateStats, findPal, parentsForTarget, pals, passives, solveRoute } from './calculators';
 import guidePages from './guides-data.json';
 
+function expectAitdkDescriptionLength(path: string, description: string) {
+  expect(description.length, `${path} meta description should be at least 140 characters`).toBeGreaterThanOrEqual(140);
+  expect(description.length, `${path} meta description should be at most 160 characters`).toBeLessThanOrEqual(160);
+}
+
+function extractRouteDescriptions(source: string) {
+  return [...source.matchAll(/\{(?: key: '[^']+',)? path: '([^']+)'[^\n]+description: '([^']+)'/g)].map((match) => ({ path: match[1], description: match[2] }));
+}
+
 describe('production Palworld data contract', () => {
   it('replaces pending/example-only public data with a versioned Palworld data build', () => {
     const schema = fs.readFileSync('public/data/schema-version.json', 'utf8');
@@ -193,6 +202,10 @@ describe('static frontend contract', () => {
     expect(fs.existsSync('public/icon-512.png')).toBe(true);
     expect(app).toContain('src="/brand-icon.svg"');
     expect(app).toContain('className="brand-mark"');
+    const brandIcon = app.match(/<img[^>]+className="brand-mark"[^>]+src="\/brand-icon\.svg"[^>]*\/>/)?.[0] ?? '';
+    expect(brandIcon).toContain('alt="PalCalculator logo"');
+    expect(brandIcon).not.toContain('alt=""');
+    expect(brandIcon).not.toContain('aria-hidden="true"');
     expect(app).not.toContain('<span className="brand-mark">PC</span>');
     for (const html of [shell, generator]) {
       expect(html).toContain('rel="icon" href="/favicon.ico" sizes="any"');
@@ -316,7 +329,7 @@ describe('static frontend contract', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
 
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(18);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(24);
     expect(sitemap).not.toContain('/share/');
     expect(app).toContain('Try this in PalCalculator');
     expect(app).toContain('Check a combo in the calculator');
@@ -339,23 +352,59 @@ describe('static frontend contract', () => {
       '/guides/how-to-breed-anubis-palworld/',
       '/guides/how-to-breed-jetragon-palworld/',
       '/guides/palworld-breeding-route-examples/',
+      '/guides/palworld-breeding-faq/',
+      '/guides/how-to-breed-orserk-palworld/',
+      '/guides/how-to-breed-shadowbeak-palworld/',
+      '/guides/palworld-breeding-with-owned-pals/',
+      '/guides/best-palworld-breeding-combos/',
+      '/guides/palworld-base-worker-passives/',
     ]);
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(18);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(24);
     expect(sitemap).not.toContain('/share/');
     expect(generator).toContain('src/guides-data.json');
     expect(generator).toContain('FAQPage');
     expect(app).toContain('function GuidePage');
-    expect(app).toContain("'guideIvExplained'");
+    expect(guidePages.some((page) => page.key === 'guideIvExplained')).toBe(true);
     expect(app).toContain('<GuideLinks navigate={navigate}/>');
     for (const page of guidePages) {
       expect(page.title.length).toBeLessThanOrEqual(60);
-      expect(page.description.length).toBeLessThanOrEqual(160);
+      expectAitdkDescriptionLength(page.path, page.description);
       expect(page.faqs.length).toBeGreaterThanOrEqual(7);
       expect(page.sections.length).toBeGreaterThanOrEqual(6);
       expect(sitemap).toContain(`https://palcalculator.com${page.path}`);
       expect(page.intro.join(' ')).toContain('unofficial fan-made');
       expect(page.links.some((link) => link.href === '/data-sources/')).toBe(true);
     }
+  });
+
+  it('implements P5 SEO guide pages with route, sitemap, metadata, and caveat guardrails', () => {
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+    const p5Paths = [
+      '/guides/palworld-breeding-faq/',
+      '/guides/how-to-breed-orserk-palworld/',
+      '/guides/how-to-breed-shadowbeak-palworld/',
+      '/guides/palworld-breeding-with-owned-pals/',
+      '/guides/best-palworld-breeding-combos/',
+      '/guides/palworld-base-worker-passives/',
+    ];
+    const blockedClaims = /official Palworld source|guarantees passive|guaranteed passive outcome|promises perfect IV|claims a universal best build|claims complete special-combo coverage|100% accurate/i;
+
+    for (const route of p5Paths) {
+      const page = guidePages.find((entry) => entry.path === route);
+      expect(page, `${route} should be in guide data`).toBeTruthy();
+      expect(sitemap).toContain(`https://palcalculator.com${route}`);
+      expect(page?.title.length).toBeLessThanOrEqual(60);
+      expectAitdkDescriptionLength(route, page?.description ?? '');
+      expect(page?.intro.join(' ')).toContain('unofficial fan-made');
+      expect(JSON.stringify(page)).toContain('/data-sources/');
+      expect(page?.faqs.length).toBeGreaterThanOrEqual(7);
+      expect(page?.sections.length).toBeGreaterThanOrEqual(5);
+      expect(JSON.stringify(page)).not.toMatch(blockedClaims);
+    }
+
+    const combos = guidePages.find((entry) => entry.path === '/guides/palworld-breeding-combos/');
+    expect(combos?.sections.some((section) => section.heading === 'Current data limits before you follow a combo')).toBe(true);
+    expect(JSON.stringify(combos)).toContain('/guides/best-palworld-breeding-combos/');
   });
 
   it('keeps P2 guide metadata, internal links, and ad exclusions aligned', () => {
@@ -371,12 +420,43 @@ describe('static frontend contract', () => {
       const page = guidePages.find((entry) => entry.path === route);
       expect(page).toBeTruthy();
       expect(page?.title.length).toBeLessThanOrEqual(60);
-      expect(page?.description.length).toBeLessThanOrEqual(160);
+      expectAitdkDescriptionLength(route, page?.description ?? '');
       expect(page?.primaryCta.href.startsWith('/')).toBe(true);
       expect(page?.secondaryCta.href.startsWith('/')).toBe(true);
       expect(page?.links.length).toBeGreaterThanOrEqual(6);
       expect(sitemap).toContain(`https://palcalculator.com${route}`);
       expect(JSON.stringify(page)).not.toMatch(/ad-slot|native-ad|data-palcalculator-ad-key/i);
     }
+  });
+
+  it('keeps every indexable route meta description in the AITDK 140-160 character range', () => {
+    const shell = fs.readFileSync('index.html', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const shellDescription = shell.match(/<meta name="description" content="([^"]+)"\/>/)?.[1] ?? '';
+    const spaRoutes = extractRouteDescriptions(app).filter((route) => !route.path.startsWith('/guides/'));
+    const staticRoutes = extractRouteDescriptions(generator).filter((route) => !route.path.startsWith('/guides/'));
+    const staticByPath = new Map(staticRoutes.map((route) => [route.path, route.description]));
+
+    expect(spaRoutes.map((route) => route.path)).toEqual([
+      '/',
+      '/breeding-calculator/',
+      '/breeding-route-calculator/',
+      '/iv-calculator/',
+      '/stats-calculator/',
+      '/passive-skill-calculator/',
+      '/palworld-1-0-breeding-calculator/',
+      '/data-sources/',
+      '/privacy/',
+      '/terms/',
+    ]);
+    expect(staticRoutes.map((route) => route.path)).toEqual(spaRoutes.map((route) => route.path));
+    expect(shellDescription).toBe(spaRoutes[0].description);
+
+    for (const route of spaRoutes) {
+      expect(staticByPath.get(route.path), `${route.path} static generator description should match SPA metadata`).toBe(route.description);
+      expectAitdkDescriptionLength(route.path, route.description);
+    }
+    for (const page of guidePages) expectAitdkDescriptionLength(page.path, page.description);
   });
 });

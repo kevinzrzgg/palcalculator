@@ -1,0 +1,107 @@
+{
+  "task_id": "t_74da1366",
+  "verdict": "GO",
+  "production_deploy_performed": false,
+  "telegram_running_report": {
+    "attempted": true,
+    "result": "held_for_terminal_security_approval_confusable_unicode; work continued per task fallback"
+  },
+  "commands": [
+    {
+      "command": "npm run test",
+      "status": "PASS",
+      "evidence": "Vitest: 1 file passed, 24 tests passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "0 errors, 28 existing react-refresh/react-hooks warnings in src/main.tsx"
+    },
+    {
+      "command": "npm run build",
+      "status": "PASS",
+      "evidence": "Vite build passed; static generator produced 24 route-specific HTML files, 24 sitemap URLs, redirects, and 404.html"
+    }
+  ],
+  "new_guide_paths": [
+    {
+      "path": "/guides/palworld-breeding-faq/",
+      "status": "PASS",
+      "local_preview": "200 text/html; charset=utf-8 11567",
+      "title": "Palworld Breeding FAQ",
+      "faq_count": 8,
+      "internal_link_count": 9
+    },
+    {
+      "path": "/guides/how-to-breed-orserk-palworld/",
+      "status": "PASS",
+      "local_preview": "200 text/html; charset=utf-8 12549",
+      "title": "How to Breed Orserk in Palworld",
+      "faq_count": 7,
+      "internal_link_count": 10
+    },
+    {
+      "path": "/guides/how-to-breed-shadowbeak-palworld/",
+      "status": "PASS",
+      "local_preview": "200 text/html; charset=utf-8 11909",
+      "title": "How to Breed Shadowbeak in Palworld",
+      "faq_count": 7,
+      "internal_link_count": 10
+    },
+    {
+      "path": "/guides/palworld-breeding-with-owned-pals/",
+      "status": "PASS",
+      "local_preview": "200 text/html; charset=utf-8 10913",
+      "title": "Palworld Breeding With Owned Pals",
+      "faq_count": 7,
+      "internal_link_count": 10
+    },
+    {
+      "path": "/guides/best-palworld-breeding-combos/",
+      "status": "PASS",
+      "local_preview": "200 text/html; charset=utf-8 11867",
+      "title": "Best Palworld Breeding Combos",
+      "faq_count": 7,
+      "internal_link_count": 10
+    },
+    {
+      "path": "/guides/palworld-base-worker-passives/",
+      "status": "PASS",
+      "local_preview": "200 text/html; charset=utf-8 11852",
+      "title": "Palworld Base Worker Passives",
+      "faq_count": 7,
+      "internal_link_count": 10
+    }
+  ],
+  "checks": {
+    "all_six_local_preview_200": true,
+    "all_six_static_files_exist": true,
+    "public_sitemap_url_count": 24,
+    "dist_sitemap_url_count": 24,
+    "all_six_in_public_and_dist_sitemap": true,
+    "all_six_self_canonical_https_palcalculator": true,
+    "all_six_robots_index_follow": true,
+    "all_six_visible_unofficial_caveat": true,
+    "all_six_data_sources_link": true,
+    "all_six_faq_schema_7plus": true,
+    "all_six_tech_article_schema": true,
+    "all_six_title_lte_60": true,
+    "all_six_description_lte_160": true,
+    "blocked_claims_absent": true,
+    "broken_internal_links": [],
+    "representative_mobile_390x844_no_horizontal_overflow": true,
+    "browser_console_errors_on_representative_page": 0
+  },
+  "mobile_evidence": {
+    "selenium_device_metrics": "390x844 mobile emulation; each six guide path had innerWidth/clientWidth/scrollWidth/bodyScrollWidth = 390 and overflowingCount = 0",
+    "screenshots": [
+      "artifacts/p6-mobile-screenshots/palworld-breeding-faq-390x844.png",
+      "artifacts/p6-mobile-screenshots/how-to-breed-orserk-palworld-390x844.png",
+      "artifacts/p6-mobile-screenshots/palworld-base-worker-passives-390x844.png"
+    ]
+  },
+  "notes": [
+    "No production deploy was performed.",
+    "Browser runtime inspection of /guides/palworld-breeding-faq/ found canonical, robots index/follow, visible caveat, FAQ JSON-LD, and 0 console/JS errors."
+  ]
+}

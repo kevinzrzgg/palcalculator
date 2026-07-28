@@ -5,7 +5,7 @@
     "label": "Breeding Combos Guide",
     "h1": "Palworld Breeding Combos Guide",
     "title": "Palworld Breeding Combos Guide",
-    "description": "Learn Palworld breeding combos, parent-pair lookup, 1.0 caveats, and when to use PalCalculator's fan-made breeding tools.",
+    "description": "Learn Palworld breeding combos, parent-pair lookup, 1.0 caveats, route handoffs, and when to use PalCalculator fan-made breeding tools safely.",
     "keywords": "palworld breeding combos, palworld breeding combinations, palworld parent pairs, palworld breeding combos 1.0",
     "ogDescription": "Use PalCalculator to understand Palworld breeding combinations, check parent pairs, review 1.0 caveats, and move from combo ideas to calculator workflows.",
     "primaryCta": {
@@ -47,6 +47,15 @@
         "paragraphs": [
           "Palworld 1.0 searches often include freshness intent. Players want to know whether a combo is current, whether special combinations are represented, and why two sites may not show the same answer.",
           "PalCalculator uses fan-made data and selected data-version notes. Different websites can disagree when they update at different times, include different special-combo assumptions, or handle missing data differently."
+        ]
+      },
+      {
+        "heading": "Current data limits before you follow a combo",
+        "paragraphs": [
+          "Before you follow a combo from any chart, check what the current PalCalculator dataset supports. PalCalculator is an unofficial fan-made planning site, and its results should stay tied to visible data-version notes rather than silent certainty.",
+          "Current normal-formula breeding workflows are supported where the selected dataset has the required Pal data. Verified special-combo override table support is still pending, so unsupported special-combo states should be treated as unavailable instead of guessed.",
+          "Use this checklist before spending resources: check the result in the current Palworld breeding calculator, look for data-version, normal-formula, special-combo, or unsupported labels, review data-source notes before following a long route, do not assume a combo guarantees passive skills, perfect IVs, or a universal best build, and recheck after patches or when another guide shows a different answer.",
+          "If PalCalculator does not support a special combo or route state yet, the safe answer is unavailable in the current dataset, not a guessed combo."
         ]
       },
       {
@@ -101,6 +110,22 @@
       {
         "label": "passive skills guide",
         "href": "/guides/best-passive-skills-for-breeding-palworld/"
+      },
+      {
+        "label": "how to choose useful combos",
+        "href": "/guides/best-palworld-breeding-combos/"
+      },
+      {
+        "label": "Palworld breeding FAQ",
+        "href": "/guides/palworld-breeding-faq/"
+      },
+      {
+        "label": "Orserk breeding workflow",
+        "href": "/guides/how-to-breed-orserk-palworld/"
+      },
+      {
+        "label": "Shadowbeak breeding workflow",
+        "href": "/guides/how-to-breed-shadowbeak-palworld/"
       }
     ],
     "faqs": [
@@ -140,7 +165,7 @@
     "label": "Breeding Tree Guide",
     "h1": "Palworld Breeding Tree Guide",
     "title": "Palworld Breeding Tree Guide",
-    "description": "Understand Palworld breeding trees, route steps, owned-Pal paths, and how PalCalculator finds caveated breeding routes.",
+    "description": "Understand Palworld breeding trees, route steps, owned-Pal paths, missing-parent notes, and how PalCalculator finds caveated breeding routes.",
     "keywords": "palworld breeding tree, palworld breeding tree calculator, palworld breeding route, palworld breeding path",
     "ogDescription": "Learn how Palworld breeding trees work, when a direct combo becomes a route, and how to use PalCalculator's route solver with owned-Pal and data-version caveats.",
     "primaryCta": {
@@ -274,7 +299,7 @@
     "label": "1.0 Breeding Guide",
     "h1": "Palworld 1.0 Breeding Guide",
     "title": "Palworld 1.0 Breeding Guide",
-    "description": "Use this Palworld 1.0 breeding guide to check combos, routes, data-version notes, and fan-made calculator caveats.",
+    "description": "Use this Palworld 1.0 breeding guide to check combos, routes, data-version notes, special-combo caveats, and fan-made calculator workflows safely.",
     "keywords": "palworld 1.0 breeding guide, palworld 1.0 breeding combos, palworld 1.0 breeding calculator",
     "ogDescription": "Use PalCalculator's fan-made Palworld 1.0 breeding workflows to check parent pairs, target parents, route steps, passives, and data-version caveats.",
     "primaryCta": {
@@ -426,7 +451,7 @@
     "label": "IV Explained Guide",
     "h1": "Palworld IV Explained",
     "title": "Palworld IV Explained",
-    "description": "Learn what Palworld IVs mean, why stats vary, how IV calculators estimate ranges, and where formula caveats apply.",
+    "description": "Learn what Palworld IVs mean, why stats vary, how IV calculators estimate ranges, and where formula, modifier, and data-version caveats apply.",
     "keywords": "Palworld IV explained, Palworld IV guide, Palworld IV calculator, Palworld stats calculator",
     "ogDescription": "Understand Palworld IVs, stat variation, calculator inputs, estimate ranges, and fan-made formula caveats before judging a breeder Pal.",
     "primaryCta": {
@@ -555,7 +580,7 @@
     "label": "Passive Skills Guide",
     "h1": "Best Passive Skills for Breeding in Palworld",
     "title": "Best Passive Skills for Breeding in Palworld",
-    "description": "Plan Palworld breeding passives by goal, use PalCalculator's passive planner, and keep inheritance RNG and data caveats clear.",
+    "description": "Plan Palworld breeding passives by goal, compare worker and combat skills, use PalCalculator planning tools, and keep inheritance RNG caveats clear.",
     "keywords": "best passive skills for breeding Palworld, Palworld breeding passives, Palworld passive skill calculator",
     "ogDescription": "Choose Palworld breeding passives by role, plan with PalCalculator, and avoid treating passive inheritance as guaranteed.",
     "primaryCta": {
@@ -693,7 +718,7 @@
     "label": "Anubis Breeding Guide",
     "h1": "How to Breed Anubis in Palworld",
     "title": "How to Breed Anubis in Palworld",
-    "description": "Learn how to plan Anubis breeding in Palworld with parent-pair lookup, route steps, passive caveats, and PalCalculator tools.",
+    "description": "Learn how to plan Anubis breeding in Palworld with parent-pair lookup, route steps, passive caveats, and PalCalculator data-version notes safely.",
     "keywords": "how to breed Anubis Palworld, Palworld Anubis breeding, Anubis parent pairs, Anubis breeding route",
     "ogDescription": "Plan an Anubis breeding workflow with parent-pair checks, route solving, passive planning, IV checks, and data-version caveats.",
     "primaryCta": {
@@ -836,7 +861,7 @@
     "label": "Jetragon Breeding Guide",
     "h1": "How to Breed Jetragon in Palworld",
     "title": "How to Breed Jetragon in Palworld",
-    "description": "Check Jetragon breeding options in Palworld with route planning, parent-pair caveats, data-version notes, and fan-made calculator links.",
+    "description": "Check Jetragon breeding options in Palworld with route planning, parent-pair caveats, data-version notes, and fan-made calculator links safely.",
     "keywords": "how to breed Jetragon Palworld, Palworld Jetragon breeding, Jetragon parent pairs, Jetragon breeding route",
     "ogDescription": "Use PalCalculator to check Jetragon parent-pair and route availability with legendary, special-combo, and data-version caveats visible.",
     "primaryCta": {
@@ -975,7 +1000,7 @@
     "label": "Route Examples Guide",
     "h1": "Palworld Breeding Route Examples",
     "title": "Palworld Breeding Route Examples",
-    "description": "See caveated Palworld breeding route examples, owned-Pal planning patterns, missing-Pal notes, and calculator workflow tips.",
+    "description": "See caveated Palworld breeding route examples, owned-Pal planning patterns, missing-parent notes, alternatives, and calculator workflow tips.",
     "keywords": "Palworld breeding route examples, Palworld breeding path examples, Palworld route calculator examples",
     "ogDescription": "Learn how to read Palworld breeding route examples, compare route options, and use PalCalculator without relying on unverified exact paths.",
     "primaryCta": {
@@ -1109,6 +1134,924 @@
       {
         "question": "When should a route example stay unpublished?",
         "answer": "Keep it unpublished or noindex when it is a placeholder, copied from an unverified chart, missing caveats, too similar to another page, or based on unsupported exact-route claims."
+      }
+    ]
+  },
+  {
+    "key": "guideBreedingFaq",
+    "path": "/guides/palworld-breeding-faq/",
+    "label": "Breeding FAQ",
+    "h1": "Palworld Breeding FAQ",
+    "title": "Palworld Breeding FAQ",
+    "description": "Get quick answers about Palworld breeding combos, routes, passives, 1.0 data, owned-Pal planning, and PalCalculator fan-made caveats safely.",
+    "keywords": "palworld breeding faq, palworld breeding questions, palcalculator caveats",
+    "ogDescription": "Find quick, caveated answers about Palworld breeding tools, route planning, passive planning, privacy, and data-source notes.",
+    "primaryCta": {
+      "label": "Check parent pairs",
+      "href": "/breeding-calculator/"
+    },
+    "secondaryCta": {
+      "label": "Plan a route from owned Pals",
+      "href": "/breeding-route-calculator/"
+    },
+    "intro": [
+      "Use this FAQ when you need the short answer before choosing a calculator. PalCalculator can help you check parent pairs, plan routes from owned Pals, organize passive goals, estimate IV ranges, and review data-source notes, but each workflow has limits.",
+      "PalCalculator is an unofficial fan-made Palworld calculator and guide site. Treat every result as planning guidance tied to the selected dataset, then verify in game when a patch, special combo, or expensive breeding project makes accuracy important.",
+      "Primary CTA: Check parent pairs",
+      "Secondary CTA: Plan a route from owned Pals",
+      "Check parent pairs: `/breeding-calculator/`",
+      "Plan a route from owned Pals: `/breeding-route-calculator/`"
+    ],
+    "sections": [
+      {
+        "heading": "Fast answers before you choose a tool",
+        "paragraphs": [
+          "Short answer: start with the question you are trying to answer. Use the breeding calculator for direct parent-pair checks, the route calculator when one pair is not enough, the passive planner for trait goals, and the IV or stats tools after you have candidates to compare.",
+          "This page is intentionally short-answer first. It should not duplicate the full breeding combos, breeding tree, passive skills, IV, Anubis, Jetragon, or route examples guides. Each answer should route the user to the best next tool."
+        ]
+      },
+      {
+        "heading": "What PalCalculator can help with",
+        "paragraphs": [
+          "PalCalculator is useful for planning decisions, not for promising one official final answer. It can support workflows such as:",
+          "Checking what a selected parent pair may produce in the current dataset.",
+          "Searching possible parents for a target Pal.",
+          "Planning a route from Pals you already own.",
+          "Keeping passive inheritance and IV/stat caveats visible.",
+          "Reviewing data-source notes before following a long breeding plan."
+        ]
+      },
+      {
+        "heading": "What to verify before following a result",
+        "paragraphs": [
+          "Before spending resources on a route, check three things: the selected data version, whether a result relies on special-combo support, and whether the page labels unsupported states instead of guessing.",
+          "If another guide disagrees with PalCalculator, compare patch timing and source notes before assuming either source is always current."
+        ]
+      },
+      {
+        "heading": "Privacy and owned-Pal inputs",
+        "paragraphs": [
+          "Owned-Pal route planning is most useful when the calculator can use your current Palbox or typed list. Current MVP copy should describe those inputs as browser-local unless a later owner-approved backend clearly says otherwise.",
+          "Do not imply account storage, server-side Palbox syncing, or external sharing unless the product has implemented and reviewed that behavior."
+        ]
+      },
+      {
+        "heading": "Corrections and unsupported states",
+        "paragraphs": [
+          "If a Pal, combo, passive, IV formula, or route looks wrong, review `/data-sources/` first. The safest product behavior is to show unavailable or unsupported states clearly rather than inventing a missing answer.",
+          "Correction CTA copy:",
+          "Think a result is wrong? Check the data-source notes first, then use the listed correction path when available."
+        ]
+      },
+      {
+        "heading": "Choose the right next calculator",
+        "paragraphs": [
+          "Use the FAQ as a routing hub: open the breeding calculator for one parent-pair question, the route calculator when owned Pals matter, the passive planner for trait goals, and the IV or stats calculators after you have candidates to compare.",
+          "When a result is expensive to follow, keep the data-source notes, unsupported-state labels, and fan-made caveats visible before committing resources."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "check parent pairs",
+        "href": "/breeding-calculator/"
+      },
+      {
+        "label": "plan a route from owned Pals",
+        "href": "/breeding-route-calculator/"
+      },
+      {
+        "label": "Palworld 1.0 breeding calculator",
+        "href": "/palworld-1-0-breeding-calculator/"
+      },
+      {
+        "label": "plan passive skills",
+        "href": "/passive-skill-calculator/"
+      },
+      {
+        "label": "check IV ranges",
+        "href": "/iv-calculator/"
+      },
+      {
+        "label": "data version and correction notes",
+        "href": "/data-sources/"
+      },
+      {
+        "label": "browser-local privacy notes",
+        "href": "/privacy/"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is PalCalculator official?",
+        "answer": "No. PalCalculator is an unofficial fan-made Palworld calculator and guide site. Use its results as planning guidance with visible data-version and source caveats."
+      },
+      {
+        "question": "Are Palworld breeding results guaranteed?",
+        "answer": "No. Results depend on the selected dataset, supported breeding rules, patch timing, and any caveats shown near the tool output. Verify in game when the cost of a mistake is high."
+      },
+      {
+        "question": "What is the difference between a combo and a route?",
+        "answer": "A combo is one parent-pair relationship. A route can include multiple generations, missing-Pal notes, and owned-Pal constraints that help you move from what you have to the target you want."
+      },
+      {
+        "question": "Why does the route solver ask for owned Pals?",
+        "answer": "Owned Pals help the route calculator search for practical paths from your current Palbox instead of showing one static path that may not fit your game state."
+      },
+      {
+        "question": "Does PalCalculator include special breeding combos?",
+        "answer": "Special-combo information should appear only where the current dataset supports it. If a special combo is unsupported or missing, PalCalculator should show that state instead of guessing."
+      },
+      {
+        "question": "Can breeding guarantee passive skills?",
+        "answer": "No. Passive skills can involve RNG and supported-data limits. Use the passive planner to organize goals, not as a promise that the next egg will inherit every selected passive."
+      },
+      {
+        "question": "Does PalCalculator store my Palbox?",
+        "answer": "Current MVP copy should frame owned-Pal inputs as browser-local unless a later reviewed feature explicitly adds account or server-side storage. Review `/privacy/` before publishing any stronger claim."
+      },
+      {
+        "question": "How do I report incorrect data?",
+        "answer": "Start with /data-sources/ to check version notes and unsupported areas. If a correction path is listed there, use it with the Pal name, expected result, source, and reproduction steps."
+      }
+    ]
+  },
+  {
+    "key": "guideOrserk",
+    "path": "/guides/how-to-breed-orserk-palworld/",
+    "label": "Orserk Breeding Guide",
+    "h1": "How to Breed Orserk in Palworld",
+    "title": "How to Breed Orserk in Palworld",
+    "description": "Plan Orserk breeding in Palworld with parent-pair lookup, owned-Pal routes, passive caveats, data-version notes, and calculator handoffs safely.",
+    "keywords": "how to breed Orserk Palworld, Orserk breeding, Orserk parent pairs",
+    "ogDescription": "Use PalCalculator to plan an Orserk breeding workflow with parent-pair checks, route planning, passive goals, IV checks, and data caveats.",
+    "primaryCta": {
+      "label": "Find Orserk parent pairs",
+      "href": "/breeding-calculator/"
+    },
+    "secondaryCta": {
+      "label": "Plan an Orserk route",
+      "href": "/breeding-route-calculator/"
+    },
+    "intro": [
+      "Breeding Orserk is easier to plan when you separate the job into steps: first find supported parent-pair options, then check whether a route is practical from the Pals you already own, then plan passives, IVs, and stats without turning caveats into promises.",
+      "PalCalculator is an unofficial fan-made Palworld calculator and guide site. Use this guide to choose the workflow, then verify current Orserk parent pairs and route availability in the calculator because patches, special-combo handling, and data-source updates can change results.",
+      "Primary CTA: Find Orserk parent pairs",
+      "Secondary CTA: Plan an Orserk route",
+      "Find Orserk parent pairs: `/breeding-calculator/`",
+      "Plan an Orserk route: `/breeding-route-calculator/`"
+    ],
+    "sections": [
+      {
+        "heading": "Start with the Orserk question you need answered",
+        "paragraphs": [
+          "Players searching for Orserk usually mean one of four things: Which current parent pairs can produce Orserk?",
+          "Can I reach Orserk from the Pals I already own?",
+          "How should I plan passives for an Orserk project?",
+          "How do I judge IVs or stats after I hatch candidates?",
+          "To breed Orserk, search Orserk as the target in the breeding calculator, review current parent-pair options, then use the route calculator if the direct parents are missing or impractical."
+        ]
+      },
+      {
+        "heading": "Find Orserk parent pairs in PalCalculator",
+        "paragraphs": [
+          "Use `/breeding-calculator/` when your first question is direct parent-pair availability.",
+          "Open `/breeding-calculator/`.",
+          "Choose target-to-parent mode if the UI separates modes.",
+          "Search for Orserk as the target Pal.",
+          "Review parent pairs shown for the selected data version.",
+          "Check caveats for normal formula support, special-combo assumptions, unsupported states, or data-source notes.",
+          "If none of the direct parents are practical, move into route planning.",
+          "Do not hardcode Orserk parent pairs into this guide unless they are generated from the current app dataset or separately reviewed. The page should teach users how to verify current results."
+        ]
+      },
+      {
+        "heading": "Build an Orserk route from owned Pals",
+        "paragraphs": [
+          "A direct pair is not always the best plan. If you do not own the listed parents, use `/breeding-route-calculator/` to search for a multi-generation path from your current Palbox.",
+          "Set Orserk as the target Pal.",
+          "Add owned Pals where the tool supports owned-Pal planning.",
+          "Choose a max generation limit you would actually execute.",
+          "Review route steps, missing-Pal notes, and no-route states.",
+          "Compare whether catching one missing parent is easier than breeding several intermediates.",
+          "Recheck `/data-sources/` if a result conflicts with another guide.",
+          "No Orserk route is available for this dataset and constraint set. Try checking spelling, adding more owned Pals, increasing max generations, removing strict filters, or reviewing data-source notes."
+        ]
+      },
+      {
+        "heading": "Planning a “perfect Orserk” without overpromising",
+        "paragraphs": [
+          "A search for “perfect Orserk” usually combines several different goals. Keep them separate:",
+          "Route: how to reach Orserk. Passives: which traits you want to target for the intended role. IVs: how strong a candidate's hidden stat values may be. Stats: how the candidate looks after level, passives, and supported modifiers.",
+          "Do not promise a perfect Orserk outcome. PalCalculator can help organize the plan, but passive inheritance can involve RNG and IV/stat estimates can depend on supported formulas and observed inputs."
+        ]
+      },
+      {
+        "heading": "Passive and IV follow-up after Orserk breeding",
+        "paragraphs": [
+          "After you have an Orserk route or parent-pair option, open `/passive-skill-calculator/` to plan desired passives by role. A base-worker Orserk, combat Orserk, and future breeder Orserk may not use the same priorities.",
+          "After hatching candidates, use `/iv-calculator/` and `/stats-calculator/` before choosing which Orserk to keep. A candidate with useful passives may still need stat review before you invest resources."
+        ]
+      },
+      {
+        "heading": "Common mistakes when breeding Orserk",
+        "paragraphs": [
+          "Mistake 1: Copying one combo from an old chart. Better approach: verify Orserk in the current calculator and check data-source notes.",
+          "Mistake 2: Treating a route as a passive guarantee. Better approach: use route tools for target access and passive tools for trait planning.",
+          "Mistake 3: Chasing “perfect” before checking direct parent options. Better approach: start with parent-pair lookup, then route, passives, IVs, and stats.",
+          "Mistake 4: Ignoring no-result states. Better approach: check spelling, aliases, generation limits, owned-Pal inputs, and unsupported special-combo notes.",
+          "Mistake 5: Assuming every guide uses the same data version. Better approach: compare patch timing and prefer sources that show caveats."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "find Orserk parent pairs",
+        "href": "/breeding-calculator/"
+      },
+      {
+        "label": "plan an Orserk route from owned Pals",
+        "href": "/breeding-route-calculator/"
+      },
+      {
+        "label": "plan Orserk passives",
+        "href": "/passive-skill-calculator/"
+      },
+      {
+        "label": "check Orserk IV ranges",
+        "href": "/iv-calculator/"
+      },
+      {
+        "label": "compare Orserk stats",
+        "href": "/stats-calculator/"
+      },
+      {
+        "label": "breeding combos guide",
+        "href": "/guides/palworld-breeding-combos/"
+      },
+      {
+        "label": "owned-Pal route planning",
+        "href": "/guides/palworld-breeding-with-owned-pals/"
+      },
+      {
+        "label": "current data caveats",
+        "href": "/data-sources/"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you breed Orserk in Palworld?",
+        "answer": "Use PalCalculator's current breeding data to check Orserk parent-pair and route availability. This guide does not make an unsupported static claim because results should be verified against the selected dataset."
+      },
+      {
+        "question": "What parents make Orserk?",
+        "answer": "Open the breeding calculator, search Orserk in target-to-parent mode, and review parent pairs shown for the current data version. If you do not own a direct pair, use the route calculator next."
+      },
+      {
+        "question": "Can I plan perfect Orserk passives?",
+        "answer": "You can plan desired passives, but PalCalculator should not promise guaranteed inheritance. Treat passive selections as targets that may require repeated attempts and current data support."
+      },
+      {
+        "question": "Should I use a direct combo or a route for Orserk?",
+        "answer": "Use a direct combo if you own a supported parent pair. Use a route when you need multiple generations, missing-Pal notes, or alternatives from your owned Pals."
+      },
+      {
+        "question": "Why might Orserk results differ from another guide?",
+        "answer": "Guides can differ because of patch timing, data-source choices, aliases, special-combo handling, or unsupported states. Check data-source notes and verify in game when the result matters."
+      },
+      {
+        "question": "What should I do if no Orserk route appears?",
+        "answer": "Recheck spelling, add more owned Pals, increase max generations, remove strict filters, and review /data-sources/ for unsupported areas before assuming a route is impossible."
+      },
+      {
+        "question": "Which calculator should I use after hatching Orserk?",
+        "answer": "Use the passive planner for trait goals, the IV calculator for hidden stat estimates, and the stats calculator when you want to compare practical outcomes."
+      }
+    ]
+  },
+  {
+    "key": "guideShadowbeak",
+    "path": "/guides/how-to-breed-shadowbeak-palworld/",
+    "label": "Shadowbeak Breeding Guide",
+    "h1": "How to Breed Shadowbeak in Palworld",
+    "title": "How to Breed Shadowbeak in Palworld",
+    "description": "Check Shadowbeak breeding options with parent-pair lookup, route planning, passive and IV caveats, and PalCalculator data-version notes safely.",
+    "keywords": "how to breed Shadowbeak Palworld, Shadowbeak breeding, Shadowbeak parent pairs",
+    "ogDescription": "Plan Shadowbeak breeding with caveated parent-pair checks, owned-Pal routes, passive goals, IV/stat review, and data-source notes.",
+    "primaryCta": {
+      "label": "Check Shadowbeak parent pairs",
+      "href": "/breeding-calculator/"
+    },
+    "secondaryCta": {
+      "label": "Try a Shadowbeak route",
+      "href": "/breeding-route-calculator/"
+    },
+    "intro": [
+      "Shadowbeak breeding searches often mix direct parent-pair intent with “best Shadowbeak” build intent. The safer workflow is to separate access, route practicality, passive goals, and IV/stat review before committing resources.",
+      "PalCalculator is an unofficial fan-made Palworld calculator and guide site. Use this page to check Shadowbeak planning options without assuming official data, certain passive inheritance, perfect IVs, or exhaustive special-combo data.",
+      "Primary CTA: Check Shadowbeak parent pairs",
+      "Secondary CTA: Try a Shadowbeak route",
+      "Check Shadowbeak parent pairs: `/breeding-calculator/`",
+      "Try a Shadowbeak route: `/breeding-route-calculator/`"
+    ],
+    "sections": [
+      {
+        "heading": "Choose your Shadowbeak goal first",
+        "paragraphs": [
+          "A useful Shadowbeak breeding plan starts with the job: Reach Shadowbeak at all.",
+          "Build a combat-focused Shadowbeak.",
+          "Build a mount or utility candidate where relevant.",
+          "Preserve passives for a future breeder.",
+          "Find the most practical route from your current Palbox.",
+          "To breed Shadowbeak, check target-parent options in the breeding calculator first, then use route planning if the direct parents are unavailable or impractical."
+        ]
+      },
+      {
+        "heading": "Check Shadowbeak parent-pair options",
+        "paragraphs": [
+          "Use `/breeding-calculator/` when you want current parent-pair data.",
+          "Open `/breeding-calculator/`.",
+          "Choose target-to-parent mode if available.",
+          "Search for Shadowbeak.",
+          "Review whether the current dataset shows parent pairs, caveated states, or unavailable states.",
+          "Check labels for normal formula support, special-combo handling, and data-source notes.",
+          "Move to route planning if direct parents are missing from your current Palbox.",
+          "Do not add exact Shadowbeak parent pairs unless they are generated from the current app dataset or reviewed separately. The page should teach the verification workflow."
+        ]
+      },
+      {
+        "heading": "Try a Shadowbeak route from owned Pals",
+        "paragraphs": [
+          "If a direct pair is not practical, use `/breeding-route-calculator/` to search from Pals you already own.",
+          "Set Shadowbeak as the target Pal.",
+          "Add owned Pals where supported.",
+          "Pick a practical max generation limit.",
+          "Review route steps, missing-Pal notes, and no-route states.",
+          "Compare whether catching one missing Pal is easier than breeding multiple intermediates.",
+          "Recheck `/data-sources/` if another guide shows a different route.",
+          "No Shadowbeak route is available for this dataset and constraint set. Try checking spelling, increasing max generations, adding more owned Pals, removing filters, or reviewing whether current breeding data supports the path."
+        ]
+      },
+      {
+        "heading": "What “best Shadowbeak” should mean",
+        "paragraphs": [
+          "Do not frame “best Shadowbeak” as one universal ranking. Define best by the player's goal:",
+          "Combat: prioritize combat-relevant passive and stat planning where supported. Utility: consider movement or quality-of-life goals where relevant to the player's plan. Future breeder: preserve passives or candidates that support later breeding projects. Practical route: choose a path that fits the Palbox and resources the player actually has.",
+          "This keeps the page useful for searchers without claiming exact best builds, guaranteed Legend inheritance, or deterministic passive outcomes."
+        ]
+      },
+      {
+        "heading": "Passive, IV, and stats follow-up",
+        "paragraphs": [
+          "A route can help you reach Shadowbeak. It does not guarantee a desired passive set or perfect stat outcome.",
+          "Use `/passive-skill-calculator/` after choosing the Shadowbeak role. Use `/iv-calculator/` and `/stats-calculator/` after hatching candidates to compare whether a candidate fits the plan. Keep RNG, formula, range, and data-version caveats visible."
+        ]
+      },
+      {
+        "heading": "Why Shadowbeak results can differ between guides",
+        "paragraphs": [
+          "Shadowbeak results may differ across guides because of: Patch timing.",
+          "Different data-source choices.",
+          "Normal formula versus special-combo assumptions.",
+          "Alias or name handling.",
+          "Unsupported states being hidden by one source and shown by another.",
+          "Player inventory changing the most practical route.",
+          "When sources disagree, prefer a workflow that shows data-source notes and unsupported states instead of silent certainty."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "check Shadowbeak parent pairs",
+        "href": "/breeding-calculator/"
+      },
+      {
+        "label": "try a Shadowbeak route",
+        "href": "/breeding-route-calculator/"
+      },
+      {
+        "label": "plan Shadowbeak passive skills",
+        "href": "/passive-skill-calculator/"
+      },
+      {
+        "label": "estimate Shadowbeak IV ranges",
+        "href": "/iv-calculator/"
+      },
+      {
+        "label": "compare expected Shadowbeak stats",
+        "href": "/stats-calculator/"
+      },
+      {
+        "label": "passive skills guide",
+        "href": "/guides/best-passive-skills-for-breeding-palworld/"
+      },
+      {
+        "label": "route examples guide",
+        "href": "/guides/palworld-breeding-route-examples/"
+      },
+      {
+        "label": "data version notes",
+        "href": "/data-sources/"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can Shadowbeak be bred in Palworld?",
+        "answer": "Check Shadowbeak in PalCalculator's current breeding dataset. This guide avoids a static yes/no claim because support can depend on data version, special-combo handling, and current coverage."
+      },
+      {
+        "question": "What parents make Shadowbeak?",
+        "answer": "Search Shadowbeak in target-to-parent mode in the breeding calculator. Review the pairs and caveats shown for the current data version before following them."
+      },
+      {
+        "question": "Can I breed the best Shadowbeak?",
+        "answer": "You can plan toward a role-based goal, but PalCalculator should not promise a universal best build, certain passive inheritance, or perfect IVs. Define the goal first, then verify route, passives, and stats."
+      },
+      {
+        "question": "Does a route guarantee passives?",
+        "answer": "No. A route can help you reach Shadowbeak, but passive inheritance can involve RNG and supported-data limits. Use passive planning as guidance."
+      },
+      {
+        "question": "Why did another guide show a different Shadowbeak combo?",
+        "answer": "The guide may use different patch timing, data sources, special-combo assumptions, or unsupported-state handling. Check /data-sources/ and verify the result in game when needed."
+      },
+      {
+        "question": "What should I do if no Shadowbeak route appears?",
+        "answer": "Recheck spelling, add more owned Pals, increase max generations, remove optional filters, and review data-source notes before assuming the target is unreachable."
+      },
+      {
+        "question": "Which tool should I use after a Shadowbeak route appears?",
+        "answer": "Use the passive planner for desired traits, the IV calculator for hidden stat estimates, and the stats calculator for practical stat comparisons."
+      }
+    ]
+  },
+  {
+    "key": "guideOwnedPals",
+    "path": "/guides/palworld-breeding-with-owned-pals/",
+    "label": "Owned Pals Breeding Guide",
+    "h1": "Palworld Breeding With Owned Pals",
+    "title": "Palworld Breeding With Owned Pals",
+    "description": "Learn how to plan Palworld breeding routes from the Pals you own, compare missing parents, use route constraints, and read calculator caveats.",
+    "keywords": "Palworld breeding with owned Pals, owned Pal route, Palbox breeding route",
+    "ogDescription": "Use PalCalculator to plan owned-Pal breeding routes, compare missing-parent notes, protect browser-local inputs, and verify data caveats.",
+    "primaryCta": {
+      "label": "Open the route calculator",
+      "href": "/breeding-route-calculator/"
+    },
+    "secondaryCta": {
+      "label": "Check direct parent pairs",
+      "href": "/breeding-calculator/"
+    },
+    "intro": [
+      "Owned-Pal breeding planning starts from your current Palbox instead of one generic chart. The goal is to answer: “Given the Pals I have, what route can I actually try next?”",
+      "PalCalculator is an unofficial fan-made Palworld calculator and guide site. Use owned-Pal route planning with visible data-version caveats, browser-local privacy expectations, and no promise that every route, passive, or special combo is supported.",
+      "Primary CTA: Open the route calculator",
+      "Secondary CTA: Check direct parent pairs",
+      "Open the route calculator: `/breeding-route-calculator/`",
+      "Check direct parent pairs: `/breeding-calculator/`"
+    ],
+    "sections": [
+      {
+        "heading": "Why owned-Pal planning is different",
+        "paragraphs": [
+          "Static combo lists usually assume the same answer fits everyone. Owned-Pal planning is more practical because it uses the Pals you already have, the target you want, and the generation limit you are willing to follow.",
+          "Use owned-Pal planning when a direct combo is not enough and you need a route that starts from your current Palbox."
+        ]
+      },
+      {
+        "heading": "What to enter into the route calculator",
+        "paragraphs": [
+          "Expected inputs should be clear and forgiving: Target Pal.",
+          "Owned Pals or current Palbox list.",
+          "Max generations.",
+          "Optional filters or exclusions where supported.",
+          "Current data version and visible caveats.",
+          "Add the Pals you can actually use, then choose the target. A larger owned-Pal list can give the route solver more practical options, but unsupported data should still be shown as unavailable rather than guessed."
+        ]
+      },
+      {
+        "heading": "How to read missing-Pal notes",
+        "paragraphs": [
+          "A missing-Pal note is not always a failure. It may mean the route is possible in the current dataset but requires a parent or intermediate Pal outside your owned list.",
+          "Use missing-Pal notes to decide whether to: Catch the missing Pal.",
+          "Breed an intermediate first.",
+          "Increase max generations.",
+          "Add more owned Pals.",
+          "Try a different target.",
+          "Stop because the route depends on unsupported data."
+        ]
+      },
+      {
+        "heading": "Compare routes like a player, not only a graph",
+        "paragraphs": [
+          "Shortest route is not always the best route. Compare: Generations: fewer steps are simpler, but not always easier.",
+          "Missing Pals: a short route may require a hard-to-get parent.",
+          "Practical effort: catching one Pal may be easier than several breeding steps.",
+          "Passive goals: a longer route may fit trait planning better.",
+          "IV/stat follow-up: valuable candidates may need more review after hatching.",
+          "Data caveats: avoid routes that depend on unsupported special-combo assumptions."
+        ]
+      },
+      {
+        "heading": "Privacy expectations for Palbox inputs",
+        "paragraphs": [
+          "Current MVP copy should keep owned-Pal inputs browser-local unless a later owner-approved backend changes that behavior. Do not imply login sync, server-side Palbox storage, or account history if those features do not exist.",
+          "Your route inputs are for planning the current calculation. Review the privacy page for current storage behavior before relying on any stronger account or sync assumption."
+        ]
+      },
+      {
+        "heading": "What to try when no route appears",
+        "paragraphs": [
+          "No route found can be useful information. Try: Recheck the target spelling and selector suggestions.",
+          "Add more owned Pals.",
+          "Increase max generations.",
+          "Remove strict filters.",
+          "Compare direct parent pairs in `/breeding-calculator/`.",
+          "Review `/data-sources/` for unsupported special-combo or dataset limits.",
+          "Do not turn a no-route state into a guessed route. If the current app cannot support a path, the page should say so clearly."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "route calculator from owned Pals",
+        "href": "/breeding-route-calculator/"
+      },
+      {
+        "label": "direct parent-pair lookup",
+        "href": "/breeding-calculator/"
+      },
+      {
+        "label": "breeding tree basics",
+        "href": "/guides/palworld-breeding-tree/"
+      },
+      {
+        "label": "route example patterns",
+        "href": "/guides/palworld-breeding-route-examples/"
+      },
+      {
+        "label": "Anubis route workflow",
+        "href": "/guides/how-to-breed-anubis-palworld/"
+      },
+      {
+        "label": "Orserk route workflow",
+        "href": "/guides/how-to-breed-orserk-palworld/"
+      },
+      {
+        "label": "browser-local Palbox privacy",
+        "href": "/privacy/"
+      },
+      {
+        "label": "data version notes",
+        "href": "/data-sources/"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does breeding with owned Pals mean?",
+        "answer": "It means planning a route from the Pals you currently have instead of relying on one static combo chart. The route can change when your Palbox changes."
+      },
+      {
+        "question": "Why should I enter owned Pals?",
+        "answer": "Owned Pals help the route calculator find paths that are practical for your game state and show which parents or intermediates may still be missing."
+      },
+      {
+        "question": "Does PalCalculator store my Palbox?",
+        "answer": "Current MVP copy should describe owned-Pal inputs as browser-local unless a reviewed backend feature says otherwise. Link to `/privacy/` for the current policy."
+      },
+      {
+        "question": "Why do two players get different routes?",
+        "answer": "Routes can differ because each player has different owned Pals, generation limits, filters, and tolerance for missing parents or longer paths."
+      },
+      {
+        "question": "Is the shortest route always best?",
+        "answer": "No. A short route may require a hard-to-get missing Pal, while a longer route may use Pals you already own or fit passive goals better."
+      },
+      {
+        "question": "What should I do if no route appears?",
+        "answer": "Add more owned Pals, increase max generations, check spelling, relax filters, and review data-source notes. If the dataset does not support a path, do not guess one."
+      },
+      {
+        "question": "Can owned-Pal route planning guarantee passives?",
+        "answer": "No. Route planning helps with target access. Passive inheritance can involve RNG and supported-data limits, so use the passive planner separately."
+      }
+    ]
+  },
+  {
+    "key": "guideBestCombos",
+    "path": "/guides/best-palworld-breeding-combos/",
+    "label": "Best Combos Guide",
+    "h1": "Best Palworld Breeding Combos",
+    "title": "Best Palworld Breeding Combos",
+    "description": "Explore useful Palworld breeding combo ideas by goal, with 1.0 data caveats, route handoffs, and links to verify results in PalCalculator safely.",
+    "keywords": "best Palworld breeding combos, useful breeding combos, Palworld combo guide",
+    "ogDescription": "Choose useful Palworld breeding combos by goal, then verify parent pairs, route practicality, passives, and data caveats in PalCalculator.",
+    "primaryCta": {
+      "label": "Verify a parent pair",
+      "href": "/breeding-calculator/"
+    },
+    "secondaryCta": {
+      "label": "Check routes from owned Pals",
+      "href": "/breeding-route-calculator/"
+    },
+    "intro": [
+      "The best Palworld breeding combo is not one universal pair. A useful combo depends on your target, stage of progression, owned Pals, passive goals, and whether the current dataset supports the relationship.",
+      "PalCalculator is an unofficial fan-made Palworld calculator and guide site. Use this page as a decision framework, then verify exact parent pairs and routes in the calculator before spending resources.",
+      "Primary CTA: Verify a parent pair",
+      "Secondary CTA: Check routes from owned Pals",
+      "Verify a parent pair: `/breeding-calculator/`",
+      "Check routes from owned Pals: `/breeding-route-calculator/`"
+    ],
+    "sections": [
+      {
+        "heading": "Define “best” before choosing combos",
+        "paragraphs": [
+          "Do not publish this page as a thin top-10 chart. Define best by goal: Early or mid-game practicality.",
+          "Reaching a target Pal.",
+          "Route simplicity from owned Pals.",
+          "Passive planning fit.",
+          "IV/stat follow-up value.",
+          "Data support and caveat clarity.",
+          "A good breeding combo is useful for your current goal and current Palbox. Verify it in the calculator instead of trusting one universal ranking."
+        ]
+      },
+      {
+        "heading": "Early and mid-game practical combos",
+        "paragraphs": [
+          "For early or mid-game players, practicality matters more than theoretical perfection. A useful combo is one where the parents are realistic to obtain, the route is short enough to follow, and the target helps the next stage of play.",
+          "Use exact examples only if implementation generates them from current app data and editorial review accepts the caveats. If exact examples are not reviewed, write this section as a method for choosing practical combos."
+        ]
+      },
+      {
+        "heading": "Target-Pal combos",
+        "paragraphs": [
+          "When the goal is a specific Pal, start with target-to-parent search instead of scanning a list.",
+          "Open `/breeding-calculator/`.",
+          "Search the target Pal.",
+          "Review supported parent pairs for the selected data version.",
+          "Check whether a pair depends on special-combo handling or unsupported data.",
+          "If direct parents are missing, send the target to `/breeding-route-calculator/`.",
+          "Suggested target workflows to link after implementation: Anubis breeding workflow.",
+          "Orserk breeding workflow.",
+          "Shadowbeak breeding workflow.",
+          "Jetragon caveated workflow."
+        ]
+      },
+      {
+        "heading": "Owned-Pal route combos",
+        "paragraphs": [
+          "A combo that looks “best” in a chart may be impractical for your Palbox. Use owned-Pal route planning when the real question is “what can I breed from what I have?”",
+          "Compare route options by generation count, missing parents, practical catching effort, passive compatibility, and data caveats. If a route depends on unsupported special-combo assumptions, do not treat it as a reviewed best combo."
+        ]
+      },
+      {
+        "heading": "Passive and IV value after a combo",
+        "paragraphs": [
+          "The target Pal is only one layer. After choosing a combo or route, decide whether the result fits the role you want.",
+          "Use `/passive-skill-calculator/` to plan desired traits without claiming deterministic inheritance. Use `/iv-calculator/` and `/stats-calculator/` after hatching candidates to compare whether a Pal is worth keeping."
+        ]
+      },
+      {
+        "heading": "Why best-combo lists disagree",
+        "paragraphs": [
+          "Best-combo lists often disagree because: Palworld patches change assumptions.",
+          "Sites use different source data.",
+          "Some charts include special combos that another dataset does not verify.",
+          "Some lists rank by combat value while others rank by accessibility.",
+          "Player inventories make one route practical and another route painful.",
+          "Old screenshots may omit caveats or unsupported states.",
+          "When two combo lists disagree, verify the pair in PalCalculator and check the visible data-source notes. Prefer caveated, current, reviewed results over silent certainty."
+        ]
+      },
+      {
+        "heading": "Review gate before this page is indexed",
+        "paragraphs": [
+          "This page should be indexed only when it is differentiated from the existing breeding combos guide and does not rely on unsupported exact claims.",
+          "Keep the page noindex or unpublished if: It is only a rewritten combo definition page.",
+          "It contains exact combo examples that were not generated or reviewed.",
+          "It claims a universal best ranking.",
+          "It implies exhaustive special-combo coverage.",
+          "It lacks visible fan-made and data-version caveats."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "verify a parent pair",
+        "href": "/breeding-calculator/"
+      },
+      {
+        "label": "check the route from your owned Pals",
+        "href": "/breeding-route-calculator/"
+      },
+      {
+        "label": "1.0 breeding calculator",
+        "href": "/palworld-1-0-breeding-calculator/"
+      },
+      {
+        "label": "passive planner",
+        "href": "/passive-skill-calculator/"
+      },
+      {
+        "label": "Anubis breeding workflow",
+        "href": "/guides/how-to-breed-anubis-palworld/"
+      },
+      {
+        "label": "Orserk breeding workflow",
+        "href": "/guides/how-to-breed-orserk-palworld/"
+      },
+      {
+        "label": "Shadowbeak breeding workflow",
+        "href": "/guides/how-to-breed-shadowbeak-palworld/"
+      },
+      {
+        "label": "data-source caveats",
+        "href": "/data-sources/"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What are the best Palworld breeding combos?",
+        "answer": "The best combos depend on your goal, Palbox, route practicality, passive plan, and current data support. Use this page as a framework, then verify exact pairs in PalCalculator."
+      },
+      {
+        "question": "Should I trust a top-10 breeding combo list?",
+        "answer": "Treat top-10 lists as ideas, not final proof. Check patch timing, data-source notes, special-combo handling, and whether the listed pair is supported in the current calculator."
+      },
+      {
+        "question": "Are early-game combos different from late-game combos?",
+        "answer": "Yes. Early-game practicality usually values accessible parents and short routes, while late-game optimization may focus more on target roles, passives, IVs, and resources."
+      },
+      {
+        "question": "Can PalCalculator rank the best combos automatically?",
+        "answer": "This page should not claim automated rankings unless the product has reviewed, visible ranking logic. For now, frame “best” as goal-based planning and verification."
+      },
+      {
+        "question": "Why do best-combo lists disagree?",
+        "answer": "Lists can differ because of patches, source data, special-combo assumptions, ranking criteria, and player inventory. Verify the pair and caveats before following a costly plan."
+      },
+      {
+        "question": "Can a best combo guarantee the perfect Pal?",
+        "answer": "No. A combo may help reach a target, but passives, IVs, stats, and patch-sensitive data still need separate caveated planning."
+      },
+      {
+        "question": "Should this page use ranking schema?",
+        "answer": "Avoid ranking or ItemList schema unless the visible page contains a reviewed, stable, genuinely ranked list. Otherwise use Article and visible FAQ only."
+      }
+    ]
+  },
+  {
+    "key": "guideBaseWorkerPassives",
+    "path": "/guides/palworld-base-worker-passives/",
+    "label": "Base Worker Passives Guide",
+    "h1": "Palworld Base Worker Passives",
+    "title": "Palworld Base Worker Passives",
+    "description": "Plan Palworld base worker passives by role, compare work-speed skills, use PalCalculator planning notes, and avoid guaranteed inheritance claims.",
+    "keywords": "Palworld base worker passives, best worker passives Palworld, passive planner",
+    "ogDescription": "Use PalCalculator to plan base-worker passive goals by role, with limited passive seed data, inheritance caveats, and route links visible.",
+    "primaryCta": {
+      "label": "Open the passive planner",
+      "href": "/passive-skill-calculator/"
+    },
+    "secondaryCta": {
+      "label": "Find a base-worker route",
+      "href": "/breeding-route-calculator/"
+    },
+    "intro": [
+      "Base worker passives are about role fit, not one universal best list. A mining worker, crafting worker, transporter, and early-game helper may need different priorities.",
+      "PalCalculator is an unofficial fan-made Palworld calculator and guide site. Current passive seed data is limited, so use this page as a base-work planning framework and verify recognized passive names and caveats in the passive planner and `/data-sources/`.",
+      "Primary CTA: Open the passive planner",
+      "Secondary CTA: Find a base-worker route",
+      "Open the passive planner: `/passive-skill-calculator/`",
+      "Find a base-worker route: `/breeding-route-calculator/`"
+    ],
+    "sections": [
+      {
+        "heading": "Base-worker passives by role",
+        "paragraphs": [
+          "Start with the job the Pal will do in your base. Useful categories include: Work speed and base productivity.",
+          "Stamina or uptime where applicable.",
+          "Transport and movement utility.",
+          "Early-game practicality.",
+          "Late-game optimization.",
+          "Future breeder value.",
+          "Choose base-worker passives by the job first, then check whether the passive names and route plan are supported by the current PalCalculator data."
+        ]
+      },
+      {
+        "heading": "Current passive data limits",
+        "paragraphs": [
+          "The current app seed data is limited. Supported passive names such as `Artisan`, `Serious`, and `Swift` can be mentioned as recognized examples, not as a complete best list.",
+          "Do not imply PalCalculator currently contains every passive, exact inheritance odds, or a deterministic way to produce the final passive set. Keep `/data-sources/` linked near passive guidance."
+        ]
+      },
+      {
+        "heading": "Work speed and productivity planning",
+        "paragraphs": [
+          "For crafting, handiwork, mining, gathering, or similar base tasks, users usually care about work output and time saved. Frame the guidance as planning questions:",
+          "What job will this Pal perform most often?",
+          "Does the current passive planner recognize the passive names you want?",
+          "Is the target Pal practical to breed from your current Palbox?",
+          "Are you choosing a short-term worker or a long-term optimized breeder?",
+          "If examples are shown, label recognized passive names as examples only. Do not call them a complete or final ranking."
+        ]
+      },
+      {
+        "heading": "Stamina, movement, and transport utility",
+        "paragraphs": [
+          "Some base-worker plans care about uptime, movement, or transport behavior. Keep this section goal-based because the current data may not support a complete passive table.",
+          "For transport or movement-heavy base roles, look for passive goals that match the job, then verify current passive support in the planner. If the passive name is not recognized, treat it as unsupported for the current dataset rather than assuming the calculator can plan around it."
+        ]
+      },
+      {
+        "heading": "Route to the worker before optimizing traits",
+        "paragraphs": [
+          "A perfect passive wishlist is not useful if the target Pal is impractical to reach. Use `/breeding-calculator/` for direct parent-pair checks and `/breeding-route-calculator/` when you need a route from owned Pals.",
+          "Choose the base role.",
+          "Choose one or two candidate target Pals.",
+          "Check direct parent pairs.",
+          "If direct pairs are missing, check route options from owned Pals.",
+          "Plan recognized passives.",
+          "Use IV or stats tools only if the worker's long-term value justifies extra review."
+        ]
+      },
+      {
+        "heading": "Avoid passive inheritance certainty claims",
+        "paragraphs": [
+          "Passive planning does not guarantee inheritance. The page should avoid exact odds, deterministic outcome claims, and “always breed this” language unless reviewed product logic supports it.",
+          "Treat desired passives as targets. A supported route can help you reach a Pal, but it does not promise that every desired passive will appear on the next hatch."
+        ]
+      },
+      {
+        "heading": "How this page differs from the broad passive guide",
+        "paragraphs": [
+          "The existing passive skills guide explains passive planning across breeding roles. This page is narrower: it focuses on base-work decisions, worker route practicality, browser-visible caveats, and limited passive seed data.",
+          "Do not duplicate the broad passive guide's general framework without adding base-specific planning questions and examples."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "base worker passive planner",
+        "href": "/passive-skill-calculator/"
+      },
+      {
+        "label": "general passive skills guide",
+        "href": "/guides/best-passive-skills-for-breeding-palworld/"
+      },
+      {
+        "label": "route to a base worker target",
+        "href": "/breeding-route-calculator/"
+      },
+      {
+        "label": "check parent pairs",
+        "href": "/breeding-calculator/"
+      },
+      {
+        "label": "check IVs before keeping breeders",
+        "href": "/iv-calculator/"
+      },
+      {
+        "label": "compare expected stats",
+        "href": "/stats-calculator/"
+      },
+      {
+        "label": "Anubis base-work planning example",
+        "href": "/guides/how-to-breed-anubis-palworld/"
+      },
+      {
+        "label": "passive data caveats",
+        "href": "/data-sources/"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What are the best passives for base workers in Palworld?",
+        "answer": "The best base-worker passives depend on the role, such as work speed, uptime, transport utility, early-game practicality, or long-term optimization. Verify current passive support before treating any list as complete."
+      },
+      {
+        "question": "Does PalCalculator include every passive skill?",
+        "answer": "No. Current passive seed data is limited. Use recognized examples such as `Artisan`, `Serious`, and `Swift` only as supported examples, not as a complete best-passive list."
+      },
+      {
+        "question": "Can breeding guarantee base-worker passives?",
+        "answer": "No. Passive inheritance can involve RNG and supported-data limits. PalCalculator can help organize a plan, but it should not promise certain passive outcomes."
+      },
+      {
+        "question": "Should I choose the Pal or passive first?",
+        "answer": "Start with the base job, then choose candidate Pals and passive goals together. If the target Pal is hard to reach, revise the route or passive plan."
+      },
+      {
+        "question": "Which calculator should I use for base-worker planning?",
+        "answer": "Start with the passive skill calculator, then use the breeding calculator for direct pairs or the route calculator when you need a multi-generation path from owned Pals."
+      },
+      {
+        "question": "Are Artisan, Serious, and Swift the full best list?",
+        "answer": "No. They are currently recognized examples in the app data. Do not present them as the full passive table or universal ranking."
+      },
+      {
+        "question": "How is this different from the general passive guide?",
+        "answer": "This page focuses specifically on base-worker roles, route practicality, and limited passive data caveats. The general passive guide covers broader breeding-passive planning."
       }
     ]
   }
