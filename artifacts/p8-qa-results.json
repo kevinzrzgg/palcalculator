@@ -1,0 +1,138 @@
+{
+  "task_id": "t_392907f6",
+  "project": "PalCalculator",
+  "phase": "P8 QA: share URLs and crawlable internal links",
+  "generated_at_utc": "2026-07-28T00:54:59Z",
+  "production_deploy_performed": false,
+  "conclusion": "GO",
+  "safe_to_deploy": true,
+  "commands": [
+    {
+      "command": "npm run test",
+      "status": "PASS",
+      "evidence": "Vitest: 1 test file passed, 27 tests passed."
+    },
+    {
+      "command": "npm run lint",
+      "status": "PASS_WITH_EXISTING_WARNINGS",
+      "evidence": "ESLint exited 0 with 0 errors and 29 pre-existing React Fast Refresh / hook dependency warnings."
+    },
+    {
+      "command": "npm run build",
+      "status": "PASS",
+      "evidence": "tsc + vite build passed; generated 24 route-specific HTML files, 24 sitemap URLs, slash redirects, and 404.html."
+    }
+  ],
+  "browser_qa": {
+    "base_url": "http://127.0.0.1:4173",
+    "share_copy": {
+      "status": "PASS",
+      "evidence": "Clicking Copy/share result URL in browser produced visible URL fallback when clipboard write was unavailable. Open share URL remained a real href."
+    },
+    "query_hydration_and_share_urls": [
+      {
+        "route": "/breeding-calculator/?mode=pair&parentA=penking&parentB=bushi",
+        "status": "PASS",
+        "hydrated_fields_seen": ["Parent A = penking", "Parent B = bushi"],
+        "result_seen": "Penking + Bushi -> Sibelyx",
+        "share_href": "http://127.0.0.1:4173/breeding-calculator/?mode=pair&parentA=penking&parentB=bushi",
+        "robots": "noindex,follow",
+        "canonical": "https://palcalculator.com/breeding-calculator/"
+      },
+      {
+        "route": "/breeding-calculator/?mode=target&target=anubis",
+        "status": "PASS",
+        "hydrated_fields_seen": ["Target child = anubis"],
+        "result_seen": "66 parent pairs found for Anubis",
+        "share_href": "http://127.0.0.1:4173/breeding-calculator/?mode=target&target=anubis",
+        "robots": "noindex,follow",
+        "canonical": "https://palcalculator.com/breeding-calculator/"
+      },
+      {
+        "route": "/breeding-route-calculator/?target=anubis&maxGen=5",
+        "status": "PASS",
+        "hydrated_fields_seen": ["Target Pal = anubis", "Max generations = 5"],
+        "result_seen": "Route found to Anubis",
+        "share_href": "http://127.0.0.1:4173/breeding-route-calculator/?target=anubis&maxGen=5",
+        "robots": "noindex,follow",
+        "canonical": "https://palcalculator.com/breeding-route-calculator/",
+        "owned_pal_share_leak": false,
+        "owned_privacy_copy_seen": true
+      },
+      {
+        "route": "/iv-calculator/?pal=anubis&level=50&hp=500&attack=130&defense=100",
+        "status": "PASS",
+        "hydrated_fields_seen": ["Pal = anubis", "Level = 50", "HP = 500", "Attack = 130", "Defense = 100"],
+        "result_seen": "Caveated IV bands calculated",
+        "share_href": "http://127.0.0.1:4173/iv-calculator/?pal=anubis&level=50&hp=500&attack=130&defense=100",
+        "robots": "noindex,follow",
+        "canonical": "https://palcalculator.com/iv-calculator/"
+      },
+      {
+        "route": "/stats-calculator/?pal=anubis&level=30&hp=360&attack=95&defense=75",
+        "status": "PASS",
+        "hydrated_fields_seen": ["Pal = anubis", "Level = 30", "HP = 360", "Attack = 95", "Defense = 75"],
+        "result_seen": "Expected stat bands calculated",
+        "share_href": "http://127.0.0.1:4173/stats-calculator/?pal=anubis&level=30&hp=360&attack=95&defense=75"
+      },
+      {
+        "route": "/passive-skill-calculator/?target=anubis&passives=artisan,serious",
+        "status": "PASS",
+        "hydrated_fields_seen": ["Target Pal = anubis", "Desired passives = artisan,serious"],
+        "result_seen": "Passive plan captured; 2 desired passives recognized",
+        "share_href": "http://127.0.0.1:4173/passive-skill-calculator/?target=anubis&passives=artisan%2Cserious",
+        "robots": "noindex,follow",
+        "canonical": "https://palcalculator.com/passive-skill-calculator/"
+      }
+    ],
+    "analytics_privacy": {
+      "status": "PASS",
+      "evidence": "Observed first-party event payload keys stayed to route/tool/result/status/device/referrer/data-version buckets. Route owned-list helper emitted only owned_count_bucket and storage_scope, not raw Pal list or full share URL."
+    },
+    "mobile_390_route_smoke": {
+      "status": "PASS",
+      "viewport": { "width": 390, "height": 844 },
+      "scroll_width": 390,
+      "client_width": 390,
+      "horizontal_overflow": false,
+      "h1": "Palworld Breeding Route Calculator",
+      "share_href": "http://127.0.0.1:4173/breeding-route-calculator/?target=anubis&maxGen=5",
+      "owned_privacy_copy_seen": true,
+      "robots": "noindex,follow",
+      "canonical": "https://palcalculator.com/breeding-route-calculator/"
+    },
+    "console": {
+      "status": "PASS",
+      "messages": 0,
+      "js_errors": 0
+    }
+  },
+  "crawlable_links_and_static_checks": {
+    "status": "PASS",
+    "header_nav_anchor_hrefs": ["/", "/breeding-calculator/", "/breeding-route-calculator/", "/iv-calculator/", "/stats-calculator/", "/passive-skill-calculator/", "/data-sources/"],
+    "homepage_card_anchor_routes_seen": ["/breeding-calculator/", "/breeding-route-calculator/", "/iv-calculator/", "/stats-calculator/", "/passive-skill-calculator/", "/palworld-1-0-breeding-calculator/"],
+    "button_card_count": 0,
+    "public_sitemap": { "loc_count": 24, "bad_locs": [] },
+    "dist_sitemap": { "loc_count": 24, "bad_locs": [] },
+    "dist_html_files_checked": 25,
+    "broken_internal_links": 0,
+    "bad_canonicals": [],
+    "unexpected_static_robots": [],
+    "notes": [
+      "dist/index.html static prerender contains all six main tool-route anchors and guide links.",
+      "No query URLs, /share/, or /results/ appeared in public or generated sitemap locs.",
+      "No production deploy was performed."
+    ]
+  },
+  "telegram_self_report": {
+    "first_running_send": "ATTEMPTED_BUT_PENDING_APPROVAL_DENIED_BY_TOOL_GUARD",
+    "done_send": "SENT"
+  },
+  "risks": {
+    "p0": [],
+    "p1": [],
+    "p2": [
+      "ESLint still reports 29 warnings in src/main.tsx, but lint exits 0 and these match the implementation handoff's known existing warning class."
+    ]
+  }
+}

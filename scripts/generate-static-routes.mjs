@@ -41,7 +41,9 @@ function guideStructuredData(route) {
 
 function bodyFor(route) {
   if (!route.guide) {
-    return `<p class="eyebrow">Unofficial fan-made Palworld tool</p><h1>${esc(route.h1)}</h1><p>${esc(route.description)}</p><p><a href="/data-sources/">Data sources</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>`;
+    const toolLinks = routes.filter((entry) => ['/breeding-calculator/', '/breeding-route-calculator/', '/iv-calculator/', '/stats-calculator/', '/passive-skill-calculator/', '/palworld-1-0-breeding-calculator/'].includes(entry.path)).map((entry) => `<li><a href="${esc(entry.path)}">${esc(entry.h1)}</a></li>`).join('');
+    const guideLinks = guidePages.map((guide) => `<li><a href="${esc(guide.path)}">${esc(guide.h1)}</a></li>`).join('');
+    return `<p class="eyebrow">Unofficial fan-made Palworld tool</p><h1>${esc(route.h1)}</h1><p>${esc(route.description)}</p><section><h2>PalCalculator tools</h2><ul>${toolLinks}</ul></section><section><h2>Palworld breeding guides</h2><ul>${guideLinks}</ul></section><p><a href="/data-sources/">Data sources</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>`;
   }
   const guide = route.guide;
   const intro = paragraphs(guide.intro);

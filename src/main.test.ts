@@ -163,6 +163,43 @@ describe('static frontend contract', () => {
     expect(source).toContain('share_open');
   });
 
+  it('implements P8 privacy-safe share URLs and query-state indexing guardrails', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+
+    expect(app).toContain('function sharePayloadForTool');
+    expect(app).toContain('parentA: palSlug(payload.a ?? payload.parentA)');
+    expect(app).toContain('parentB: palSlug(payload.b ?? payload.parentB)');
+    expect(app).toContain("if (tool === 'route') return { target: palSlug(payload.target), maxGen: boundedNumber(payload.maxGen, 3, 1, 8) }");
+    expect(app).toContain("passives: String(payload.desired ?? '').split(',').map(passiveSlug).filter(Boolean).join(',')");
+    expect(app).toContain('queryMode(\'pair\')');
+    expect(app).toContain("queryValue('target', 'Anubis')");
+    expect(app).toContain("queryNumber('maxGen', 3, 1, 8)");
+    expect(app).toContain("hasQueryState(route) ? 'noindex,follow' : 'index,follow'");
+    expect(app).toContain('Your browser-local owned Pal list is not included in this share URL.');
+    expect(app).not.toContain('payload={{ target, owned, maxGen }}');
+    expect(app).not.toContain("params.set('owned'");
+    expect(generator).not.toContain('/share/');
+    expect(generator).not.toContain('/results/');
+  });
+
+  it('renders P8 route-changing discovery UI as crawlable anchors', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+
+    expect(app).toContain('function RouteAnchor');
+    expect(app).toContain('<RouteAnchor className="card" key={r.key} to={r.key} navigate={navigate} linkContext="hub_tool_card">');
+    expect(app).toContain('<RouteAnchor className="secondary link-button" to="guideRouteExamples" navigate={navigate}');
+    expect(app).not.toContain('<button className="card" key={r.key} onClick={() => navigate(r.key)}');
+    expect(app).toContain("routeLink('route', 'primary link-button'");
+    expect(app).toContain("routeLink('breeding', 'secondary link-button'");
+    for (const href of ['/breeding-calculator/', '/breeding-route-calculator/', '/iv-calculator/', '/stats-calculator/', '/passive-skill-calculator/', '/palworld-1-0-breeding-calculator/']) {
+      expect(generator).toContain(href);
+    }
+    expect(generator).toContain('PalCalculator tools');
+    expect(generator).toContain('Palworld breeding guides');
+  });
+
   it('uses the Cloudflare-equivalent static preview server instead of SPA preview fallback', () => {
     const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     expect(pkg.scripts.preview).toContain('scripts/preview-static.mjs');
