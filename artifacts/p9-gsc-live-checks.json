@@ -1,0 +1,437 @@
+{
+  "checked_at_utc": "2026-07-28T14:43:32Z",
+  "repo_sitemap_count": 24,
+  "live_sitemap_status": 200,
+  "live_sitemap_count": 24,
+  "repo_urls": [
+    "https://palcalculator.com/",
+    "https://palcalculator.com/breeding-calculator/",
+    "https://palcalculator.com/breeding-route-calculator/",
+    "https://palcalculator.com/iv-calculator/",
+    "https://palcalculator.com/stats-calculator/",
+    "https://palcalculator.com/passive-skill-calculator/",
+    "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+    "https://palcalculator.com/data-sources/",
+    "https://palcalculator.com/privacy/",
+    "https://palcalculator.com/terms/",
+    "https://palcalculator.com/guides/palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-breeding-tree/",
+    "https://palcalculator.com/guides/palworld-1-0-breeding-guide/",
+    "https://palcalculator.com/guides/palworld-iv-explained/",
+    "https://palcalculator.com/guides/best-passive-skills-for-breeding-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-jetragon-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-route-examples/",
+    "https://palcalculator.com/guides/palworld-breeding-faq/",
+    "https://palcalculator.com/guides/how-to-breed-orserk-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-shadowbeak-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-with-owned-pals/",
+    "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-base-worker-passives/"
+  ],
+  "live_urls": [
+    "https://palcalculator.com/",
+    "https://palcalculator.com/breeding-calculator/",
+    "https://palcalculator.com/breeding-route-calculator/",
+    "https://palcalculator.com/iv-calculator/",
+    "https://palcalculator.com/stats-calculator/",
+    "https://palcalculator.com/passive-skill-calculator/",
+    "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+    "https://palcalculator.com/data-sources/",
+    "https://palcalculator.com/privacy/",
+    "https://palcalculator.com/terms/",
+    "https://palcalculator.com/guides/palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-breeding-tree/",
+    "https://palcalculator.com/guides/palworld-1-0-breeding-guide/",
+    "https://palcalculator.com/guides/palworld-iv-explained/",
+    "https://palcalculator.com/guides/best-passive-skills-for-breeding-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-jetragon-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-route-examples/",
+    "https://palcalculator.com/guides/palworld-breeding-faq/",
+    "https://palcalculator.com/guides/how-to-breed-orserk-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-shadowbeak-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-with-owned-pals/",
+    "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-base-worker-passives/"
+  ],
+  "robots_status": 200,
+  "robots_body": "User-agent: *\nAllow: /\nDisallow: /share/\nSitemap: https://palcalculator.com/sitemap.xml\n",
+  "canonical_checks": [
+    {
+      "url": "https://palcalculator.com/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/breeding-calculator/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/breeding-calculator/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/breeding-route-calculator/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/breeding-route-calculator/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/iv-calculator/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/iv-calculator/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/stats-calculator/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/stats-calculator/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/passive-skill-calculator/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/passive-skill-calculator/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/data-sources/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/data-sources/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/privacy/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/privacy/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/terms/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/terms/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-combos/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-combos/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-tree/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-tree/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-1-0-breeding-guide/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-1-0-breeding-guide/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-iv-explained/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-iv-explained/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/best-passive-skills-for-breeding-palworld/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/best-passive-skills-for-breeding-palworld/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/how-to-breed-jetragon-palworld/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-jetragon-palworld/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-route-examples/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-route-examples/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-faq/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-faq/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/how-to-breed-orserk-palworld/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-orserk-palworld/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/how-to-breed-shadowbeak-palworld/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-shadowbeak-palworld/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-with-owned-pals/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-with-owned-pals/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+      "status": 200,
+      "canonical": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+      "robots": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    }
+  ],
+  "variant_checks": [
+    {
+      "url": "http://palcalculator.com/",
+      "status": 301,
+      "location": "https://palcalculator.com/",
+      "content_type": "text/html; charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "http://www.palcalculator.com/",
+      "status": 301,
+      "location": "https://www.palcalculator.com/",
+      "content_type": "text/html; charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "http://palcalculator.com/breeding-calculator/",
+      "status": 301,
+      "location": "https://palcalculator.com/breeding-calculator/",
+      "content_type": "text/html; charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/breeding-calculator/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "http://www.palcalculator.com/breeding-calculator/",
+      "status": 301,
+      "location": "https://www.palcalculator.com/breeding-calculator/",
+      "content_type": "text/html; charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/breeding-calculator/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/breeding-calculator",
+      "status": 301,
+      "location": "/breeding-calculator/",
+      "content_type": "text/plain;charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/breeding-calculator",
+      "status": 301,
+      "location": "/breeding-calculator/",
+      "content_type": "text/plain;charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "http://palcalculator.com/guides/palworld-breeding-combos/",
+      "status": 301,
+      "location": "https://palcalculator.com/guides/palworld-breeding-combos/",
+      "content_type": "text/html; charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-combos/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "http://www.palcalculator.com/guides/palworld-breeding-combos/",
+      "status": 301,
+      "location": "https://www.palcalculator.com/guides/palworld-breeding-combos/",
+      "content_type": "text/html; charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/guides/palworld-breeding-combos/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-combos",
+      "status": 301,
+      "location": "/guides/palworld-breeding-combos/",
+      "content_type": "text/plain;charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/guides/palworld-breeding-combos",
+      "status": 301,
+      "location": "/guides/palworld-breeding-combos/",
+      "content_type": "text/plain;charset=UTF-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-base-worker-passives/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/guides/palworld-base-worker-passives/",
+      "status": 200,
+      "location": null,
+      "content_type": "text/html; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/sitemap.xml",
+      "status": 200,
+      "location": null,
+      "content_type": "application/xml",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/sitemap.xml",
+      "status": 200,
+      "location": null,
+      "content_type": "application/xml",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/robots.txt",
+      "status": 200,
+      "location": null,
+      "content_type": "text/plain; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "https://www.palcalculator.com/robots.txt",
+      "status": 200,
+      "location": null,
+      "content_type": "text/plain; charset=utf-8",
+      "body": ""
+    },
+    {
+      "url": "https://palcalculator.com/breeding-calculator/?mode=target&target=Anubis",
+      "status": 200,
+      "location": null,
+      "canonical": "https://palcalculator.com/breeding-calculator/",
+      "robots_static": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://palcalculator.com/guides/palworld-breeding-combos/?utm_source=test",
+      "status": 200,
+      "location": null,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-combos/",
+      "robots_static": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    },
+    {
+      "url": "https://www.palcalculator.com/breeding-calculator/?mode=target&target=Anubis",
+      "status": 200,
+      "location": null,
+      "canonical": "https://palcalculator.com/breeding-calculator/",
+      "robots_static": "index,follow",
+      "content_type": "text/html; charset=utf-8",
+      "error": null
+    }
+  ]
+}
