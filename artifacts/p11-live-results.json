@@ -1,0 +1,192 @@
+{
+  "checked_at": "2026-07-30T08:06:16.778789+00:00",
+  "base": "https://palcalculator.com",
+  "deployment_url": "https://9aec368d.palcalculator.pages.dev",
+  "production_home_status_code": 200,
+  "deployment_url_status_code": 200,
+  "route_home_status_code": 200,
+  "route_query_status_code": 200,
+  "dist_assets": [
+    "index-BU2H6ri9.js",
+    "index-CmXCt1iC.css"
+  ],
+  "live_assets": [
+    "index-BU2H6ri9.js",
+    "index-CmXCt1iC.css"
+  ],
+  "live_assets_match_dist": true,
+  "representative_statuses": {
+    "/": 200,
+    "/breeding-route-calculator/": 200,
+    "/breeding-route-calculator/?target=anubis&maxGen=2": 200,
+    "/guides/how-to-breed-blazamut-palworld/": 200,
+    "/guides/how-to-breed-astegon-palworld/": 200,
+    "/guides/how-to-breed-grizzbolt-palworld/": 200,
+    "/guides/how-to-breed-lyleen-palworld/": 200,
+    "/guides/palworld-breeding-path-finder/": 200
+  },
+  "representative_statuses_ok": true,
+  "guide_results": [
+    {
+      "route": "/guides/how-to-breed-blazamut-palworld/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/how-to-breed-blazamut-palworld/",
+      "description_length": 144,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-blazamut-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "schema_types": [
+        "FAQPage",
+        "TechArticle"
+      ],
+      "faq_count": 7,
+      "faq_schema_ok": true,
+      "tech_article_schema_ok": true,
+      "data_sources_link": true,
+      "forbidden_matches": [],
+      "ok": true
+    },
+    {
+      "route": "/guides/how-to-breed-astegon-palworld/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/how-to-breed-astegon-palworld/",
+      "description_length": 142,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-astegon-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "schema_types": [
+        "FAQPage",
+        "TechArticle"
+      ],
+      "faq_count": 7,
+      "faq_schema_ok": true,
+      "tech_article_schema_ok": true,
+      "data_sources_link": true,
+      "forbidden_matches": [],
+      "ok": true
+    },
+    {
+      "route": "/guides/how-to-breed-grizzbolt-palworld/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/how-to-breed-grizzbolt-palworld/",
+      "description_length": 146,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-grizzbolt-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "schema_types": [
+        "FAQPage",
+        "TechArticle"
+      ],
+      "faq_count": 7,
+      "faq_schema_ok": true,
+      "tech_article_schema_ok": true,
+      "data_sources_link": true,
+      "forbidden_matches": [],
+      "ok": true
+    },
+    {
+      "route": "/guides/how-to-breed-lyleen-palworld/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/how-to-breed-lyleen-palworld/",
+      "description_length": 144,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-lyleen-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "schema_types": [
+        "FAQPage",
+        "TechArticle"
+      ],
+      "faq_count": 7,
+      "faq_schema_ok": true,
+      "tech_article_schema_ok": true,
+      "data_sources_link": true,
+      "forbidden_matches": [],
+      "ok": true
+    },
+    {
+      "route": "/guides/palworld-breeding-path-finder/",
+      "status_code": 200,
+      "final_url": "https://palcalculator.com/guides/palworld-breeding-path-finder/",
+      "description_length": 142,
+      "canonical": "https://palcalculator.com/guides/palworld-breeding-path-finder/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "schema_types": [
+        "FAQPage",
+        "TechArticle"
+      ],
+      "faq_count": 7,
+      "faq_schema_ok": true,
+      "tech_article_schema_ok": true,
+      "data_sources_link": true,
+      "forbidden_matches": [],
+      "ok": true
+    }
+  ],
+  "guides_ok": true,
+  "sitemap_status_code": 200,
+  "sitemap_url_count": 29,
+  "sitemap_urls": [
+    "https://palcalculator.com/",
+    "https://palcalculator.com/breeding-calculator/",
+    "https://palcalculator.com/breeding-route-calculator/",
+    "https://palcalculator.com/iv-calculator/",
+    "https://palcalculator.com/stats-calculator/",
+    "https://palcalculator.com/passive-skill-calculator/",
+    "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+    "https://palcalculator.com/data-sources/",
+    "https://palcalculator.com/privacy/",
+    "https://palcalculator.com/terms/",
+    "https://palcalculator.com/guides/palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-breeding-tree/",
+    "https://palcalculator.com/guides/palworld-1-0-breeding-guide/",
+    "https://palcalculator.com/guides/palworld-iv-explained/",
+    "https://palcalculator.com/guides/best-passive-skills-for-breeding-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-jetragon-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-route-examples/",
+    "https://palcalculator.com/guides/palworld-breeding-faq/",
+    "https://palcalculator.com/guides/how-to-breed-orserk-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-shadowbeak-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-with-owned-pals/",
+    "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+    "https://palcalculator.com/guides/palworld-base-worker-passives/",
+    "https://palcalculator.com/guides/how-to-breed-blazamut-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-astegon-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-grizzbolt-palworld/",
+    "https://palcalculator.com/guides/how-to-breed-lyleen-palworld/",
+    "https://palcalculator.com/guides/palworld-breeding-path-finder/"
+  ],
+  "sitemap_has_query": false,
+  "sitemap_has_share": false,
+  "sitemap_ok": true,
+  "robots_status_code": 200,
+  "robots_text": "User-agent: *\nAllow: /\nDisallow: /share/\nSitemap: https://palcalculator.com/sitemap.xml\n",
+  "robots_ok": true,
+  "browser_checks": {
+    "route": "/breeding-route-calculator/",
+    "screenshot": "/tmp/p11-route-mobile-live-390.png",
+    "mobile_metrics": {
+      "innerWidth": 390,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflowingCount": 0
+    },
+    "direct_route_ok": true,
+    "multi_generation_route_ok": true,
+    "missing_route_ok": true,
+    "share_href": "https://palcalculator.com/breeding-route-calculator/?target=anubis&maxGen=2",
+    "share_privacy_ok": true,
+    "canonical": "https://palcalculator.com/breeding-route-calculator/",
+    "robots": "index,follow",
+    "console_errors": [],
+    "ok": true
+  },
+  "ok": true
+}
