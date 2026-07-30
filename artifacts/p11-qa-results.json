@@ -1,0 +1,39 @@
+{
+  "task": "t_ddba0fd3",
+  "status": "NO-GO",
+  "generatedAt": "2026-07-29T09:30:00Z",
+  "commands": [
+    {"command": "npm run test", "status": "pass", "evidence": "33 tests passed in src/main.test.ts"},
+    {"command": "npm run lint", "status": "pass_with_warnings", "evidence": "0 errors, 37 existing warnings in src/main.tsx"},
+    {"command": "npm run build", "status": "pass_with_warning", "evidence": "Generated 29 route-specific HTML files, 29 sitemap URLs; Vite chunk-size warning"}
+  ],
+  "routeCalculatorBrowserQa": {
+    "directRoute": {"status": "pass", "scenario": "Sibelyx from Penking, Bushi with maxGen=1", "observed": "Route found to Sibelyx; 1 generation, 1 step, 0 missing Pals"},
+    "multiGenerationRoute": {"status": "pass", "scenario": "Caprity Noct from Penking, Bushi with maxGen=2", "observed": "Route found to Caprity Noct; 2 generations, 2 steps, route tree and caveats visible"},
+    "missingPalState": {"status": "pass", "scenario": "Anubis from insufficient owned Pals at maxGen=2", "observed": "Route unavailable with NO_ROUTE_WITHIN_CONSTRAINTS and missing candidate guidance"},
+    "ownedPalLocalStorageHelper": {"status": "pass", "scenario": "Add Penking to browser-local helper and apply", "observed": "Penking displayed as saved; route input changed to Penking; helper copy says browser-local"},
+    "sharePrivacy": {"status": "pass", "observedShareHref": "http://127.0.0.1:4173/breeding-route-calculator/?target=anubis&maxGen=2", "notes": "No owned Pal text/list encoded in share URL"},
+    "mobile390": {"status": "fail", "screenshot": "/tmp/p11-route-mobile-390.png", "observed": "390px screenshot shows route page H1/hero copy clipped at the right edge; primary content is not fully readable"}
+  },
+  "seoQa": {
+    "newPagesChecked": [
+      "/guides/how-to-breed-blazamut-palworld/",
+      "/guides/how-to-breed-astegon-palworld/",
+      "/guides/how-to-breed-grizzbolt-palworld/",
+      "/guides/how-to-breed-lyleen-palworld/",
+      "/guides/palworld-breeding-path-finder/"
+    ],
+    "staticRoutes": {"status": "pass", "observed": "All five dist guide index.html files exist after build"},
+    "metaDescriptions": {"status": "pass", "observed": "All five source and dist descriptions are 140-160 chars"},
+    "canonicalRobotsSchema": {"status": "pass", "observed": "All five have self canonical, index/follow, TechArticle JSON-LD, FAQPage JSON-LD"},
+    "sitemapCountAndLeaks": {"status": "pass", "observed": "dist sitemap has 29 URLs; no query strings and no /share/ URLs"},
+    "riskyClaims": {"status": "fail", "observed": [
+      {"file": "src/guides-data.json:2301", "url": "/guides/how-to-breed-astegon-palworld/", "text": "Does easiest mean guaranteed fastest for Astegon?"},
+      {"file": "src/guides-data.json:2690", "url": "/guides/palworld-breeding-path-finder/", "text": "Is the path finder an official Palworld route source?"}
+    ], "notes": "The task explicitly listed official and guaranteed as risky claims to avoid; these appear even though they are negated in FAQ copy."}
+  },
+  "overallFailures": [
+    "Mobile 390px route page clips H1/hero copy at the right edge (/tmp/p11-route-mobile-390.png)",
+    "Risky claim terms remain in P11 FAQ questions: src/guides-data.json:2301 guaranteed, src/guides-data.json:2690 official"
+  ]
+}

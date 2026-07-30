@@ -1,0 +1,105 @@
+{
+  "task": "t_18abe10f",
+  "status": "GO",
+  "safeToDeploy": true,
+  "generatedAt": "2026-07-30T08:01:16Z",
+  "noDeployPerformed": true,
+  "commands": [
+    {
+      "command": "npm run test",
+      "status": "pass",
+      "evidence": "Vitest: 1 test file passed, 33 tests passed in src/main.test.ts."
+    },
+    {
+      "command": "npm run lint",
+      "status": "pass_with_existing_warnings",
+      "evidence": "ESLint exit 0; 0 errors and 37 warnings in src/main.tsx (react-refresh and hook dependency warnings already present in prior QA)."
+    },
+    {
+      "command": "npm run build",
+      "status": "pass_with_existing_warning",
+      "evidence": "tsc, vite build, and static route generator completed; Vite chunk-size warning only; generated 29 route-specific HTML files, 29 sitemap URLs, slash redirects, and 404.html."
+    }
+  ],
+  "mobile390": {
+    "status": "pass",
+    "screenshot": "/tmp/p11-route-mobile-390-rerun.png",
+    "dimensions": "390x844",
+    "evidence": "Headless Chrome 390x844 screenshot shows header/nav, route H1, hero copy, primary and secondary buttons, and data badge fully visible without right-edge clipping. Bottom of next card is below the fold only, not horizontal clipping."
+  },
+  "routeCalculatorBrowserQa": {
+    "directRoute": {
+      "status": "pass",
+      "scenario": "Target Sibelyx, owned Pals Penking and Bushi, max generations 1.",
+      "observed": "Route found to Sibelyx; 1 generation, 1 step, 0 missing Pals; step and route tree list Bushi + Penking -> Sibelyx; caveats visible."
+    },
+    "multiGenerationRoute": {
+      "status": "pass",
+      "scenario": "Target Caprity Noct, owned Pals Penking and Bushi, max generations 2.",
+      "observed": "Route found to Caprity Noct; 2 generations, 2 steps, 0 missing Pals; step 1 Bushi + Penking -> Sibelyx; step 2 Penking + Sibelyx -> Caprity Noct; route tree and caveats visible."
+    },
+    "missingPalState": {
+      "status": "pass",
+      "scenario": "Target Anubis, owned Pals Penking and Bushi, max generations 2.",
+      "observed": "Route unavailable with NO_ROUTE_WITHIN_CONSTRAINTS, owned-route-not-found summary, missing candidate guidance, practical next action, and caveats."
+    },
+    "ownedPalLocalStorageHelper": {
+      "status": "pass",
+      "scenario": "Added Penking through browser-local owned Pal helper, then clicked Use local list in route.",
+      "observed": "Helper displayed Penking, reported 'Applied 1 browser-local Pal(s) to the route calculator.', and route owned input became Penking. Privacy copy says stored only in this browser with localStorage and no account, upload, backend sync, cookie identity, or raw owned-Pal analytics."
+    },
+    "sharePrivacy": {
+      "status": "pass",
+      "observedShareHref": "http://127.0.0.1:4173/breeding-route-calculator/?target=anubis&maxGen=2",
+      "evidence": "Share URL includes target and maxGen only; owned Pal text/list is not encoded. Page copy says browser-local owned Pal list is not included in this share URL."
+    },
+    "console": {
+      "status": "pass",
+      "evidence": "browser_console reported 0 console messages and 0 JavaScript errors during route QA."
+    }
+  },
+  "seoQa": {
+    "newPagesChecked": [
+      "/guides/how-to-breed-blazamut-palworld/",
+      "/guides/how-to-breed-astegon-palworld/",
+      "/guides/how-to-breed-grizzbolt-palworld/",
+      "/guides/how-to-breed-lyleen-palworld/",
+      "/guides/palworld-breeding-path-finder/"
+    ],
+    "forbiddenTerms": ["official", "guaranteed", "100% accurate", "exact odds", "cheat", "bypass", "complete wiki"],
+    "sourceForbiddenScan": {
+      "status": "pass",
+      "matches": []
+    },
+    "distForbiddenScan": {
+      "status": "pass",
+      "matches": []
+    },
+    "staticRoutes": {
+      "status": "pass",
+      "evidence": "All five dist guide index.html files exist."
+    },
+    "metaDescriptions": {
+      "status": "pass",
+      "pages": [
+        {"url": "/guides/how-to-breed-blazamut-palworld/", "sourceLength": 144, "distLength": 144},
+        {"url": "/guides/how-to-breed-astegon-palworld/", "sourceLength": 142, "distLength": 142},
+        {"url": "/guides/how-to-breed-grizzbolt-palworld/", "sourceLength": 146, "distLength": 146},
+        {"url": "/guides/how-to-breed-lyleen-palworld/", "sourceLength": 144, "distLength": 144},
+        {"url": "/guides/palworld-breeding-path-finder/", "sourceLength": 142, "distLength": 142}
+      ]
+    },
+    "canonicalRobotsSchemaDataSources": {
+      "status": "pass",
+      "evidence": "All five pages have self-referencing canonical URLs, index/follow robots metadata, TechArticle and FAQPage JSON-LD, and a /data-sources/ link."
+    },
+    "sitemap": {
+      "status": "pass",
+      "count": 29,
+      "hasQuery": false,
+      "hasShare": false,
+      "missingP11": []
+    }
+  },
+  "overallFailures": []
+}

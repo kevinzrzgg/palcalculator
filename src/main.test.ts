@@ -52,6 +52,65 @@ describe('production Palworld data contract', () => {
     expect(noRoute.ok).toBe(false);
   });
 
+  it('finds bounded multi-generation owned-Pal routes with structured steps and alternatives', () => {
+    const route = solveRoute('Caprity Noct', 'Penking, Bushi', 2);
+
+    expect(route.ok).toBe(true);
+    if (route.ok) {
+      expect(route.target.displayName).toBe('Caprity Noct');
+      expect(route.targetAlreadyOwned).toBe(false);
+      expect(route.generations).toBe(2);
+      expect(route.steps.length).toBeGreaterThanOrEqual(2);
+      expect(route.steps.some((step) => step.generation === 1 && step.child.displayName === 'Sibelyx')).toBe(true);
+      expect(route.steps[route.steps.length - 1]?.child.displayName).toBe('Caprity Noct');
+      expect(route.routeTree.pal.displayName).toBe('Caprity Noct');
+      expect(route.routeTree.parents?.some((parent) => parent.pal.displayName === 'Sibelyx')).toBe(true);
+      expect(route.missingPals).toHaveLength(0);
+      expect(route.missingPalExplanations).toHaveLength(0);
+      expect(route.alternatives.length).toBeLessThanOrEqual(3);
+      expect(route.searchStats.pairScans).toBeLessThanOrEqual(route.searchStats.pairScanLimit);
+      expect(route.caveats.some((c) => c.code === 'SPECIAL_COMBO_NOT_APPLIED')).toBe(true);
+    }
+  });
+
+  it('treats maxGenerations=1 as a boundary for multi-generation routes', () => {
+    const route = solveRoute('Caprity Noct', 'Penking, Bushi', 1);
+
+    expect(route.ok).toBe(false);
+    if (!route.ok) {
+      expect(route.error.code).toBe('NO_ROUTE_WITHIN_CONSTRAINTS');
+      expect(route.missingPalExplanations.length).toBeGreaterThan(0);
+      expect(route.constraints.maxGenerations).toBe(1);
+      expect(route.fallbackState).toBe('owned-route-not-found');
+    }
+  });
+
+  it('keeps direct-pair route success and target-owned shortcut behavior', () => {
+    const direct = solveRoute('Sibelyx', 'Penking, Bushi', 1);
+    expect(direct.ok).toBe(true);
+    if (direct.ok) {
+      expect(direct.generations).toBe(1);
+      expect(direct.steps).toHaveLength(1);
+      expect(direct.missingPals).toHaveLength(0);
+    }
+
+    const owned = solveRoute('Sibelyx', 'Sibelyx', 0);
+    expect(owned.ok && owned.targetAlreadyOwned && owned.generations === 0).toBe(true);
+  });
+
+  it('returns invalid-Pal and performance-guardrail route fallback states', () => {
+    const invalid = solveRoute('NotAPal', 'Penking, Bushi', 2);
+    expect(invalid.ok).toBe(false);
+    if (!invalid.ok) expect(invalid.error.code).toBe('INVALID_PAL');
+
+    const tooDeep = solveRoute('Caprity Noct', 'Penking, Bushi', 99);
+    expect(tooDeep.ok).toBe(false);
+    if (!tooDeep.ok) {
+      expect(tooDeep.error.code).toBe('MAX_GENERATIONS_TOO_HIGH');
+      expect(tooDeep.fallbackState).toBe('performance-guardrail');
+    }
+  });
+
   it('returns caveated IV/stat bands instead of exact unsupported claims', () => {
     const estimate = estimateStats('Anubis', 50, { hp: 500, attack: 130, defense: 100 });
     expect(estimate.ok).toBe(true);
@@ -292,6 +351,28 @@ describe('static frontend contract', () => {
     expect(styles).toContain('.owned-pal-chip');
   });
 
+  it('renders P11 route tree UX, alternatives, missing explanations, and privacy caveats', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const styles = fs.readFileSync('src/styles.css', 'utf8');
+
+    expect(app).toContain('function RouteTreeView');
+    expect(app).toContain('Route tree');
+    expect(app).toContain('Step-by-step route');
+    expect(app).toContain('Alternative routes');
+    expect(app).toContain('Missing Pal explanations');
+    expect(app).toContain('Practical next action');
+    expect(app).toContain('Special combo overrides remain caveated');
+    expect(app).toContain('normal-formula route graph');
+    expect(app).toContain('Your browser-local owned Pal list is not included in this share URL.');
+    expect(app).toContain('payload={{ target, maxGen }}');
+    expect(app).not.toContain('payload={{ target, owned, maxGen }}');
+    expect(app).not.toContain('owned_pals: owned');
+    expect(styles).toContain('.route-summary');
+    expect(styles).toContain('.route-tree');
+    expect(styles).toContain('.route-alternatives');
+    expect(styles).toContain('.missing-pal-guidance');
+  });
+
   it('keeps the mobile header and data badge constrained to the viewport', () => {
     const styles = fs.readFileSync('src/styles.css', 'utf8');
 
@@ -362,11 +443,11 @@ describe('static frontend contract', () => {
     expect(app).toContain('Use supported passive names from this data version');
   });
 
-  it('keeps sitemap unchanged while adding beginner guide CTAs', () => {
+  it('keeps sitemap canonical while adding beginner guide CTAs', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
 
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(24);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(29);
     expect(sitemap).not.toContain('/share/');
     expect(app).toContain('Try this in PalCalculator');
     expect(app).toContain('Check a combo in the calculator');
@@ -395,9 +476,16 @@ describe('static frontend contract', () => {
       '/guides/palworld-breeding-with-owned-pals/',
       '/guides/best-palworld-breeding-combos/',
       '/guides/palworld-base-worker-passives/',
+      '/guides/how-to-breed-blazamut-palworld/',
+      '/guides/how-to-breed-astegon-palworld/',
+      '/guides/how-to-breed-grizzbolt-palworld/',
+      '/guides/how-to-breed-lyleen-palworld/',
+      '/guides/palworld-breeding-path-finder/',
     ]);
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(24);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(29);
     expect(sitemap).not.toContain('/share/');
+    expect(new Set(guidePages.map((page) => page.path)).size).toBe(guidePages.length);
+    expect(new Set(guidePages.map((page) => page.key)).size).toBe(guidePages.length);
     expect(generator).toContain('src/guides-data.json');
     expect(generator).toContain('FAQPage');
     expect(app).toContain('function GuidePage');
@@ -409,7 +497,7 @@ describe('static frontend contract', () => {
       expect(page.faqs.length).toBeGreaterThanOrEqual(7);
       expect(page.sections.length).toBeGreaterThanOrEqual(6);
       expect(sitemap).toContain(`https://palcalculator.com${page.path}`);
-      expect(page.intro.join(' ')).toContain('unofficial fan-made');
+      expect(page.intro.join(' ')).toMatch(/(?:unofficial|independent) fan-made/);
       expect(page.links.some((link) => link.href === '/data-sources/')).toBe(true);
     }
   });
@@ -442,6 +530,34 @@ describe('static frontend contract', () => {
     const combos = guidePages.find((entry) => entry.path === '/guides/palworld-breeding-combos/');
     expect(combos?.sections.some((section) => section.heading === 'Current data limits before you follow a combo')).toBe(true);
     expect(JSON.stringify(combos)).toContain('/guides/best-palworld-breeding-combos/');
+  });
+
+  it('implements P11 SEO guide pages with route, sitemap, FAQ, schema, and claim guardrails', () => {
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+    const p11Paths = [
+      '/guides/how-to-breed-blazamut-palworld/',
+      '/guides/how-to-breed-astegon-palworld/',
+      '/guides/how-to-breed-grizzbolt-palworld/',
+      '/guides/how-to-breed-lyleen-palworld/',
+      '/guides/palworld-breeding-path-finder/',
+    ];
+    const blockedClaims = /official|guaranteed|100% accurate|exact odds|cheat|bypass|complete wiki/i;
+
+    expect(generator).toContain("'@type': 'TechArticle'");
+    expect(generator).toContain('FAQPage');
+    for (const route of p11Paths) {
+      const page = guidePages.find((entry) => entry.path === route);
+      expect(page, `${route} should be in guide data`).toBeTruthy();
+      expect(sitemap).toContain(`https://palcalculator.com${route}`);
+      expect(page?.title.length).toBeLessThanOrEqual(60);
+      expectAitdkDescriptionLength(route, page?.description ?? '');
+      expect(page?.intro.join(' ')).toContain('independent fan-made');
+      expect(JSON.stringify(page)).toContain('/data-sources/');
+      expect(page?.faqs.length).toBeGreaterThanOrEqual(7);
+      expect(page?.sections.length).toBeGreaterThanOrEqual(6);
+      expect(JSON.stringify(page)).not.toMatch(blockedClaims);
+    }
   });
 
   it('keeps P2 guide metadata, internal links, and ad exclusions aligned', () => {

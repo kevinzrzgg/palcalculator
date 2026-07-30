@@ -4,6 +4,13 @@ import path from 'node:path';
 const distDir = path.resolve('dist');
 const canonicalOrigin = process.env.VITE_CANONICAL_ORIGIN || 'https://palcalculator.com';
 const guidePages = JSON.parse(fs.readFileSync(path.resolve('src/guides-data.json'), 'utf8'));
+const p11GuidePaths = new Set([
+  '/guides/how-to-breed-blazamut-palworld/',
+  '/guides/how-to-breed-astegon-palworld/',
+  '/guides/how-to-breed-grizzbolt-palworld/',
+  '/guides/how-to-breed-lyleen-palworld/',
+  '/guides/palworld-breeding-path-finder/',
+]);
 
 const routes = [
   { path: '/', h1: 'PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators', title: 'PalCalculator: Palworld Breeding & IV Tools', description: 'Fan-made Palworld 1.0 calculator hub for breeding routes, parent pairs, IV/stat estimates, passive planning, and owned-Pal optimization with caveats.', keywords: 'Palworld calculator, Palworld breeding calculator, Palworld IV calculator', ogTitle: 'PalCalculator: Palworld Breeding & IV Tools', ogDescription: 'Fan-made Palworld 1.0 calculator hub for breeding routes, parent pairs, IV/stat estimates, passive planning, and owned-Pal optimization with caveats.', robots: 'index,follow' },
@@ -50,7 +57,8 @@ function bodyFor(route) {
   const sections = guide.sections.map((section) => `<section><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs)}</section>`).join('');
   const links = guide.links.map((link) => `<li><a href="${esc(link.href)}">${esc(link.label)}</a></li>`).join('');
   const faqs = guide.faqs.map((faq) => `<details open><summary>${esc(faq.question)}</summary><p>${esc(faq.answer)}</p></details>`).join('');
-  return `<p class="eyebrow">Unofficial fan-made Palworld guide</p><h1>${esc(guide.h1)}</h1><p>${esc(guide.description)}</p>${intro}<p><a href="${esc(guide.primaryCta.href)}">${esc(guide.primaryCta.label)}</a> · <a href="${esc(guide.secondaryCta.href)}">${esc(guide.secondaryCta.label)}</a></p>${sections}<section><h2>Related PalCalculator tools</h2><ul>${links}</ul></section><section><h2>FAQ</h2>${faqs}</section>`;
+  const eyebrow = p11GuidePaths.has(guide.path) ? 'Independent fan-made Palworld guide' : 'Unofficial fan-made Palworld guide';
+  return `<p class="eyebrow">${eyebrow}</p><h1>${esc(guide.h1)}</h1><p>${esc(guide.description)}</p>${intro}<p><a href="${esc(guide.primaryCta.href)}">${esc(guide.primaryCta.label)}</a> · <a href="${esc(guide.secondaryCta.href)}">${esc(guide.secondaryCta.label)}</a></p>${sections}<section><h2>Related PalCalculator tools</h2><ul>${links}</ul></section><section><h2>FAQ</h2>${faqs}</section>`;
 }
 
 const builtIndex = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
