@@ -27,10 +27,11 @@ artifacts/p11-live-results.json | 2 +-
 
 No unrelated source changes were present.
 
-Final status after preserving the P11 artifact and before writing this report:
+Final status at handoff after committing and pushing the preservation/report commits:
 
 ```text
-clean on main relative to origin/main plus the report file to be committed separately
+git status --short: clean (no output)
+HEAD matches origin/main
 ```
 
 ## Deploy
