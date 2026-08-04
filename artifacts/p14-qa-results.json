@@ -1,0 +1,109 @@
+{
+  "task_id": "t_0d266e6f",
+  "verdict": "GO",
+  "safe_to_deploy": true,
+  "no_deploy_performed": true,
+  "commands": [
+    {
+      "command": "npm run test",
+      "status": "passed",
+      "evidence": "35 tests passed in src/main.test.ts"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed_with_warnings",
+      "evidence": "0 errors, 41 pre-existing react-refresh/hooks warnings in src/main.tsx"
+    },
+    {
+      "command": "npm run build",
+      "status": "passed",
+      "evidence": "vite build passed; generator reported 38 route-specific HTML files and 38 sitemap URLs"
+    }
+  ],
+  "sitemap": {
+    "count": 38,
+    "expected_by_implementation": 38,
+    "query_share_results_leaks": [],
+    "file": "dist/sitemap.xml"
+  },
+  "trust_pages": {
+    "checked": [
+      "/about/",
+      "/contact/",
+      "/editorial-policy/",
+      "/advertising-disclosure/",
+      "/privacy/",
+      "/terms/",
+      "/data-sources/"
+    ],
+    "all_200": true,
+    "all_self_canonical": true,
+    "all_index_follow": true,
+    "footer_or_nav_links_present": true,
+    "useful_content_and_caveats": true,
+    "risky_claims_found": []
+  },
+  "served_url_checks": {
+    "all_expected_200": true,
+    "checked": [
+      "/",
+      "/breeding-calculator/",
+      "/breeding-route-calculator/",
+      "/iv-calculator/",
+      "/stats-calculator/",
+      "/passive-skill-calculator/",
+      "/palworld-1-0-breeding-calculator/",
+      "/data-sources/",
+      "/privacy/",
+      "/terms/",
+      "/about/",
+      "/contact/",
+      "/editorial-policy/",
+      "/advertising-disclosure/",
+      "/sitemap.xml",
+      "/robots.txt",
+      "/ads.txt"
+    ]
+  },
+  "adsense_sensitive_basics": {
+    "ads_txt": "google.com, pub-8075999128078609, DIRECT, f08c47fec0942fa0",
+    "robots_txt": "User-agent: *\nAllow: /\nDisallow: /share/\nSitemap: https://palcalculator.com/sitemap.xml",
+    "sitemap_present": true,
+    "google_analytics_snippet_present": true,
+    "google_adsense_snippet_present": true,
+    "intrusive_ad_or_paywall_added": false
+  },
+  "browser_qa": {
+    "desktop_home": {
+      "url": "http://127.0.0.1:4173/",
+      "console_errors": 0,
+      "horizontal_overflow": false,
+      "canonical": "https://palcalculator.com/",
+      "robots": "index,follow",
+      "notes": "Hero, nav, cards, beginner/depth modules, guide grid, footer trust links render cleanly; no overlay or paywall observed."
+    },
+    "desktop_about": {
+      "url": "http://127.0.0.1:4173/about/",
+      "console_errors": 0,
+      "horizontal_overflow": false,
+      "canonical": "https://palcalculator.com/about/",
+      "robots": "index,follow",
+      "notes": "Trust content includes last reviewed date, unofficial fan-made caveat, not-affiliated language, related links, FAQ, and footer trust links."
+    },
+    "mobile_390_screenshots": [
+      "artifacts/p14-screenshots/home.png",
+      "artifacts/p14-screenshots/breeding-calculator.png",
+      "artifacts/p14-screenshots/breeding-route-calculator.png",
+      "artifacts/p14-screenshots/iv-calculator.png",
+      "artifacts/p14-screenshots/stats-calculator.png",
+      "artifacts/p14-screenshots/passive-skill-calculator.png",
+      "artifacts/p14-screenshots/about.png",
+      "artifacts/p14-screenshots/contact.png",
+      "artifacts/p14-screenshots/editorial-policy.png",
+      "artifacts/p14-screenshots/advertising-disclosure.png"
+    ],
+    "mobile_390_result": "No horizontal overflow, clipped content, intrusive ads, overlay, or paywall observed in sampled screenshots."
+  },
+  "issues": [],
+  "recommendation": "GO / safe for next approved deploy step"
+}

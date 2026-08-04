@@ -4,6 +4,7 @@ import path from 'node:path';
 const distDir = path.resolve('dist');
 const canonicalOrigin = process.env.VITE_CANONICAL_ORIGIN || 'https://palcalculator.com';
 const guidePages = JSON.parse(fs.readFileSync(path.resolve('src/guides-data.json'), 'utf8'));
+const p14Content = JSON.parse(fs.readFileSync(path.resolve('src/p14-content.json'), 'utf8'));
 const p11GuidePaths = new Set([
   '/guides/how-to-breed-blazamut-palworld/',
   '/guides/how-to-breed-astegon-palworld/',
@@ -23,6 +24,7 @@ const routes = [
   { path: '/data-sources/', h1: 'PalCalculator Data Sources & Update Policy', title: 'PalCalculator Data Sources & Update Policy', description: 'Review PalCalculator dataset status, source categories, update policy, formula assumptions, unsupported Palworld data, and correction workflow details.', keywords: 'PalCalculator data sources, Palworld data version, Palworld calculator policy', ogTitle: 'PalCalculator Data Sources & Update Policy', ogDescription: 'Review PalCalculator dataset status, source categories, update policy, formula assumptions, unsupported Palworld data, and correction workflow details.', robots: 'index,follow' },
   { path: '/privacy/', h1: 'Privacy Policy', title: 'Privacy Policy | PalCalculator', description: 'Read how PalCalculator handles browser-local calculator state, share URLs, hosting logs, analytics, ads, and privacy choices for fan-made Palworld tools.', keywords: 'PalCalculator privacy policy', ogTitle: 'PalCalculator Privacy Policy', ogDescription: 'Read how PalCalculator handles browser-local calculator state, share URLs, hosting logs, analytics, ads, and privacy choices for fan-made Palworld tools.', robots: 'index,follow' },
   { path: '/terms/', h1: 'Terms of Use', title: 'Terms of Use | PalCalculator', description: 'Read PalCalculator terms for unofficial fan-site status, Palworld trademark references, data accuracy caveats, user responsibility, and acceptable use.', keywords: 'PalCalculator terms of use', ogTitle: 'PalCalculator Terms of Use', ogDescription: 'Read PalCalculator terms for unofficial fan-site status, Palworld trademark references, data accuracy caveats, user responsibility, and acceptable use.', robots: 'index,follow' },
+  ...p14Content.trustPages.map((page) => ({ path: page.path, h1: page.h1, title: page.title, description: page.description, keywords: page.keywords, ogTitle: page.title, ogDescription: page.description, robots: 'index,follow', trustPage: page })),
   ...guidePages.map((guide) => ({ path: guide.path, h1: guide.h1, title: guide.title, description: guide.description, keywords: guide.keywords, ogTitle: guide.title, ogDescription: guide.ogDescription, robots: 'index,follow', guide })),
 ];
 
@@ -38,7 +40,42 @@ function paragraphs(values) {
   return values.map((value) => `<p>${esc(value)}</p>`).join('');
 }
 
+function linksHtml(links) {
+  return `<ul>${links.map((href) => {
+    const route = routes.find((entry) => entry.path === href);
+    return `<li><a href="${esc(href)}">${esc(route?.h1 ?? href)}</a></li>`;
+  }).join('')}</ul>`;
+}
+
+function blockHtml(block) {
+  const body = Array.isArray(block.body) ? paragraphs(block.body) : block.body ? `<p>${esc(block.body)}</p>` : '';
+  const items = block.items ? `<ul>${block.items.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>` : '';
+  const table = block.table ? `<table><thead><tr>${Object.keys(block.table[0] ?? {}).map((heading) => `<th>${esc(heading)}</th>`).join('')}</tr></thead><tbody>${block.table.map((row) => `<tr>${Object.values(row).map((value) => `<td>${esc(value)}</td>`).join('')}</tr>`).join('')}</tbody></table>` : '';
+  const links = block.links ? linksHtml(block.links) : '';
+  return `<section><h2>${esc(block.heading)}</h2>${body}${items}${table}${links}</section>`;
+}
+
+function faqHtml(faqs) {
+  return faqs ? `<section><h2>FAQ</h2>${faqs.map((faq) => `<details open><summary>${esc(faq.question)}</summary><p>${esc(faq.answer)}</p></details>`).join('')}</section>` : '';
+}
+
+function depthHtml(routePath) {
+  const depth = p14Content.pageDepth[routePath];
+  if (!depth) return '';
+  return `<section><p class="eyebrow">How it works</p>${depth.blocks.map(blockHtml).join('')}${depth.links ? `<section><h2>Related tools and trust pages</h2>${linksHtml(depth.links)}</section>` : ''}${faqHtml(depth.faqs)}</section>`;
+}
+
+function trustPageHtml(page) {
+  return `${paragraphs(page.intro)}<p>Last reviewed: ${esc(page.lastReviewed)}</p>${page.sections.map((section) => `<section><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs)}</section>`).join('')}<section><h2>Related trust links</h2><ul>${page.links.map((link) => `<li><a href="${esc(link.href)}">${esc(link.label)}</a></li>`).join('')}</ul></section>${faqHtml(page.faqs)}`;
+}
+
 function guideStructuredData(route) {
+  if (route.trustPage) {
+    const page = { '@context': 'https://schema.org', '@type': 'WebPage', headline: route.trustPage.h1, description: route.trustPage.description, url: canonicalFor(route.trustPage.path), isPartOf: { '@type': 'WebSite', name: 'PalCalculator', url: canonicalOrigin }, dateModified: route.trustPage.lastReviewed };
+    const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: route.trustPage.faqs.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) };
+    const safeJson = (value) => JSON.stringify(value).replaceAll('</script', '<\\/script');
+    return `<script type="application/ld+json">${safeJson(page)}</script><script type="application/ld+json">${safeJson(faq)}</script>`;
+  }
   if (!route.guide) return '';
   const article = { '@context': 'https://schema.org', '@type': 'TechArticle', headline: route.guide.h1, description: route.guide.description, url: canonicalFor(route.guide.path), isPartOf: { '@type': 'WebSite', name: 'PalCalculator', url: canonicalOrigin } };
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: route.guide.faqs.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) };
@@ -50,7 +87,9 @@ function bodyFor(route) {
   if (!route.guide) {
     const toolLinks = routes.filter((entry) => ['/breeding-calculator/', '/breeding-route-calculator/', '/iv-calculator/', '/stats-calculator/', '/passive-skill-calculator/', '/palworld-1-0-breeding-calculator/'].includes(entry.path)).map((entry) => `<li><a href="${esc(entry.path)}">${esc(entry.h1)}</a></li>`).join('');
     const guideLinks = guidePages.map((guide) => `<li><a href="${esc(guide.path)}">${esc(guide.h1)}</a></li>`).join('');
-    return `<p class="eyebrow">Unofficial fan-made Palworld tool</p><h1>${esc(route.h1)}</h1><p>${esc(route.description)}</p><section><h2>PalCalculator tools</h2><ul>${toolLinks}</ul></section><section><h2>Palworld breeding guides</h2><ul>${guideLinks}</ul></section><p><a href="/data-sources/">Data sources</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>`;
+    const trustLinks = linksHtml(['/about/', '/contact/', '/editorial-policy/', '/advertising-disclosure/', '/data-sources/', '/privacy/', '/terms/']);
+    const routeDepth = route.trustPage ? trustPageHtml(route.trustPage) : route.path === '/data-sources/' ? `<p>Last reviewed: 2026-08-04</p><p>PalCalculator uses public game-data references for Pal names, aliases, normal-formula breeding pairs, seed passive data, selected base stats, and caveated stat formulas.</p><p id="corrections">Corrections should include Pal name, page URL, game version, current result, expected result, source link, and reproduction notes. Do not send save files, passwords, tokens, payment details, or private identifiers.</p><section><h2>Why unsupported states are shown</h2><p>If the current dataset cannot support a result, PalCalculator shows a clear unavailable or caveated state instead of guessing.</p></section>` : route.path === '/privacy/' ? `<p>Last updated: 2026-08-04</p><section><h2>Calculator inputs and browser-local storage</h2><p>Selected Pals, owned-Pal helper state, stat fields, passive choices, and similar workflow inputs are handled in the browser. Owned-Pal helper data is localStorage only.</p></section><section><h2>Advertising and Google AdSense</h2><p>PalCalculator may use Google AdSense. Google ad scripts may use cookies or similar technologies for ad delivery, measurement, fraud prevention, and personalization controls.</p></section>` : route.path === '/terms/' ? `<p>Last reviewed: 2026-08-04</p><section><h2>Calculator output limitations</h2><p>Results depend on selected data versions, public source quality, formulas, modifiers, RNG, game patches, and supported domains.</p></section><section><h2>Advertising disclosure</h2><p>Advertising, if present, supports site maintenance and does not change calculator output.</p></section>` : depthHtml(route.path);
+    return `<p class="eyebrow">Unofficial fan-made Palworld tool</p><h1>${esc(route.h1)}</h1><p>${esc(route.description)}</p>${routeDepth}<section><h2>PalCalculator tools</h2><ul>${toolLinks}</ul></section><section><h2>Trust & data</h2>${trustLinks}</section><section><h2>Palworld breeding guides</h2><ul>${guideLinks}</ul></section><p><a href="/sitemap.xml">Sitemap</a></p>`;
   }
   const guide = route.guide;
   const intro = paragraphs(guide.intro);

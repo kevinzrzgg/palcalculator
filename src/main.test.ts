@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import { childFromParents, dataVersion, estimateStats, findPal, parentsForTarget, pals, passives, solveRoute } from './calculators';
 import guidePages from './guides-data.json';
+import p14Content from './p14-content.json';
 
 function expectAitdkDescriptionLength(path: string, description: string) {
   expect(description.length, `${path} meta description should be at least 140 characters`).toBeGreaterThanOrEqual(140);
@@ -447,7 +448,7 @@ describe('static frontend contract', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
 
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(34);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(38);
     expect(sitemap).not.toContain('/share/');
     expect(app).toContain('Try this in PalCalculator');
     expect(app).toContain('Check a combo in the calculator');
@@ -487,7 +488,7 @@ describe('static frontend contract', () => {
       '/guides/how-to-breed-helzephyr-palworld/',
       '/guides/how-to-breed-selyne-palworld/',
     ]);
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(34);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(38);
     expect(sitemap).not.toContain('/share/');
     expect(new Set(guidePages.map((page) => page.path)).size).toBe(guidePages.length);
     expect(new Set(guidePages.map((page) => page.key)).size).toBe(guidePages.length);
@@ -577,7 +578,7 @@ describe('static frontend contract', () => {
     ];
     const blockedClaims = /official|guaranteed|100% accurate|exact odds|cheat|bypass|complete wiki/i;
 
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(34);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(38);
     expect(sitemap).not.toContain('/share/');
     expect([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).some((loc) => loc.includes('?'))).toBe(false);
     expect(generator).toContain("'@type': 'TechArticle'");
@@ -648,5 +649,38 @@ describe('static frontend contract', () => {
       expectAitdkDescriptionLength(route.path, route.description);
     }
     for (const page of guidePages) expectAitdkDescriptionLength(page.path, page.description);
+  });
+
+  it('implements P14 trust routes, crawlable depth modules, and sitemap guardrails', () => {
+    const app = fs.readFileSync('src/main.tsx', 'utf8');
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+    const trustPaths = ['/about/', '/contact/', '/editorial-policy/', '/advertising-disclosure/'];
+    const corePaths = ['/', '/breeding-calculator/', '/breeding-route-calculator/', '/iv-calculator/', '/stats-calculator/', '/passive-skill-calculator/', '/palworld-1-0-breeding-calculator/'];
+
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(38);
+    expect([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).some((loc) => loc.includes('?'))).toBe(false);
+    expect(sitemap).not.toContain('/share/');
+    expect(sitemap).not.toContain('/results/');
+    expect(app).toContain('function TrustPageView');
+    expect(app).toContain('function PageDepthModules');
+    expect(app).toContain('Trust & data');
+    expect(generator).toContain('src/p14-content.json');
+    expect(generator).toContain("'@type': 'WebPage'");
+    expect(app).toContain("hasQueryState(route) ? 'noindex,follow' : 'index,follow'");
+
+    for (const trustPath of trustPaths) {
+      const page = p14Content.trustPages.find((entry) => entry.path === trustPath);
+      expect(page, `${trustPath} trust page content should exist`).toBeTruthy();
+      expect(sitemap).toContain(`https://palcalculator.com${trustPath}`);
+      expect(p14Content.trustPages.map((entry) => entry.path)).toContain(trustPath);
+      expect(generator).toContain(trustPath);
+      expectAitdkDescriptionLength(trustPath, page?.description ?? '');
+      expect(JSON.stringify(page)).not.toContain('[OWNER_APPROVED_CONTACT_METHOD]');
+    }
+    for (const corePath of corePaths) expect(p14Content.pageDepth[corePath as keyof typeof p14Content.pageDepth], `${corePath} should have P14 depth modules`).toBeTruthy();
+    expect(JSON.stringify(p14Content)).toContain('unofficial fan-made');
+    expect(JSON.stringify(p14Content)).toContain('localStorage only');
+    expect(JSON.stringify(p14Content)).toContain('/editorial-policy/');
   });
 });
