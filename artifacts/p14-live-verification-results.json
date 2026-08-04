@@ -1,0 +1,549 @@
+{
+  "task_id": "t_1a5db122",
+  "verified_at_utc": "2026-08-04T12:56:28Z",
+  "base_url": "https://palcalculator.com",
+  "deployment_url": "https://ed7b7846.palcalculator.pages.dev",
+  "deployment_id": "ed7b7846-3218-49f3-8041-a9c0fb1af36a",
+  "commit": "be2a2f2",
+  "qa_go_confirmed": true,
+  "routes": {
+    "/": {
+      "url": "https://palcalculator.com/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "PalCalculator: Palworld Breeding & IV Tools",
+      "h1s": [
+        "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators"
+      ],
+      "canonical": "https://palcalculator.com/",
+      "canonical_expected": "https://palcalculator.com/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 149,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/breeding-calculator/": {
+      "url": "https://palcalculator.com/breeding-calculator/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld Breeding Calculator - Parent Pairs",
+      "h1s": [
+        "Palworld Breeding Calculator"
+      ],
+      "canonical": "https://palcalculator.com/breeding-calculator/",
+      "canonical_expected": "https://palcalculator.com/breeding-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 146,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/breeding-route-calculator/": {
+      "url": "https://palcalculator.com/breeding-route-calculator/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld Breeding Route Calculator",
+      "h1s": [
+        "Palworld Breeding Route Calculator"
+      ],
+      "canonical": "https://palcalculator.com/breeding-route-calculator/",
+      "canonical_expected": "https://palcalculator.com/breeding-route-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 141,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/iv-calculator/": {
+      "url": "https://palcalculator.com/iv-calculator/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld IV Calculator",
+      "h1s": [
+        "Palworld IV Calculator"
+      ],
+      "canonical": "https://palcalculator.com/iv-calculator/",
+      "canonical_expected": "https://palcalculator.com/iv-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 148,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/stats-calculator/": {
+      "url": "https://palcalculator.com/stats-calculator/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld Stats Calculator",
+      "h1s": [
+        "Palworld Stats Calculator"
+      ],
+      "canonical": "https://palcalculator.com/stats-calculator/",
+      "canonical_expected": "https://palcalculator.com/stats-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 143,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/passive-skill-calculator/": {
+      "url": "https://palcalculator.com/passive-skill-calculator/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld Passive Skill Calculator",
+      "h1s": [
+        "Palworld Passive Skill Calculator"
+      ],
+      "canonical": "https://palcalculator.com/passive-skill-calculator/",
+      "canonical_expected": "https://palcalculator.com/passive-skill-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 154,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/palworld-1-0-breeding-calculator/": {
+      "url": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "group": "core",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld 1.0 Breeding Calculator",
+      "h1s": [
+        "Palworld 1.0 Breeding Calculator"
+      ],
+      "canonical": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "canonical_expected": "https://palcalculator.com/palworld-1-0-breeding-calculator/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 146,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/about/": {
+      "url": "https://palcalculator.com/about/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "About PalCalculator | Fan-Made Palworld Calculator Tools",
+      "h1s": [
+        "About PalCalculator"
+      ],
+      "canonical": "https://palcalculator.com/about/",
+      "canonical_expected": "https://palcalculator.com/about/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 140,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "WebPage",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [
+        {
+          "term": "official",
+          "context": "/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is PalCalculator official?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. PalCalculator is an unofficial fan-made Palworld calculator and guide "
+        },
+        {
+          "term": "official",
+          "context": "><li><a href=\"/terms/\">Terms of Use</a></li></ul></section><section><h2>FAQ</h2><details open><summary>Is PalCalculator official?</summary><p>No. PalCalculator is an unofficial fan-made Palworld calculator and guide site.</p></details><details open"
+        }
+      ],
+      "passed": true
+    },
+    "/contact/": {
+      "url": "https://palcalculator.com/contact/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Contact PalCalculator | Corrections, Privacy & Data Reports",
+      "h1s": [
+        "Contact PalCalculator"
+      ],
+      "canonical": "https://palcalculator.com/contact/",
+      "canonical_expected": "https://palcalculator.com/contact/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 143,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "WebPage",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/editorial-policy/": {
+      "url": "https://palcalculator.com/editorial-policy/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Editorial and Data Review Policy | PalCalculator",
+      "h1s": [
+        "Editorial and Data Review Policy"
+      ],
+      "canonical": "https://palcalculator.com/editorial-policy/",
+      "canonical_expected": "https://palcalculator.com/editorial-policy/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 141,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "WebPage",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/advertising-disclosure/": {
+      "url": "https://palcalculator.com/advertising-disclosure/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Advertising Disclosure | PalCalculator",
+      "h1s": [
+        "Advertising Disclosure"
+      ],
+      "canonical": "https://palcalculator.com/advertising-disclosure/",
+      "canonical_expected": "https://palcalculator.com/advertising-disclosure/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 144,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "WebPage",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/privacy/": {
+      "url": "https://palcalculator.com/privacy/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Privacy Policy | PalCalculator",
+      "h1s": [
+        "Privacy Policy"
+      ],
+      "canonical": "https://palcalculator.com/privacy/",
+      "canonical_expected": "https://palcalculator.com/privacy/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 153,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/terms/": {
+      "url": "https://palcalculator.com/terms/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Terms of Use | PalCalculator",
+      "h1s": [
+        "Terms of Use"
+      ],
+      "canonical": "https://palcalculator.com/terms/",
+      "canonical_expected": "https://palcalculator.com/terms/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 151,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/data-sources/": {
+      "url": "https://palcalculator.com/data-sources/",
+      "group": "trust",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "PalCalculator Data Sources & Update Policy",
+      "h1s": [
+        "PalCalculator Data Sources & Update Policy"
+      ],
+      "canonical": "https://palcalculator.com/data-sources/",
+      "canonical_expected": "https://palcalculator.com/data-sources/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 151,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/guides/how-to-breed-anubis-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "group": "old_guide",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Anubis in Palworld",
+      "h1s": [
+        "How to Breed Anubis in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "canonical_expected": "https://palcalculator.com/guides/how-to-breed-anubis-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 145,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [
+        {
+          "term": "guaranteed",
+          "context": "passives, then return to breeding or route tools for parent and route checks. Passive planning should not be treated as guaranteed inheritance.\"}},{\"@type\":\"Question\",\"name\":\"Should I use a direct combo or a route for Anubis?\",\"acceptedAnswer\":{\"@typ"
+        },
+        {
+          "term": "guaranteed",
+          "context": "passives, then return to breeding or route tools for parent and route checks. Passive planning should not be treated as guaranteed inheritance.</p></details><details open><summary>Should I use a direct combo or a route for Anubis?</summary><p>Use a d"
+        }
+      ],
+      "passed": true
+    },
+    "/guides/best-palworld-breeding-combos/": {
+      "url": "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+      "group": "old_guide",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Best Palworld Breeding Combos",
+      "h1s": [
+        "Best Palworld Breeding Combos"
+      ],
+      "canonical": "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+      "canonical_expected": "https://palcalculator.com/guides/best-palworld-breeding-combos/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 145,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/guides/how-to-breed-faleris-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-faleris-palworld/",
+      "group": "new_guide",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Faleris in Palworld",
+      "h1s": [
+        "How to Breed Faleris in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-faleris-palworld/",
+      "canonical_expected": "https://palcalculator.com/guides/how-to-breed-faleris-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 144,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    },
+    "/guides/how-to-breed-selyne-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-selyne-palworld/",
+      "group": "new_guide",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Selyne in Palworld",
+      "h1s": [
+        "How to Breed Selyne in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-selyne-palworld/",
+      "canonical_expected": "https://palcalculator.com/guides/how-to-breed-selyne-palworld/",
+      "canonical_ok": true,
+      "robots": "index,follow",
+      "robots_ok": true,
+      "description_length": 146,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "has_unofficial_caveat": true,
+      "risky_matches": [],
+      "caveated_risky_matches": [],
+      "passed": true
+    }
+  },
+  "sitemap": {
+    "status": 200,
+    "content_type": "application/xml",
+    "url_count": 38,
+    "expected_count": 38,
+    "missing_p14_trust_urls": [],
+    "query_share_results_leaks": [],
+    "parse_error": null,
+    "passed": true
+  },
+  "robots": {
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "has_allow": true,
+    "has_share_disallow": true,
+    "has_sitemap": true,
+    "body": "User-agent: *\nAllow: /\nDisallow: /share/\nSitemap: https://palcalculator.com/sitemap.xml\n",
+    "passed": true
+  },
+  "ads_txt": {
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "body": "google.com, pub-8075999128078609, DIRECT, f08c47fec0942fa0",
+    "expected_line_present": true,
+    "passed": true
+  },
+  "homepage_snippets": {
+    "google_analytics_snippet_present": true,
+    "google_adsense_snippet_present": true,
+    "no_intrusive_paywall_terms": true,
+    "passed": true
+  },
+  "deployment_url_check": {
+    "url": "https://ed7b7846.palcalculator.pages.dev/",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "has_p14_about_link": true,
+    "passed": true
+  },
+  "passed": true,
+  "failures": [],
+  "browser_console_smoke": {
+    "tool": "browser_navigate + browser_console(clear=true)",
+    "routes": [
+      "/",
+      "/breeding-route-calculator/",
+      "/about/",
+      "/guides/how-to-breed-faleris-palworld/"
+    ],
+    "total_console_messages": 0,
+    "total_js_errors": 0,
+    "passed": true
+  },
+  "mobile_390_smoke": {
+    "tool": "google-chrome --headless --window-size=390,1200 --screenshot plus vision inspection",
+    "screenshots": {
+      "home": {
+        "file": "artifacts/p14-live-mobile/home.png",
+        "bytes": 157957
+      },
+      "route": {
+        "file": "artifacts/p14-live-mobile/route.png",
+        "bytes": 153127
+      },
+      "about": {
+        "file": "artifacts/p14-live-mobile/about.png",
+        "bytes": 148667
+      },
+      "faleris": {
+        "file": "artifacts/p14-live-mobile/faleris.png",
+        "bytes": 154427
+      }
+    },
+    "vision_summary": "All four representative 390px screenshots stack content correctly with no visible horizontal clipping/overflow and no intrusive ads, paywall, overlay, or login prompt.",
+    "passed": true
+  }
+}
