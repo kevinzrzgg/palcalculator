@@ -1,0 +1,268 @@
+{
+  "base_url": "https://palcalculator.com",
+  "routes": {
+    "/": {
+      "url": "https://palcalculator.com/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "PalCalculator: Palworld Breeding & IV Tools",
+      "h1s": [
+        "PalCalculator: Palworld Breeding, IV, Stats & Passive Calculators"
+      ],
+      "canonical": "https://palcalculator.com/",
+      "robots": "index,follow",
+      "description_length": 149,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    },
+    "/breeding-route-calculator/": {
+      "url": "https://palcalculator.com/breeding-route-calculator/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Palworld Breeding Route Calculator",
+      "h1s": [
+        "Palworld Breeding Route Calculator"
+      ],
+      "canonical": "https://palcalculator.com/breeding-route-calculator/",
+      "robots": "index,follow",
+      "description_length": 141,
+      "schema_types": [],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    },
+    "/guides/how-to-breed-faleris-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-faleris-palworld/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Faleris in Palworld",
+      "h1s": [
+        "How to Breed Faleris in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-faleris-palworld/",
+      "robots": "index,follow",
+      "description_length": 144,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    },
+    "/guides/how-to-breed-kitsun-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-kitsun-palworld/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Kitsun in Palworld",
+      "h1s": [
+        "How to Breed Kitsun in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-kitsun-palworld/",
+      "robots": "index,follow",
+      "description_length": 147,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    },
+    "/guides/how-to-breed-suzaku-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-suzaku-palworld/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Suzaku in Palworld",
+      "h1s": [
+        "How to Breed Suzaku in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-suzaku-palworld/",
+      "robots": "index,follow",
+      "description_length": 142,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    },
+    "/guides/how-to-breed-helzephyr-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-helzephyr-palworld/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Helzephyr in Palworld",
+      "h1s": [
+        "How to Breed Helzephyr in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-helzephyr-palworld/",
+      "robots": "index,follow",
+      "description_length": 144,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    },
+    "/guides/how-to-breed-selyne-palworld/": {
+      "url": "https://palcalculator.com/guides/how-to-breed-selyne-palworld/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Breed Selyne in Palworld",
+      "h1s": [
+        "How to Breed Selyne in Palworld"
+      ],
+      "canonical": "https://palcalculator.com/guides/how-to-breed-selyne-palworld/",
+      "robots": "index,follow",
+      "description_length": 146,
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "Question",
+        "TechArticle",
+        "WebSite"
+      ],
+      "has_data_sources_link": true,
+      "asset_count": 13,
+      "blocked_risky_matches": []
+    }
+  },
+  "p13_routes": [
+    "/guides/how-to-breed-faleris-palworld/",
+    "/guides/how-to-breed-kitsun-palworld/",
+    "/guides/how-to-breed-suzaku-palworld/",
+    "/guides/how-to-breed-helzephyr-palworld/",
+    "/guides/how-to-breed-selyne-palworld/"
+  ],
+  "sitemap": {
+    "status": 200,
+    "url_count": 34,
+    "p13_present": {
+      "/guides/how-to-breed-faleris-palworld/": true,
+      "/guides/how-to-breed-kitsun-palworld/": true,
+      "/guides/how-to-breed-suzaku-palworld/": true,
+      "/guides/how-to-breed-helzephyr-palworld/": true,
+      "/guides/how-to-breed-selyne-palworld/": true
+    },
+    "has_query_urls": false,
+    "has_share_urls": false,
+    "has_results_urls": false
+  },
+  "robots": {
+    "status": 200,
+    "has_sitemap": true,
+    "body": "User-agent: *\nAllow: /\nDisallow: /share/\nSitemap: https://palcalculator.com/sitemap.xml\n"
+  },
+  "assets": {
+    "checked_count": 10,
+    "results": {
+      "https://palcalculator.com/apple-touch-icon.png": {
+        "status": 200,
+        "content_type": "image/png",
+        "bytes_read": 102020
+      },
+      "https://palcalculator.com/assets/calculator-data-8JnNABxB.js": {
+        "status": 200,
+        "content_type": "application/javascript",
+        "bytes_read": 111801
+      },
+      "https://palcalculator.com/assets/guides-data-Cj0rs8U_.js": {
+        "status": 200,
+        "content_type": "application/javascript",
+        "bytes_read": 164608
+      },
+      "https://palcalculator.com/assets/index-CmXCt1iC.css": {
+        "status": 200,
+        "content_type": "text/css; charset=utf-8",
+        "bytes_read": 11330
+      },
+      "https://palcalculator.com/assets/index-CtiZzkaP.js": {
+        "status": 200,
+        "content_type": "application/javascript",
+        "bytes_read": 69670
+      },
+      "https://palcalculator.com/assets/react-vendor-CnQ8cts2.js": {
+        "status": 200,
+        "content_type": "application/javascript",
+        "bytes_read": 189687
+      },
+      "https://palcalculator.com/assets/rolldown-runtime-Bh1tDfsg.js": {
+        "status": 200,
+        "content_type": "application/javascript",
+        "bytes_read": 567
+      },
+      "https://palcalculator.com/favicon.ico": {
+        "status": 200,
+        "content_type": "image/vnd.microsoft.icon",
+        "bytes_read": 26262
+      },
+      "https://palcalculator.com/favicon.svg": {
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "bytes_read": 783
+      },
+      "https://palcalculator.com/site.webmanifest": {
+        "status": 200,
+        "content_type": "application/manifest+json",
+        "bytes_read": 433
+      }
+    }
+  },
+  "passed": true,
+  "failures": [],
+  "task_id": "t_f649712f",
+  "verified_at_utc": "2026-08-04T11:35:11Z",
+  "qa_go_confirmed": true,
+  "local_verification": {
+    "npm_run_test": "PASS: 34/34 tests passed",
+    "npm_run_lint": "PASS: 0 errors, 37 warnings in src/main.tsx",
+    "npm_run_build": "PASS: generated 34 route-specific HTML files and 34 sitemap URLs"
+  },
+  "git": {
+    "commit": "c4fadcfe9e72da18573261e490fd83b3fb0f1d0d",
+    "short_commit": "c4fadcf",
+    "pushed": true,
+    "remote": "origin/main"
+  },
+  "cloudflare_pages": {
+    "project": "palcalculator",
+    "environment": "Production",
+    "branch": "main",
+    "deployment_id": "7bba438f-51c8-4284-94ee-10eb107b57e7",
+    "deployment_url": "https://7bba438f.palcalculator.pages.dev",
+    "source": "c4fadcf"
+  },
+  "browser_console_smoke": {
+    "tool": "browser_navigate + browser_console(clear=true)",
+    "routes": [
+      "/",
+      "/breeding-route-calculator/",
+      "/guides/how-to-breed-faleris-palworld/",
+      "/guides/how-to-breed-kitsun-palworld/",
+      "/guides/how-to-breed-suzaku-palworld/",
+      "/guides/how-to-breed-helzephyr-palworld/",
+      "/guides/how-to-breed-selyne-palworld/"
+    ],
+    "console_messages": 0,
+    "js_errors": 0,
+    "status": "PASS"
+  },
+  "telegram_running_report": "attempted; hermes send returned pending_approval due terminal security guard, so work continued per task fallback instruction"
+}
