@@ -2,7 +2,7 @@
 
 Task: `t_1a5db122`
 Status: PASS / deployed and live-verified
-Verified at: `2026-08-04T12:55:25Z`
+Verified at: `2026-08-04T13:03:11Z`
 Production origin: `https://palcalculator.com/`
 
 ## Conclusion
@@ -23,14 +23,14 @@ Confirmed parent QA GO from task `t_0d266e6f` and artifacts `artifacts/p14-qa.md
 
 ## Git and deploy
 
-- Commit: `be2a2f2` (`feat: add P14 AdSense recovery trust content`).
-- Push: `origin/main` updated from `cb0a840` to `be2a2f2`.
+- Source commit deployed: `734e8f7` (source commit `be2a2f2` plus preserved live-verification artifacts in `docs: add P14 live verification`).
+- Push: `origin/main` updated through `734e8f7` before final deploy.
 - Cloudflare Pages project: `palcalculator`.
 - Deploy command: `npx wrangler pages deploy dist --project-name palcalculator --branch main`.
-- Deploy result: PASS; uploaded 42 files, 26 already uploaded, `_redirects` uploaded.
-- Production deployment: `ed7b7846-3218-49f3-8041-a9c0fb1af36a`.
-- Deployment URL: `https://ed7b7846.palcalculator.pages.dev`.
-- Deployment list confirmed latest production branch `main`, source `be2a2f2`.
+- Final deploy result: PASS; uploaded 0 files, 68 already uploaded, `_redirects` uploaded.
+- Production deployment: `26d37ab1-05f8-41e1-83d8-05c3349fc591`.
+- Deployment URL: `https://26d37ab1.palcalculator.pages.dev`.
+- Deployment list confirmed latest production branch `main`, source `734e8f7`.
 
 ## Live route checks
 

@@ -9,10 +9,10 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 
 BASE_URL = "https://palcalculator.com"
-DEPLOYMENT_URL = "https://ed7b7846.palcalculator.pages.dev"
+DEPLOYMENT_URL = "https://26d37ab1.palcalculator.pages.dev"
 TASK_ID = "t_1a5db122"
-COMMIT = "be2a2f2"
-DEPLOYMENT_ID = "ed7b7846-3218-49f3-8041-a9c0fb1af36a"
+COMMIT = "734e8f7"
+DEPLOYMENT_ID = "26d37ab1-05f8-41e1-83d8-05c3349fc591"
 
 ROUTES = [
     "/",

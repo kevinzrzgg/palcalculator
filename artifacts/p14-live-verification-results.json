@@ -1,10 +1,10 @@
 {
   "task_id": "t_1a5db122",
-  "verified_at_utc": "2026-08-04T12:56:28Z",
+  "verified_at_utc": "2026-08-04T13:02:08Z",
   "base_url": "https://palcalculator.com",
-  "deployment_url": "https://ed7b7846.palcalculator.pages.dev",
-  "deployment_id": "ed7b7846-3218-49f3-8041-a9c0fb1af36a",
-  "commit": "be2a2f2",
+  "deployment_url": "https://26d37ab1.palcalculator.pages.dev",
+  "deployment_id": "26d37ab1-05f8-41e1-83d8-05c3349fc591",
+  "commit": "734e8f7",
   "qa_go_confirmed": true,
   "routes": {
     "/": {
@@ -503,7 +503,7 @@
     "passed": true
   },
   "deployment_url_check": {
-    "url": "https://ed7b7846.palcalculator.pages.dev/",
+    "url": "https://26d37ab1.palcalculator.pages.dev/",
     "status": 200,
     "content_type": "text/html; charset=utf-8",
     "has_p14_about_link": true,
