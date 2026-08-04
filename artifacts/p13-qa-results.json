@@ -1,0 +1,123 @@
+{
+  "task_id": "t_1941d753",
+  "conclusion": "GO",
+  "safe_to_deploy": true,
+  "deploy_performed": false,
+  "commands": {
+    "npm_run_test": {
+      "status": "PASS",
+      "summary": "vitest run: 1 test file passed, 34 tests passed"
+    },
+    "npm_run_lint": {
+      "status": "PASS_WITH_EXISTING_WARNINGS",
+      "summary": "eslint completed with 0 errors and 37 warnings in src/main.tsx (React fast-refresh / hook dependency warnings already documented upstream)"
+    },
+    "npm_run_build": {
+      "status": "PASS",
+      "summary": "tsc -b, vite build, and static route generation passed; Generated 34 route-specific HTML files, 34 sitemap URLs, explicit slash redirects, and 404.html"
+    }
+  },
+  "sitemap": {
+    "source_count": 34,
+    "dist_count": 34,
+    "no_query_urls": true,
+    "no_share_urls": true,
+    "no_results_urls": true
+  },
+  "p13_pages": {
+    "/guides/how-to-breed-faleris-palworld/": {
+      "http_status": 200,
+      "meta_description_length": 144,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-faleris-palworld/",
+      "robots": "index,follow",
+      "schema": ["TechArticle", "FAQPage"],
+      "faq_questions": 5,
+      "has_data_sources_link": true,
+      "has_internal_calculator_cta": true,
+      "risky_matches_excluding_unofficial": []
+    },
+    "/guides/how-to-breed-kitsun-palworld/": {
+      "http_status": 200,
+      "meta_description_length": 147,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-kitsun-palworld/",
+      "robots": "index,follow",
+      "schema": ["TechArticle", "FAQPage"],
+      "faq_questions": 5,
+      "has_data_sources_link": true,
+      "has_internal_calculator_cta": true,
+      "risky_matches_excluding_unofficial": []
+    },
+    "/guides/how-to-breed-suzaku-palworld/": {
+      "http_status": 200,
+      "meta_description_length": 142,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-suzaku-palworld/",
+      "robots": "index,follow",
+      "schema": ["TechArticle", "FAQPage"],
+      "faq_questions": 5,
+      "has_data_sources_link": true,
+      "has_internal_calculator_cta": true,
+      "risky_matches_excluding_unofficial": []
+    },
+    "/guides/how-to-breed-helzephyr-palworld/": {
+      "http_status": 200,
+      "meta_description_length": 144,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-helzephyr-palworld/",
+      "robots": "index,follow",
+      "schema": ["TechArticle", "FAQPage"],
+      "faq_questions": 5,
+      "has_data_sources_link": true,
+      "has_internal_calculator_cta": true,
+      "risky_matches_excluding_unofficial": []
+    },
+    "/guides/how-to-breed-selyne-palworld/": {
+      "http_status": 200,
+      "meta_description_length": 146,
+      "canonical": "https://palcalculator.com/guides/how-to-breed-selyne-palworld/",
+      "robots": "index,follow",
+      "schema": ["TechArticle", "FAQPage"],
+      "faq_questions": 5,
+      "has_data_sources_link": true,
+      "has_internal_calculator_cta": true,
+      "risky_matches_excluding_unofficial": []
+    }
+  },
+  "preview_smoke": {
+    "base_url": "http://127.0.0.1:4173",
+    "note": "npm run preview could not start a second server because port 4173 was already in use; the existing local static preview on 127.0.0.1:4173 returned 200 and served current rebuilt dist files.",
+    "http_200_routes": [
+      "/",
+      "/breeding-route-calculator/",
+      "/guides/how-to-breed-lyleen-palworld/",
+      "/guides/how-to-breed-faleris-palworld/",
+      "/guides/how-to-breed-kitsun-palworld/",
+      "/guides/how-to-breed-suzaku-palworld/",
+      "/guides/how-to-breed-helzephyr-palworld/",
+      "/guides/how-to-breed-selyne-palworld/"
+    ],
+    "mobile_390_checks": {
+      "viewport": "390x844 via headless Chrome CDP",
+      "routes": ["/", "/breeding-route-calculator/", "/guides/how-to-breed-lyleen-palworld/", "/guides/how-to-breed-faleris-palworld/"],
+      "all_inner_width_390": true,
+      "all_client_width_390": true,
+      "all_body_scroll_width_390": true,
+      "all_document_scroll_width_390": true,
+      "overflow_count": 0,
+      "canonical_and_robots_present": true
+    }
+  },
+  "risk_terms": {
+    "blocked_terms": ["official", "guaranteed", "100% accurate", "exact odds", "cheat", "bypass", "complete wiki"],
+    "source_new_pages": "PASS",
+    "dist_new_pages": "PASS when treating required safety word 'unofficial' as a caveat, not an official-claim match"
+  },
+  "files_checked": [
+    "src/guides-data.json",
+    "public/sitemap.xml",
+    "dist/sitemap.xml",
+    "dist/guides/how-to-breed-faleris-palworld/index.html",
+    "dist/guides/how-to-breed-kitsun-palworld/index.html",
+    "dist/guides/how-to-breed-suzaku-palworld/index.html",
+    "dist/guides/how-to-breed-helzephyr-palworld/index.html",
+    "dist/guides/how-to-breed-selyne-palworld/index.html"
+  ]
+}

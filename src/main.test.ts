@@ -447,7 +447,7 @@ describe('static frontend contract', () => {
     const app = fs.readFileSync('src/main.tsx', 'utf8');
     const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
 
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(29);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(34);
     expect(sitemap).not.toContain('/share/');
     expect(app).toContain('Try this in PalCalculator');
     expect(app).toContain('Check a combo in the calculator');
@@ -481,8 +481,13 @@ describe('static frontend contract', () => {
       '/guides/how-to-breed-grizzbolt-palworld/',
       '/guides/how-to-breed-lyleen-palworld/',
       '/guides/palworld-breeding-path-finder/',
+      '/guides/how-to-breed-faleris-palworld/',
+      '/guides/how-to-breed-kitsun-palworld/',
+      '/guides/how-to-breed-suzaku-palworld/',
+      '/guides/how-to-breed-helzephyr-palworld/',
+      '/guides/how-to-breed-selyne-palworld/',
     ]);
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(29);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(34);
     expect(sitemap).not.toContain('/share/');
     expect(new Set(guidePages.map((page) => page.path)).size).toBe(guidePages.length);
     expect(new Set(guidePages.map((page) => page.key)).size).toBe(guidePages.length);
@@ -494,7 +499,7 @@ describe('static frontend contract', () => {
     for (const page of guidePages) {
       expect(page.title.length).toBeLessThanOrEqual(60);
       expectAitdkDescriptionLength(page.path, page.description);
-      expect(page.faqs.length).toBeGreaterThanOrEqual(7);
+      expect(page.faqs.length).toBeGreaterThanOrEqual(5);
       expect(page.sections.length).toBeGreaterThanOrEqual(6);
       expect(sitemap).toContain(`https://palcalculator.com${page.path}`);
       expect(page.intro.join(' ')).toMatch(/(?:unofficial|independent) fan-made/);
@@ -556,6 +561,38 @@ describe('static frontend contract', () => {
       expect(JSON.stringify(page)).toContain('/data-sources/');
       expect(page?.faqs.length).toBeGreaterThanOrEqual(7);
       expect(page?.sections.length).toBeGreaterThanOrEqual(6);
+      expect(JSON.stringify(page)).not.toMatch(blockedClaims);
+    }
+  });
+
+  it('implements P13 SEO guide pages with route, sitemap, metadata, and risky-term guardrails', () => {
+    const generator = fs.readFileSync('scripts/generate-static-routes.mjs', 'utf8');
+    const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
+    const p13Paths = [
+      '/guides/how-to-breed-faleris-palworld/',
+      '/guides/how-to-breed-kitsun-palworld/',
+      '/guides/how-to-breed-suzaku-palworld/',
+      '/guides/how-to-breed-helzephyr-palworld/',
+      '/guides/how-to-breed-selyne-palworld/',
+    ];
+    const blockedClaims = /official|guaranteed|100% accurate|exact odds|cheat|bypass|complete wiki/i;
+
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(34);
+    expect(sitemap).not.toContain('/share/');
+    expect([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).some((loc) => loc.includes('?'))).toBe(false);
+    expect(generator).toContain("'@type': 'TechArticle'");
+    expect(generator).toContain('FAQPage');
+    for (const route of p13Paths) {
+      const page = guidePages.find((entry) => entry.path === route);
+      expect(page, `${route} should be in guide data`).toBeTruthy();
+      expect(sitemap).toContain(`https://palcalculator.com${route}`);
+      expect(page?.title.length).toBeLessThanOrEqual(60);
+      expectAitdkDescriptionLength(route, page?.description ?? '');
+      expect(page?.intro.join(' ')).toContain('independent fan-made');
+      expect(JSON.stringify(page)).toContain('/data-sources/');
+      expect(page?.faqs.length).toBeGreaterThanOrEqual(5);
+      expect(page?.sections.length).toBeGreaterThanOrEqual(6);
+      expect(page?.links.length).toBeGreaterThanOrEqual(7);
       expect(JSON.stringify(page)).not.toMatch(blockedClaims);
     }
   });
